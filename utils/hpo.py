@@ -53,7 +53,6 @@ def get_search_space(model_type, kernel=None, booster=None):
         'xgb__max_depth': max_depth,
         'xgb__subsample': subsample,
         'xgb__grow_policy': grow_policy,
-        'xgb__tree_method': ['exact', 'approx', 'hist'],
         'xgb__gamma': gamma,
         'xgb__colsample_bytree': colsample_bytree,
     }
