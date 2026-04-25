@@ -8,6 +8,7 @@ from qiskit_ibm_runtime import QiskitRuntimeService, SamplerV2
 from qiskit_algorithms.state_fidelities import ComputeUncompute
 from qiskit.transpiler import generate_preset_pass_manager
 from .circuits import QuantumKernelCircuits
+import numpy as np
 
 class QuantumKernelEstimator:
     
@@ -17,6 +18,7 @@ class QuantumKernelEstimator:
         self.backend = None
         self.n_qubits = n_qubits
         self.lambda_ = lambda_
+        self._qkernel = None
         
         # Map kernel types to circuit creation functions
         self.qkc = QuantumKernelCircuits(self.n_qubits, self.lambda_)
@@ -55,13 +57,42 @@ class QuantumKernelEstimator:
             
             # create fidelity implementation
             fidelity = ComputeUncompute(sampler=self.sampler, transpiler=pm)
-            qkernel = FidelityQuantumKernel(
+            self._qkernel = FidelityQuantumKernel(
                 feature_map=isa_feature_map, 
                 fidelity=fidelity, 
                 max_circuits_per_job=300
             )
         else:
             transpiled_feature_map = transpile(self._feature_map, AerSimulator())
-            qkernel = FidelityStatevectorKernel(feature_map=transpiled_feature_map)
+            self._qkernel = FidelityStatevectorKernel(feature_map=transpiled_feature_map)
 
-        return qkernel
+        return self._qkernel
+    
+    # ------------------------------------------------------------------
+    # Methods below are used by QuantumEnhancedMulticlassSVM (paper model)
+    # ------------------------------------------------------------------
+
+    def compute_kernel_matrix(self, X, Y=None):
+        """
+        Compute kernel matrix using the built Qiskit kernel.
+        - If Y is None: computes symmetric K(X, X) for training
+        - If Y is provided: computes rectangular K(X, Y) for inference
+        
+        Must call build_quantum_kernel() before this.
+        """
+        if self._qkernel is None:
+            raise RuntimeError(
+                "Quantum kernel not built yet. Call build_quantum_kernel() first."
+            )
+        
+        if Y is None:
+            return self._compute_symmetric(X)
+        return self._compute_rectangular(X, Y)
+    
+    def _compute_symmetric(self, X):
+        """K(X, X) — symmetric, exploits K[i,j] = K[j,i]."""
+        return self._qkernel.evaluate(X, X)
+
+    def _compute_rectangular(self, X, Y):
+        """K(X, Y) — rectangular, for test vs train."""
+        return self._qkernel.evaluate(X, Y)

@@ -1,7 +1,7 @@
 import time
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
-from .models import quantum_model, svc_model, xgboost_model, catboost_model, libsvm_model
+from .models import qsvc_model, svc_model, xgboost_model, catboost_model, libsvm_model
 from .training import train_model, validate_model, test_model
 from utils.hpo import build_hpo
 
@@ -12,7 +12,7 @@ def run_model(data, kernels, model_type='quantum', use_hardware=False, stage='cv
     else: kernel_list = [None]
     for kernel in kernel_list:
         if model_type == 'quantum':
-            model = quantum_model(kernel, n_measurements=1024, use_hardware=use_hardware, n_features=data['X_train'].shape[1])
+            model = qsvc_model(kernel, n_measurements=1024, use_hardware=use_hardware, n_features=data['X_train'].shape[1])
         elif model_type == 'sklearn':
             model = svc_model(kernel, random_state=random_state)
         elif model_type == 'xgboost':

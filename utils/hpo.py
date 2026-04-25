@@ -6,7 +6,6 @@ def get_search_space(model_type, kernel=None, booster=None):
       'svc__C': Real(1e-3, 1e3, prior='log-uniform'),
       'svc__class_weight': ['balanced', None],
       'svc__decision_function_shape': ['ovr', 'ovo'],
-      'svc__shrinking': [True, False],
       'svc__tol': Real(1e-5, 1, prior='log-uniform')
     }
 
@@ -80,9 +79,20 @@ def get_search_space(model_type, kernel=None, booster=None):
       'qsvc__C': Real(1e-3, 1e3, prior='log-uniform'),
       'qsvc__class_weight': ['balanced', None],
       'qsvc__decision_function_shape': ['ovr', 'ovo'],
-      'qsvc__n_qubits': [5, 8, 10],
+      # 'qsvc__n_qubits': [5, 8, 10],
       'qsvc__lambda_': Real(1e-3, 1e3, prior='log-uniform'),
-      'qsvc__n_measurement': [256, 1024, 2048],
+      'qsvc__n_measurements': [256, 1024, 2048],
+      'qsvc__tol': Real(1e-5, 1, prior='log-uniform')
+    }
+  elif model_type == 'qesvc':
+    return {
+      'qesvc__C': Real(1e-3, 1e3, prior='log-uniform'),
+      'qesvc__class_weight': ['balanced', None],
+      'qesvc__decision_function_shape': ['ovr', 'ovo'],
+      # 'qesvc__n_qubits': [5, 8, 10],
+      'qesvc__lambda_': Real(1e-3, 1e3, prior='log-uniform'),
+      'qesvc__n_measurements': [256, 1024, 2048],
+      'qesvc__tol': Real(1e-5, 1, prior='log-uniform')
     }
 
 def build_hpo(model_type, cv, model, kernel=None, random_state=42):

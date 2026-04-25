@@ -61,3 +61,6 @@ class QSVCWrapper(BaseEstimator, ClassifierMixin):
 
     def score(self, X, y):
         return self.model_.score(X, y)
+    
+    def decision_function(self, X):
+        return self.model_.decision_function(X)

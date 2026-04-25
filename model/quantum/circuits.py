@@ -6,7 +6,7 @@ class QuantumKernelCircuits:
         self.lambda_ = lambda_
         self.n_qubits = n_qubits
     
-    @staticmethod
+    # @staticmethod
     def create_iqp_full(self, params):
         # params = ParameterVector("x", n_qubits)
         qc = QuantumCircuit(self.n_qubits)
@@ -26,7 +26,7 @@ class QuantumKernelCircuits:
                 
         return qc
     
-    @staticmethod
+    # @staticmethod
     def create_iqp_linear(self, params):
         qc = QuantumCircuit(self.n_qubits)
         
@@ -48,7 +48,7 @@ class QuantumKernelCircuits:
                 
         return qc
     
-    @staticmethod
+    # @staticmethod
     def create_iqp_circular(self, params):
         qc = QuantumCircuit(self.n_qubits)
         
@@ -68,7 +68,7 @@ class QuantumKernelCircuits:
                 
         return qc
     
-    @staticmethod
+    # @staticmethod
     def create_pauli_x(self, params):
         qc = QuantumCircuit(self.n_qubits)
         
@@ -77,7 +77,7 @@ class QuantumKernelCircuits:
             
         return qc
     
-    @staticmethod
+    # @staticmethod
     def create_pauli_y(self, params):
         qc = QuantumCircuit(self.n_qubits)
         
@@ -86,7 +86,7 @@ class QuantumKernelCircuits:
             
         return qc
     
-    @staticmethod
+    # @staticmethod
     def create_pauli_z(self, params):
         qc = QuantumCircuit(self.n_qubits)
         
