@@ -1,0 +1,293 @@
+🔬 Search space: 3 C × 2 class_weight × 2 decision_function_shape × 3 tol =  36 configs × 5 folds = 180 fits
+   Scoring criterion: (AUROC + PRAUC + Accuracy) / 3
+
+  ▶ C=0.1 | class_weight=balanced | decision_function_shape=ovr | tol=0.1
+    F1 → Acc=0.3578 | Prec=0.4868 | Rec=0.3578 | F1=0.3368 | AUROC=0.6808 | PRAUC=0.4544
+    F2 → Acc=0.3660 | Prec=0.5378 | Rec=0.3660 | F1=0.3506 | AUROC=0.6910 | PRAUC=0.4737
+    F3 → Acc=0.3708 | Prec=0.5325 | Rec=0.3708 | F1=0.3571 | AUROC=0.6684 | PRAUC=0.4486
+    F4 → Acc=0.3698 | Prec=0.5072 | Rec=0.3698 | F1=0.3482 | AUROC=0.6810 | PRAUC=0.4601
+    F5 → Acc=0.3575 | Prec=0.4963 | Rec=0.3575 | F1=0.3309 | AUROC=0.6698 | PRAUC=0.4472
+  ✅  Acc:0.3644±0.0057 | Precision:0.5121±0.0200  |Recall:0.3644±0.0057 |F1:0.3447±0.0095 | AUROC:0.6782±0.0083 | PRAUC:0.4568±0.0096 | MCC:0.2222 | Composite:0.4998
+
+  ▶ C=0.1 | class_weight=balanced | decision_function_shape=ovr | tol=1
+    F1 → Acc=0.3511 | Prec=0.5074 | Rec=0.3511 | F1=0.3285 | AUROC=0.6832 | PRAUC=0.4554
+    F2 → Acc=0.3660 | Prec=0.5815 | Rec=0.3660 | F1=0.3373 | AUROC=0.6934 | PRAUC=0.4736
+    F3 → Acc=0.3367 | Prec=0.4810 | Rec=0.3367 | F1=0.3274 | AUROC=0.6716 | PRAUC=0.4485
+    F4 → Acc=0.3708 | Prec=0.5089 | Rec=0.3708 | F1=0.3552 | AUROC=0.6906 | PRAUC=0.4585
+    F5 → Acc=0.3623 | Prec=0.5236 | Rec=0.3623 | F1=0.3384 | AUROC=0.6750 | PRAUC=0.4489
+  ✅  Acc:0.3574±0.0122 | Precision:0.5205±0.0335  |Recall:0.3574±0.0122 |F1:0.3374±0.0100 | AUROC:0.6827±0.0085 | PRAUC:0.4570±0.0091 | MCC:0.2071 | Composite:0.4990
+
+  ▶ C=0.1 | class_weight=balanced | decision_function_shape=ovr | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+  ▶ C=0.1 | class_weight=balanced | decision_function_shape=ovo | tol=0.1
+    F1 → Acc=0.3578 | Prec=0.4868 | Rec=0.3578 | F1=0.3368 | AUROC=0.7245 | PRAUC=0.4542
+    F2 → Acc=0.3660 | Prec=0.5378 | Rec=0.3660 | F1=0.3506 | AUROC=0.7326 | PRAUC=0.4738
+    F3 → Acc=0.3708 | Prec=0.5325 | Rec=0.3708 | F1=0.3571 | AUROC=0.7163 | PRAUC=0.4486
+    F4 → Acc=0.3698 | Prec=0.5072 | Rec=0.3698 | F1=0.3482 | AUROC=0.7281 | PRAUC=0.4603
+    F5 → Acc=0.3575 | Prec=0.4963 | Rec=0.3575 | F1=0.3309 | AUROC=0.7185 | PRAUC=0.4472
+  ✅  Acc:0.3644±0.0057 | Precision:0.5121±0.0200  |Recall:0.3644±0.0057 |F1:0.3447±0.0095 | AUROC:0.7240±0.0060 | PRAUC:0.4568±0.0097 | MCC:0.2222 | Composite:0.5151
+
+  ▶ C=0.1 | class_weight=balanced | decision_function_shape=ovo | tol=1
+    F1 → Acc=0.3511 | Prec=0.5074 | Rec=0.3511 | F1=0.3285 | AUROC=0.7279 | PRAUC=0.4565
+    F2 → Acc=0.3660 | Prec=0.5815 | Rec=0.3660 | F1=0.3373 | AUROC=0.7361 | PRAUC=0.4735
+    F3 → Acc=0.3367 | Prec=0.4810 | Rec=0.3367 | F1=0.3274 | AUROC=0.7206 | PRAUC=0.4476
+    F4 → Acc=0.3708 | Prec=0.5089 | Rec=0.3708 | F1=0.3552 | AUROC=0.7353 | PRAUC=0.4578
+    F5 → Acc=0.3623 | Prec=0.5236 | Rec=0.3623 | F1=0.3384 | AUROC=0.7237 | PRAUC=0.4488
+  ✅  Acc:0.3574±0.0122 | Precision:0.5205±0.0335  |Recall:0.3574±0.0122 |F1:0.3374±0.0100 | AUROC:0.7287±0.0062 | PRAUC:0.4568±0.0093 | MCC:0.2071 | Composite:0.5143
+
+  ▶ C=0.1 | class_weight=balanced | decision_function_shape=ovo | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+  ▶ C=0.1 | class_weight=None | decision_function_shape=ovr | tol=0.1
+    F1 → Acc=0.4524 | Prec=0.2925 | Rec=0.4524 | F1=0.3381 | AUROC=0.6863 | PRAUC=0.4625
+    F2 → Acc=0.4500 | Prec=0.2853 | Rec=0.4500 | F1=0.3328 | AUROC=0.6843 | PRAUC=0.4295
+    F3 → Acc=0.4452 | Prec=0.2799 | Rec=0.4452 | F1=0.3286 | AUROC=0.6766 | PRAUC=0.4409
+    F4 → Acc=0.4510 | Prec=0.2886 | Rec=0.4510 | F1=0.3324 | AUROC=0.6881 | PRAUC=0.4446
+    F5 → Acc=0.4431 | Prec=0.2812 | Rec=0.4431 | F1=0.3282 | AUROC=0.6409 | PRAUC=0.3880
+  ✅  Acc:0.4484±0.0036 | Precision:0.2855±0.0046  |Recall:0.4484±0.0036 |F1:0.3320±0.0036 | AUROC:0.6752±0.0176 | PRAUC:0.4331±0.0249 | MCC:0.0792 | Composite:0.5189
+
+  ▶ C=0.1 | class_weight=None | decision_function_shape=ovr | tol=1
+    F1 → Acc=0.4524 | Prec=0.2925 | Rec=0.4524 | F1=0.3381 | AUROC=0.7002 | PRAUC=0.4768
+    F2 → Acc=0.4500 | Prec=0.2851 | Rec=0.4500 | F1=0.3328 | AUROC=0.6814 | PRAUC=0.4629
+    F3 → Acc=0.4467 | Prec=0.2808 | Rec=0.4467 | F1=0.3296 | AUROC=0.6692 | PRAUC=0.4478
+    F4 → Acc=0.4621 | Prec=0.3004 | Rec=0.4621 | F1=0.3394 | AUROC=0.6024 | PRAUC=0.3545
+    F5 → Acc=0.4435 | Prec=0.2817 | Rec=0.4435 | F1=0.3285 | AUROC=0.6469 | PRAUC=0.4091
+  ✅  Acc:0.4510±0.0063 | Precision:0.2881±0.0074  |Recall:0.4510±0.0063 |F1:0.3337±0.0044 | AUROC:0.6600±0.0336 | PRAUC:0.4302±0.0441 | MCC:0.0848 | Composite:0.5137
+
+  ▶ C=0.1 | class_weight=None | decision_function_shape=ovr | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+  ▶ C=0.1 | class_weight=None | decision_function_shape=ovo | tol=0.1
+    F1 → Acc=0.4524 | Prec=0.2925 | Rec=0.4524 | F1=0.3381 | AUROC=0.7230 | PRAUC=0.4633
+    F2 → Acc=0.4500 | Prec=0.2853 | Rec=0.4500 | F1=0.3328 | AUROC=0.7184 | PRAUC=0.4411
+    F3 → Acc=0.4452 | Prec=0.2799 | Rec=0.4452 | F1=0.3286 | AUROC=0.7185 | PRAUC=0.4419
+    F4 → Acc=0.4510 | Prec=0.2886 | Rec=0.4510 | F1=0.3324 | AUROC=0.7376 | PRAUC=0.4531
+    F5 → Acc=0.4431 | Prec=0.2812 | Rec=0.4431 | F1=0.3282 | AUROC=0.6809 | PRAUC=0.3829
+  ✅  Acc:0.4484±0.0036 | Precision:0.2855±0.0046  |Recall:0.4484±0.0036 |F1:0.3320±0.0036 | AUROC:0.7157±0.0187 | PRAUC:0.4365±0.0280 | MCC:0.0792 | Composite:0.5335
+
+  ▶ C=0.1 | class_weight=None | decision_function_shape=ovo | tol=1
+    F1 → Acc=0.4524 | Prec=0.2925 | Rec=0.4524 | F1=0.3381 | AUROC=0.7326 | PRAUC=0.4827
+    F2 → Acc=0.4500 | Prec=0.2851 | Rec=0.4500 | F1=0.3328 | AUROC=0.7155 | PRAUC=0.4600
+    F3 → Acc=0.4467 | Prec=0.2808 | Rec=0.4467 | F1=0.3296 | AUROC=0.7134 | PRAUC=0.4406
+    F4 → Acc=0.4621 | Prec=0.3004 | Rec=0.4621 | F1=0.3394 | AUROC=0.6634 | PRAUC=0.3649
+    F5 → Acc=0.4435 | Prec=0.2817 | Rec=0.4435 | F1=0.3285 | AUROC=0.6990 | PRAUC=0.4182
+  ✅  Acc:0.4510±0.0063 | Precision:0.2881±0.0074  |Recall:0.4510±0.0063 |F1:0.3337±0.0044 | AUROC:0.7048±0.0233 | PRAUC:0.4333±0.0403 | MCC:0.0848 | Composite:0.5297
+
+  ▶ C=0.1 | class_weight=None | decision_function_shape=ovo | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+  ▶ C=1 | class_weight=balanced | decision_function_shape=ovr | tol=0.1
+    F1 → Acc=0.3573 | Prec=0.4882 | Rec=0.3573 | F1=0.3359 | AUROC=0.6806 | PRAUC=0.4547
+    F2 → Acc=0.3655 | Prec=0.5398 | Rec=0.3655 | F1=0.3502 | AUROC=0.6922 | PRAUC=0.4755
+    F3 → Acc=0.3646 | Prec=0.5259 | Rec=0.3646 | F1=0.3502 | AUROC=0.6693 | PRAUC=0.4497
+    F4 → Acc=0.3689 | Prec=0.5075 | Rec=0.3689 | F1=0.3454 | AUROC=0.6820 | PRAUC=0.4606
+    F5 → Acc=0.3585 | Prec=0.4963 | Rec=0.3585 | F1=0.3318 | AUROC=0.6707 | PRAUC=0.4476
+  ✅  Acc:0.3630±0.0044 | Precision:0.5116±0.0190  |Recall:0.3630±0.0044 |F1:0.3427±0.0075 | AUROC:0.6790±0.0084 | PRAUC:0.4576±0.0100 | MCC:0.2214 | Composite:0.4998
+
+  ▶ C=1 | class_weight=balanced | decision_function_shape=ovr | tol=1
+    F1 → Acc=0.3583 | Prec=0.4850 | Rec=0.3583 | F1=0.3419 | AUROC=0.6811 | PRAUC=0.4600
+    F2 → Acc=0.3703 | Prec=0.5426 | Rec=0.3703 | F1=0.3488 | AUROC=0.6996 | PRAUC=0.4867
+    F3 → Acc=0.3511 | Prec=0.4955 | Rec=0.3511 | F1=0.3350 | AUROC=0.6718 | PRAUC=0.4481
+    F4 → Acc=0.3626 | Prec=0.4965 | Rec=0.3626 | F1=0.3316 | AUROC=0.6875 | PRAUC=0.4589
+    F5 → Acc=0.3623 | Prec=0.4900 | Rec=0.3623 | F1=0.3361 | AUROC=0.6730 | PRAUC=0.4485
+  ✅  Acc:0.3609±0.0063 | Precision:0.5019±0.0208  |Recall:0.3609±0.0063 |F1:0.3387±0.0060 | AUROC:0.6826±0.0102 | PRAUC:0.4605±0.0141 | MCC:0.2156 | Composite:0.5013
+
+  ▶ C=1 | class_weight=balanced | decision_function_shape=ovr | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+  ▶ C=1 | class_weight=balanced | decision_function_shape=ovo | tol=0.1
+    F1 → Acc=0.3573 | Prec=0.4882 | Rec=0.3573 | F1=0.3359 | AUROC=0.7243 | PRAUC=0.4549
+    F2 → Acc=0.3655 | Prec=0.5398 | Rec=0.3655 | F1=0.3502 | AUROC=0.7338 | PRAUC=0.4752
+    F3 → Acc=0.3646 | Prec=0.5259 | Rec=0.3646 | F1=0.3502 | AUROC=0.7169 | PRAUC=0.4496
+    F4 → Acc=0.3689 | Prec=0.5075 | Rec=0.3689 | F1=0.3454 | AUROC=0.7283 | PRAUC=0.4606
+    F5 → Acc=0.3585 | Prec=0.4963 | Rec=0.3585 | F1=0.3318 | AUROC=0.7187 | PRAUC=0.4474
+  ✅  Acc:0.3630±0.0044 | Precision:0.5116±0.0190  |Recall:0.3630±0.0044 |F1:0.3427±0.0075 | AUROC:0.7244±0.0062 | PRAUC:0.4575±0.0099 | MCC:0.2214 | Composite:0.5150
+
+  ▶ C=1 | class_weight=balanced | decision_function_shape=ovo | tol=1
+    F1 → Acc=0.3583 | Prec=0.4850 | Rec=0.3583 | F1=0.3419 | AUROC=0.7251 | PRAUC=0.4610
+    F2 → Acc=0.3703 | Prec=0.5426 | Rec=0.3703 | F1=0.3488 | AUROC=0.7425 | PRAUC=0.4879
+    F3 → Acc=0.3511 | Prec=0.4955 | Rec=0.3511 | F1=0.3350 | AUROC=0.7199 | PRAUC=0.4481
+    F4 → Acc=0.3626 | Prec=0.4965 | Rec=0.3626 | F1=0.3316 | AUROC=0.7340 | PRAUC=0.4589
+    F5 → Acc=0.3623 | Prec=0.4900 | Rec=0.3623 | F1=0.3361 | AUROC=0.7224 | PRAUC=0.4478
+  ✅  Acc:0.3609±0.0063 | Precision:0.5019±0.0208  |Recall:0.3609±0.0063 |F1:0.3387±0.0060 | AUROC:0.7288±0.0083 | PRAUC:0.4607±0.0146 | MCC:0.2156 | Composite:0.5168
+
+  ▶ C=1 | class_weight=balanced | decision_function_shape=ovo | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+  ▶ C=1 | class_weight=None | decision_function_shape=ovr | tol=0.1
+    F1 → Acc=0.4524 | Prec=0.2926 | Rec=0.4524 | F1=0.3380 | AUROC=0.6934 | PRAUC=0.4626
+    F2 → Acc=0.4500 | Prec=0.2851 | Rec=0.4500 | F1=0.3328 | AUROC=0.6816 | PRAUC=0.4451
+    F3 → Acc=0.4467 | Prec=0.2811 | Rec=0.4467 | F1=0.3295 | AUROC=0.6621 | PRAUC=0.4157
+    F4 → Acc=0.4510 | Prec=0.2886 | Rec=0.4510 | F1=0.3324 | AUROC=0.6910 | PRAUC=0.4671
+    F5 → Acc=0.4435 | Prec=0.2816 | Rec=0.4435 | F1=0.3285 | AUROC=0.6735 | PRAUC=0.4390
+  ✅  Acc:0.4487±0.0032 | Precision:0.2858±0.0044  |Recall:0.4487±0.0032 |F1:0.3323±0.0033 | AUROC:0.6803±0.0116 | PRAUC:0.4459±0.0184 | MCC:0.0800 | Composite:0.5250
+
+  ▶ C=1 | class_weight=None | decision_function_shape=ovr | tol=1
+    F1 → Acc=0.4524 | Prec=0.2923 | Rec=0.4524 | F1=0.3381 | AUROC=0.6832 | PRAUC=0.4656
+    F2 → Acc=0.4500 | Prec=0.2839 | Rec=0.4500 | F1=0.3330 | AUROC=0.6798 | PRAUC=0.4598
+    F3 → Acc=0.4467 | Prec=0.2792 | Rec=0.4467 | F1=0.3299 | AUROC=0.6380 | PRAUC=0.3879
+    F4 → Acc=0.4510 | Prec=0.2867 | Rec=0.4510 | F1=0.3326 | AUROC=0.6360 | PRAUC=0.3723
+    F5 → Acc=0.4435 | Prec=0.2793 | Rec=0.4435 | F1=0.3289 | AUROC=0.6230 | PRAUC=0.3614
+  ✅  Acc:0.4487±0.0032 | Precision:0.2843±0.0049  |Recall:0.4487±0.0032 |F1:0.3325±0.0032 | AUROC:0.6520±0.0247 | PRAUC:0.4094±0.0444 | MCC:0.0815 | Composite:0.5034
+
+  ▶ C=1 | class_weight=None | decision_function_shape=ovr | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+  ▶ C=1 | class_weight=None | decision_function_shape=ovo | tol=0.1
+    F1 → Acc=0.4524 | Prec=0.2926 | Rec=0.4524 | F1=0.3380 | AUROC=0.7222 | PRAUC=0.4556
+    F2 → Acc=0.4500 | Prec=0.2851 | Rec=0.4500 | F1=0.3328 | AUROC=0.7221 | PRAUC=0.4414
+    F3 → Acc=0.4467 | Prec=0.2811 | Rec=0.4467 | F1=0.3295 | AUROC=0.7088 | PRAUC=0.4235
+    F4 → Acc=0.4510 | Prec=0.2886 | Rec=0.4510 | F1=0.3324 | AUROC=0.7368 | PRAUC=0.4630
+    F5 → Acc=0.4435 | Prec=0.2816 | Rec=0.4435 | F1=0.3285 | AUROC=0.7136 | PRAUC=0.4348
+  ✅  Acc:0.4487±0.0032 | Precision:0.2858±0.0044  |Recall:0.4487±0.0032 |F1:0.3323±0.0033 | AUROC:0.7207±0.0096 | PRAUC:0.4437±0.0142 | MCC:0.0800 | Composite:0.5377
+
+  ▶ C=1 | class_weight=None | decision_function_shape=ovo | tol=1
+    F1 → Acc=0.4524 | Prec=0.2923 | Rec=0.4524 | F1=0.3381 | AUROC=0.7264 | PRAUC=0.4665
+    F2 → Acc=0.4500 | Prec=0.2839 | Rec=0.4500 | F1=0.3330 | AUROC=0.7187 | PRAUC=0.4612
+    F3 → Acc=0.4467 | Prec=0.2792 | Rec=0.4467 | F1=0.3299 | AUROC=0.6941 | PRAUC=0.3907
+    F4 → Acc=0.4510 | Prec=0.2867 | Rec=0.4510 | F1=0.3326 | AUROC=0.7050 | PRAUC=0.3900
+    F5 → Acc=0.4435 | Prec=0.2793 | Rec=0.4435 | F1=0.3289 | AUROC=0.6995 | PRAUC=0.3908
+  ✅  Acc:0.4487±0.0032 | Precision:0.2843±0.0049  |Recall:0.4487±0.0032 |F1:0.3325±0.0032 | AUROC:0.7087±0.0120 | PRAUC:0.4199±0.0360 | MCC:0.0815 | Composite:0.5258
+
+  ▶ C=1 | class_weight=None | decision_function_shape=ovo | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+  ▶ C=10 | class_weight=balanced | decision_function_shape=ovr | tol=0.1
+    F1 → Acc=0.3583 | Prec=0.4961 | Rec=0.3583 | F1=0.3372 | AUROC=0.6812 | PRAUC=0.4557
+    F2 → Acc=0.3703 | Prec=0.5475 | Rec=0.3703 | F1=0.3562 | AUROC=0.6924 | PRAUC=0.4751
+    F3 → Acc=0.3694 | Prec=0.5345 | Rec=0.3694 | F1=0.3549 | AUROC=0.6694 | PRAUC=0.4500
+    F4 → Acc=0.3684 | Prec=0.5073 | Rec=0.3684 | F1=0.3452 | AUROC=0.6801 | PRAUC=0.4605
+    F5 → Acc=0.3609 | Prec=0.4996 | Rec=0.3609 | F1=0.3350 | AUROC=0.6708 | PRAUC=0.4470
+  ✅  Acc:0.3655±0.0049 | Precision:0.5170±0.0203  |Recall:0.3655±0.0049 |F1:0.3457±0.0087 | AUROC:0.6788±0.0083 | PRAUC:0.4577±0.0099 | MCC:0.2243 | Composite:0.5006
+
+  ▶ C=10 | class_weight=balanced | decision_function_shape=ovr | tol=1
+    F1 → Acc=0.3674 | Prec=0.4947 | Rec=0.3674 | F1=0.3482 | AUROC=0.6842 | PRAUC=0.4646
+    F2 → Acc=0.3876 | Prec=0.5772 | Rec=0.3876 | F1=0.3641 | AUROC=0.6955 | PRAUC=0.4808
+    F3 → Acc=0.3545 | Prec=0.4934 | Rec=0.3545 | F1=0.3400 | AUROC=0.6767 | PRAUC=0.4571
+    F4 → Acc=0.3814 | Prec=0.5639 | Rec=0.3814 | F1=0.3452 | AUROC=0.6845 | PRAUC=0.4677
+    F5 → Acc=0.3729 | Prec=0.4994 | Rec=0.3729 | F1=0.3575 | AUROC=0.6783 | PRAUC=0.4578
+  ✅  Acc:0.3728±0.0115 | Precision:0.5257±0.0369  |Recall:0.3728±0.0115 |F1:0.3510±0.0087 | AUROC:0.6838±0.0066 | PRAUC:0.4656±0.0086 | MCC:0.2301 | Composite:0.5074
+
+  ▶ C=10 | class_weight=balanced | decision_function_shape=ovr | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+  ▶ C=10 | class_weight=balanced | decision_function_shape=ovo | tol=0.1
+    F1 → Acc=0.3583 | Prec=0.4961 | Rec=0.3583 | F1=0.3372 | AUROC=0.7243 | PRAUC=0.4556
+    F2 → Acc=0.3703 | Prec=0.5475 | Rec=0.3703 | F1=0.3562 | AUROC=0.7342 | PRAUC=0.4751
+    F3 → Acc=0.3694 | Prec=0.5345 | Rec=0.3694 | F1=0.3549 | AUROC=0.7171 | PRAUC=0.4501
+    F4 → Acc=0.3684 | Prec=0.5073 | Rec=0.3684 | F1=0.3452 | AUROC=0.7263 | PRAUC=0.4606
+    F5 → Acc=0.3609 | Prec=0.4996 | Rec=0.3609 | F1=0.3350 | AUROC=0.7193 | PRAUC=0.4471
+  ✅  Acc:0.3655±0.0049 | Precision:0.5170±0.0203  |Recall:0.3655±0.0049 |F1:0.3457±0.0087 | AUROC:0.7242±0.0060 | PRAUC:0.4577±0.0099 | MCC:0.2243 | Composite:0.5158
+
+  ▶ C=10 | class_weight=balanced | decision_function_shape=ovo | tol=1
+    F1 → Acc=0.3674 | Prec=0.4947 | Rec=0.3674 | F1=0.3482 | AUROC=0.7273 | PRAUC=0.4642
+    F2 → Acc=0.3876 | Prec=0.5772 | Rec=0.3876 | F1=0.3641 | AUROC=0.7363 | PRAUC=0.4819
+    F3 → Acc=0.3545 | Prec=0.4934 | Rec=0.3545 | F1=0.3400 | AUROC=0.7230 | PRAUC=0.4570
+    F4 → Acc=0.3814 | Prec=0.5639 | Rec=0.3814 | F1=0.3452 | AUROC=0.7310 | PRAUC=0.4670
+    F5 → Acc=0.3729 | Prec=0.4994 | Rec=0.3729 | F1=0.3575 | AUROC=0.7259 | PRAUC=0.4566
+  ✅  Acc:0.3728±0.0115 | Precision:0.5257±0.0369  |Recall:0.3728±0.0115 |F1:0.3510±0.0087 | AUROC:0.7287±0.0046 | PRAUC:0.4653±0.0092 | MCC:0.2301 | Composite:0.5223
+
+  ▶ C=10 | class_weight=balanced | decision_function_shape=ovo | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+  ▶ C=10 | class_weight=None | decision_function_shape=ovr | tol=0.1
+    F1 → Acc=0.4524 | Prec=0.2926 | Rec=0.4524 | F1=0.3380 | AUROC=0.6832 | PRAUC=0.4444
+    F2 → Acc=0.4500 | Prec=0.2853 | Rec=0.4500 | F1=0.3328 | AUROC=0.6911 | PRAUC=0.4721
+    F3 → Acc=0.4457 | Prec=0.2803 | Rec=0.4457 | F1=0.3289 | AUROC=0.6730 | PRAUC=0.4403
+    F4 → Acc=0.4510 | Prec=0.2890 | Rec=0.4510 | F1=0.3324 | AUROC=0.6874 | PRAUC=0.4568
+    F5 → Acc=0.4435 | Prec=0.2817 | Rec=0.4435 | F1=0.3285 | AUROC=0.6696 | PRAUC=0.4471
+  ✅  Acc:0.4486±0.0034 | Precision:0.2858±0.0046  |Recall:0.4486±0.0034 |F1:0.3321±0.0034 | AUROC:0.6809±0.0083 | PRAUC:0.4521±0.0114 | MCC:0.0795 | Composite:0.5272
+
+  ▶ C=10 | class_weight=None | decision_function_shape=ovr | tol=1
+    F1 → Acc=0.4500 | Prec=0.3150 | Rec=0.4500 | F1=0.3427 | AUROC=0.6813 | PRAUC=0.4380
+    F2 → Acc=0.4491 | Prec=0.2822 | Rec=0.4491 | F1=0.3326 | AUROC=0.6832 | PRAUC=0.4504
+    F3 → Acc=0.4457 | Prec=0.2781 | Rec=0.4457 | F1=0.3289 | AUROC=0.6603 | PRAUC=0.4216
+    F4 → Acc=0.4472 | Prec=0.2909 | Rec=0.4472 | F1=0.3287 | AUROC=0.6651 | PRAUC=0.4224
+    F5 → Acc=0.4358 | Prec=0.2754 | Rec=0.4358 | F1=0.3210 | AUROC=0.6468 | PRAUC=0.4014
+  ✅  Acc:0.4456±0.0051 | Precision:0.2883±0.0143  |Recall:0.4456±0.0051 |F1:0.3308±0.0070 | AUROC:0.6673±0.0136 | PRAUC:0.4268±0.0166 | MCC:0.0779 | Composite:0.5132
+
+  ▶ C=10 | class_weight=None | decision_function_shape=ovr | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+  ▶ C=10 | class_weight=None | decision_function_shape=ovo | tol=0.1
+    F1 → Acc=0.4524 | Prec=0.2926 | Rec=0.4524 | F1=0.3380 | AUROC=0.7269 | PRAUC=0.4556
+    F2 → Acc=0.4500 | Prec=0.2853 | Rec=0.4500 | F1=0.3328 | AUROC=0.7269 | PRAUC=0.4771
+    F3 → Acc=0.4457 | Prec=0.2803 | Rec=0.4457 | F1=0.3289 | AUROC=0.7188 | PRAUC=0.4462
+    F4 → Acc=0.4510 | Prec=0.2890 | Rec=0.4510 | F1=0.3324 | AUROC=0.7285 | PRAUC=0.4517
+    F5 → Acc=0.4435 | Prec=0.2817 | Rec=0.4435 | F1=0.3285 | AUROC=0.7076 | PRAUC=0.4429
+  ✅  Acc:0.4486±0.0034 | Precision:0.2858±0.0046  |Recall:0.4486±0.0034 |F1:0.3321±0.0034 | AUROC:0.7218±0.0079 | PRAUC:0.4547±0.0120 | MCC:0.0795 | Composite:0.5417
+
+  ▶ C=10 | class_weight=None | decision_function_shape=ovo | tol=1
+    F1 → Acc=0.4500 | Prec=0.3150 | Rec=0.4500 | F1=0.3427 | AUROC=0.7218 | PRAUC=0.4414
+    F2 → Acc=0.4491 | Prec=0.2822 | Rec=0.4491 | F1=0.3326 | AUROC=0.7221 | PRAUC=0.4523
+    F3 → Acc=0.4457 | Prec=0.2781 | Rec=0.4457 | F1=0.3289 | AUROC=0.7101 | PRAUC=0.4175
+    F4 → Acc=0.4472 | Prec=0.2909 | Rec=0.4472 | F1=0.3287 | AUROC=0.7190 | PRAUC=0.4189
+    F5 → Acc=0.4358 | Prec=0.2754 | Rec=0.4358 | F1=0.3210 | AUROC=0.6992 | PRAUC=0.3918
+  ✅  Acc:0.4456±0.0051 | Precision:0.2883±0.0143  |Recall:0.4456±0.0051 |F1:0.3308±0.0070 | AUROC:0.7144±0.0088 | PRAUC:0.4244±0.0210 | MCC:0.0779 | Composite:0.5281
+
+  ▶ C=10 | class_weight=None | decision_function_shape=ovo | tol=10
+    F1 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3058
+    F2 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3060
+    F3 → Acc=0.4462 | Prec=0.1991 | Rec=0.4462 | F1=0.2753 | AUROC=0.5000 | PRAUC=0.3054
+    F4 → Acc=0.4467 | Prec=0.1995 | Rec=0.4467 | F1=0.2758 | AUROC=0.5000 | PRAUC=0.3056
+    F5 → Acc=0.4469 | Prec=0.1997 | Rec=0.4469 | F1=0.2761 | AUROC=0.5000 | PRAUC=0.3058
+  ✅  Acc:0.4466±0.0002 | Precision:0.1995±0.0002  |Recall:0.4466±0.0002 |F1:0.2758±0.0002 | AUROC:0.5000±0.0000 | PRAUC:0.3057±0.0002 | MCC:0.0000 | Composite:0.4175
+
+🏆 Best config : C=10 | class_weight=None | decision_function_shape=ovo | tol=0.1
+   Composite   : 0.5417 (AUROC=0.7218 | PRAUC=0.4547 | Acc=0.4486 |Prec=0.2858 |Rec=0.4486) |
