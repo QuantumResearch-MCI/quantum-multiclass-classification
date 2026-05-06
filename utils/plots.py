@@ -135,11 +135,6 @@ def plot_performance_comparison(df, all_results, metric='accuracy'):
     # return fig
 
 def plot_roc_curve(all_results, model_names, le, ncols=4):
-    """
-    all_results  : raw results dict
-    model_names  : single string OR list of strings e.g. 'SVC_linear' or ['SVC_linear', 'XGB']
-    le           : the LabelEncoder used during training
-    """
     # accept both single string and list
     if isinstance(model_names, str):
         model_names = [model_names]

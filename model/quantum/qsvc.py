@@ -30,7 +30,7 @@ class QSVCWrapper(BaseEstimator, ClassifierMixin):
 
     def _build_model(self):
         kernel_instance = QuantumKernelEstimator(
-            kernel_type=self.kernel,
+            kernel=self.kernel,
             n_qubits=self.n_qubits,
             lambda_=self.lambda_,
             n_measurements=self.n_measurements,

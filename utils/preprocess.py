@@ -1,4 +1,4 @@
-NEW = True
+NEW = False
 def preprocess(data, fit_scaler=True, scaler=None, target_col='Kategori'):
     import pandas as pd
     from sklearn.preprocessing import StandardScaler

@@ -3,7 +3,7 @@ def svc_model(kernel, random_state=None):
     model = SVC(kernel=kernel, random_state=random_state, probability=True)
     return model
 
-def xgboost_model(booster='gblinear', n_estimators=500, max_depth=10, subsample=0.8, learning_rate=1, random_state=42):
+def xgboost_model(booster='gbtree', n_estimators=500, max_depth=10, subsample=0.8, learning_rate=1, random_state=42):
     from xgboost import XGBClassifier
     model = XGBClassifier(
                 # n_estimators=n_estimators, 

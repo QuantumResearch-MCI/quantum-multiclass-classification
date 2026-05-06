@@ -12,8 +12,8 @@ import numpy as np
 
 class QuantumKernelEstimator:
     
-    def __init__(self, n_qubits, lambda_=1.0, kernel_type='full', n_measurements=1024):
-        self.kernel_type = kernel_type
+    def __init__(self, n_qubits, lambda_=1.0, kernel='full', n_measurements=1024):
+        self.kernel = kernel
         self.n_measurements = n_measurements
         self.backend = None
         self.n_qubits = n_qubits
@@ -33,7 +33,7 @@ class QuantumKernelEstimator:
 
     def _build_feature_map(self, n_features):
         params = ParameterVector('x', length=n_features)
-        creator_fn = self.circuit_creators[self.kernel_type]
+        creator_fn = self.circuit_creators[self.kernel]
         feature_map = creator_fn(params)
         
         return feature_map
