@@ -36,40 +36,35 @@ class QESVC(BaseEstimator, ClassifierMixin):
         self.tol = tol
         self.decision_function_shape = decision_function_shape
         
+
+    def _build_model(self):
+        kernel_instance = QuantumKernelEstimator(
+            kernel=self.kernel,
+            n_qubits=self.n_qubits,
+            lambda_=self.lambda_,
+            n_measurements=self.n_measurements,
+        )
+
+        qkernel = kernel_instance.build_quantum_kernel(
+            n_features=self.n_features,
+            use_hardware=self.use_hardware,
+        )
+
+        return SVC(
+            kernel=qkernel.evaluate,
+            C=self.C, 
+            random_state=self.random_state,
+            class_weight=self.class_weight,
+            shrinking=self.shrinking,
+            tol=self.tol,
+            decision_function_shape=self.decision_function_shape,
+            probability=True
+        )
+
     def fit(self, X, y):
-        self.kernel_estimator = QuantumKernelEstimator(
-            kernel=self.kernel, 
-            n_qubits=self.n_qubits, 
-            lambda_=self.lambda_, 
-            n_measurements=self.n_measurements
-        )
-
-        self.kernel_estimator.build_quantum_kernel(
-            n_features=self.n_features, 
-            use_hardware=self.use_hardware
-        )
-        
-        self.X_train = X
         self.classes_ = np.unique(y)
-
-        # Step 1: Compute kernel matrix for training data
-        qkernel = self.kernel_estimator._qkernel
-        
-        # Step 2: Train binary classifiers for each class (one-vs-all)
-        for s in self.classes_:
-            y_binary = np.where(y == s, 1, -1)
-            clf = SVC(
-                kernel=qkernel.evaluate, 
-                C=self.C, 
-                random_state=self.random_state,
-                class_weight=self.class_weight,
-                shrinking=self.shrinking,
-                tol=self.tol,
-                decision_function_shape=self.decision_function_shape
-            )
-            clf.fit(X, y_binary)
-            self.binary_classifiers[s] = clf
-            
+        self.model_ = self._build_model()
+        self.model_.fit(X, y)
         return self
     
     def decision_function(self, X_test):
@@ -82,12 +77,14 @@ class QESVC(BaseEstimator, ClassifierMixin):
             
         return decision_values
     
-    def predict(self, X_test):
-        decision_values = self.decision_function(X_test)
-        predictions = self.classes_[np.argmax(decision_values, axis=1)]
-        return predictions
+    def predict(self, X):
+        return self.model_.predict(X)
+
+    def predict_proba(self, X):
+        return self.model_.predict_proba(X)
+
+    def score(self, X, y):
+        return self.model_.score(X, y)
     
-    def score(self, X_test, y_test):
-        predictions = self.predict(X_test)
-        accuracy = np.mean(predictions == y_test)
-        return accuracy
+    def decision_function(self, X):
+        return self.model_.decision_function(X)
