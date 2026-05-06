@@ -8,7 +8,7 @@ class QESVC(BaseEstimator, ClassifierMixin):
             self, 
             n_qubits=8, 
             lambda_=1.0, 
-            kernel_type='full', 
+            kernel='full', 
             C=1.0, 
             n_measurements=1024, 
             use_hardware=False, 
@@ -21,7 +21,7 @@ class QESVC(BaseEstimator, ClassifierMixin):
         ):
         self.n_qubits = n_qubits
         self.lambda_ = lambda_
-        self.kernel_type = kernel_type
+        self.kernel = kernel
         self.C = C
         self.n_measurements = n_measurements        
         self.binary_classifiers = {}
@@ -38,7 +38,7 @@ class QESVC(BaseEstimator, ClassifierMixin):
         
     def fit(self, X, y):
         self.kernel_estimator = QuantumKernelEstimator(
-            kernel_type=self.kernel_type, 
+            kernel=self.kernel, 
             n_qubits=self.n_qubits, 
             lambda_=self.lambda_, 
             n_measurements=self.n_measurements
@@ -52,15 +52,14 @@ class QESVC(BaseEstimator, ClassifierMixin):
         self.X_train = X
         self.classes_ = np.unique(y)
 
-        # Step 1: Compute quantum kernel matrix
-        self.K_train = self.kernel_estimator.compute_kernel_matrix(X)
+        # Step 1: Compute kernel matrix for training data
+        qkernel = self.kernel_estimator._qkernel
         
         # Step 2: Train binary classifiers for each class (one-vs-all)
-        self.binary_classifiers_ = {}
         for s in self.classes_:
             y_binary = np.where(y == s, 1, -1)
             clf = SVC(
-                kernel='precomputed', 
+                kernel=qkernel.evaluate, 
                 C=self.C, 
                 random_state=self.random_state,
                 class_weight=self.class_weight,
@@ -68,7 +67,7 @@ class QESVC(BaseEstimator, ClassifierMixin):
                 tol=self.tol,
                 decision_function_shape=self.decision_function_shape
             )
-            clf.fit(self.K_train, y_binary)
+            clf.fit(X, y_binary)
             self.binary_classifiers[s] = clf
             
         return self
@@ -77,12 +76,9 @@ class QESVC(BaseEstimator, ClassifierMixin):
         n_test = X_test.shape[0]
         decision_values = np.zeros((n_test, len(self.classes_)))
         
-        # Compute kernel between test and training data
-        K_test = self.kernel_estimator.compute_kernel_matrix(X_test, self.X_train)
-        
         # Calculate decision function for each class
         for idx, s in enumerate(self.classes_):
-            decision_values[:, idx] = clf = self.binary_classifiers[s].decision_function(K_test)
+            decision_values[:, idx] = self.binary_classifiers[s].decision_function(X_test)
             
         return decision_values
     
