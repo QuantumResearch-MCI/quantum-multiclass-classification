@@ -53,18 +53,7 @@ def qesvc_model(kernel, random_state=42, use_hardware=False, n_features=20, n_qu
     model = QESVC(kernel_type=kernel, use_hardware=use_hardware, n_features=n_features, random_state=random_state, n_qubits=n_qubits)
     return model
 
-def libsvm_model(kernel, C=1.0, gamma=0.5, degree=3):
+def libsvm_model(kernel='rbf', C=1.0, gamma=None, degree=None):
     from .libsvm.libsvm_model import LibSVMModel
-    kernel_map = {'linear': 0, 'poly': 1, 'rbf': 2, 'sigmoid': 3}
-    t_val = kernel_map[kernel]
-
-    params = f"-t {t_val} -c {C} -b 1 -q"
-    if kernel == 'linear':
-        pass
-    elif kernel == 'poly':
-        params += f" -g {gamma} -d {degree}"
-    elif kernel in ['rbf', 'sigmoid']:
-        params += f" -g {gamma}"
-    
-    model = LibSVMModel(params)
+    model = LibSVMModel(kernel=kernel, C=C, gamma=gamma, degree=degree)
     return model

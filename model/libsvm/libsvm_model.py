@@ -6,14 +6,18 @@ class LibSVMModel(BaseEstimator, ClassifierMixin):
     def __init__(self, kernel='rbf', C=1.0, gamma=None, degree=None):
         self.kernel_map = {'linear': 0, 'poly': 1, 'rbf': 2, 'sigmoid': 3}
         self.t_val = self.kernel_map[kernel]
-        self.params = f"-t {self.t_val} -c {C} -b 1 -q"
+        self.kernel = kernel
+        self.C = C
+        self.gamma = gamma
+        self.degree = degree
+        self.params = f"-t {self.t_val} -c {self.C} -b 1 -q"
 
-        if kernel == 'linear':
+        if self.kernel == 'linear':
             pass
-        elif kernel == 'poly':
-            self.params += f" -g {gamma} -d {degree}"
-        elif kernel in ['rbf', 'sigmoid']:
-            self.params += f" -g {gamma}"
+        elif self.kernel == 'poly':
+            self.params += f" -g {self.gamma} -d {self.degree}"
+        elif self.kernel in ['rbf', 'sigmoid']:
+            self.params += f" -g {self.gamma}"
 
         self.model = None
 

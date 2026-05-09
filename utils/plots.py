@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib import gridspec
-from sklearn.metrics import roc_curve, auc
+from sklearn.metrics import roc_curve, auc, precision_recall_curve, average_precision_score
 from sklearn.preprocessing import label_binarize
 from itertools import cycle
 import math
@@ -211,6 +211,86 @@ def plot_roc_curve(all_results, model_names, le, ncols=4):
         ax.grid(True, ls='--', alpha=0.3)
 
     # hide unused axes
+    for j in range(len(model_names), len(axes)):
+        axes[j].set_visible(False)
+
+    plt.tight_layout()
+    plt.show()
+
+def plot_prauc(all_results, model_names, le, ncols=4):
+    if isinstance(model_names, str):
+        model_names = [model_names]
+
+    n     = len(model_names)
+    ncols = min(ncols, n)
+    nrows = math.ceil(n / ncols)
+
+    fig, axes = plt.subplots(nrows, ncols, figsize=(5.5 * ncols, 4.5 * nrows), squeeze=False)
+    axes = axes.flatten()
+
+    classes   = le.classes_
+    n_classes = len(classes)
+
+    for ax, model_name in zip(axes, model_names):
+        key        = model_name.replace(' ', '_').removesuffix('_-')
+        y_true_all = np.concatenate(all_results[key]['y_true'])
+        y_prob_all = np.concatenate(all_results[key]['y_prob'], axis=0)
+
+        y_bin = label_binarize(y_true_all, classes=np.arange(n_classes))
+
+        precision, recall, ap = {}, {}, {}
+
+        # ── per-class ─────────────────────────────────────────
+        colors = cycle(plt.cm.tab10.colors)
+        for i, color in zip(range(n_classes), colors):
+            precision[i], recall[i], _ = precision_recall_curve(y_bin[:, i], y_prob_all[:, i])
+            ap[i] = average_precision_score(y_bin[:, i], y_prob_all[:, i])
+            ax.plot(recall[i], precision[i], color=color, lw=1.5,
+                    label=f'Class {classes[i]} (AP = {ap[i]:.4f})')
+
+        # ── micro average ──────────────────────────────────────
+        precision['micro'], recall['micro'], _ = precision_recall_curve(
+            y_bin.ravel(), y_prob_all.ravel()
+        )
+        ap['micro'] = average_precision_score(y_bin, y_prob_all, average='micro')
+        ax.plot(recall['micro'], precision['micro'],
+                color='navy', lw=1.5, ls=':',
+                label=f'Micro average (AP = {ap["micro"]:.4f})')
+
+        # ── macro average ──────────────────────────────────────
+        ap['macro'] = average_precision_score(y_bin, y_prob_all, average='macro')
+        all_recall  = np.linspace(0, 1, 200)
+        mean_prec   = np.zeros_like(all_recall)
+        for i in range(n_classes):
+            mean_prec += np.interp(all_recall, recall[i][::-1], precision[i][::-1])
+        mean_prec /= n_classes
+        ax.plot(all_recall, mean_prec,
+                color='grey', lw=1.5, ls='--',
+                label=f'Macro average (AP = {ap["macro"]:.4f})')
+
+        # ── weighted average ───────────────────────────────────
+        ap['weighted'] = average_precision_score(y_bin, y_prob_all, average='weighted')
+        class_counts   = np.bincount(y_true_all, minlength=n_classes)
+        weights        = class_counts / class_counts.sum()
+        mean_prec_w    = np.zeros_like(all_recall)
+        for i in range(n_classes):
+            mean_prec_w += weights[i] * np.interp(all_recall, recall[i][::-1], precision[i][::-1])
+        ax.plot(all_recall, mean_prec_w,
+                color='purple', lw=1.5, ls='-.',
+                label=f'Weighted average (AP = {ap["weighted"]:.4f})')
+
+        # ── baseline (random classifier) ──────────────────────
+        baseline = y_bin.sum(axis=0) / len(y_true_all)
+        ax.axhline(baseline.mean(), color='k', lw=0.8, ls='--', alpha=0.5, label=f'Baseline (freq = {baseline.mean():.4f})')
+
+        ax.set_xlim([0.0, 1.0])
+        ax.set_ylim([0.0, 1.05])
+        ax.set_xlabel('Recall',    fontsize=9)
+        ax.set_ylabel('Precision', fontsize=9)
+        ax.set_title(model_name,   fontsize=10)
+        ax.legend(loc='upper right', fontsize=7)
+        ax.grid(True, ls='--', alpha=0.3)
+
     for j in range(len(model_names), len(axes)):
         axes[j].set_visible(False)
 
