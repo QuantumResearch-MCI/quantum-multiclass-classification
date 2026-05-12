@@ -50,7 +50,7 @@ class QuantumKernelEstimator:
             print("Using backend:", self.backend.name)
 
             pm = generate_preset_pass_manager(backend=self.backend)
-            isa_feature_map = pm.run(self._feature_map)
+            # isa_feature_map = pm.run(self._feature_map)
 
             self.sampler = SamplerV2(mode=self.backend)
             self.sampler.options.default_shots = int(self.n_measurements)
@@ -58,7 +58,7 @@ class QuantumKernelEstimator:
             # create fidelity implementation
             fidelity = ComputeUncompute(sampler=self.sampler, transpiler=pm)
             self._qkernel = FidelityQuantumKernel(
-                feature_map=isa_feature_map, 
+                feature_map=self._feature_map, 
                 fidelity=fidelity, 
                 max_circuits_per_job=300
             )

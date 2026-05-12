@@ -1,9 +1,9 @@
 from .estimator import QuantumKernelEstimator
 import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin
-from xgboost import XGBClassifier
+from catboost import CatBoostClassifier
 
-class QXGB(BaseEstimator, ClassifierMixin):
+class QCAT(BaseEstimator, ClassifierMixin):
   def __init__(
       self,
       n_qubits=8, 
@@ -13,12 +13,12 @@ class QXGB(BaseEstimator, ClassifierMixin):
       use_hardware=False, 
       n_features=4,
       
-      random_state=42,
-      n_estimators=500,
-      max_depth=10,
-      subsample=0.8,
-      learning_rate=0.5,
-      booster='gbtree',
+      random_seed=42,
+      iterations=100,
+      depth=5,
+      learning_rate=0.1,
+      l2_leaf_reg=3,
+      random_strength=1,
   ):
     self.n_qubits = n_qubits
     self.lambda_ = lambda_
@@ -30,12 +30,12 @@ class QXGB(BaseEstimator, ClassifierMixin):
     self.K_train = None
     self.use_hardware = use_hardware
     self.n_features = n_features
-    self.random_state = random_state
-    self.n_estimators = n_estimators
-    self.max_depth = max_depth
-    self.subsample = subsample
+    self.random_seed = random_seed
+    self.iterations = iterations
+    self.depth = depth
+    self.l2_leaf_reg = l2_leaf_reg
     self.learning_rate = learning_rate
-    self.booster = booster
+    self.random_strength = random_strength
     self.qkernel_ = None
 
   def _build_model(self):
@@ -51,14 +51,16 @@ class QXGB(BaseEstimator, ClassifierMixin):
         use_hardware=self.use_hardware,
     )
 
-    return XGBClassifier(
-      booster=self.booster,
-      objective = 'multi:softprob',
-      random_state=self.random_state,
-      n_estimators=self.n_estimators,
-      max_depth=self.max_depth,
-      subsample=self.subsample,
+    return CatBoostClassifier(
+      loss_function="MultiClassOneVsAll",
+      iterations=self.iterations,
       learning_rate=self.learning_rate,
+      depth=self.depth,
+      eval_metric="Accuracy",
+      random_seed=self.random_seed,
+      verbose=0,
+      l2_leaf_reg=self.l2_leaf_reg,
+      random_strength=self.random_strength,
     )
   
   def fit(self, X, y):

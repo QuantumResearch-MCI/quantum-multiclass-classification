@@ -6,16 +6,18 @@ from .estimator import QuantumKernelEstimator
 class QSVCWrapper(BaseEstimator, ClassifierMixin):
     def __init__(
         self, 
-        kernel, 
         n_qubits=4,
         lambda_=1.0, 
-        C=1.0, 
-        class_weight=None, 
-        decision_function_shape='ovr', 
+        kernel='full', 
         n_measurements=1024, 
         use_hardware=False, 
         n_features=20, 
-        random_state=42
+        
+        random_state=42,
+        C=1.0, 
+        class_weight=None, 
+        decision_function_shape='ovr', 
+        tol=1e-3,
       ):
         self.kernel = kernel
         self.n_qubits = n_qubits
@@ -27,6 +29,7 @@ class QSVCWrapper(BaseEstimator, ClassifierMixin):
         self.random_state = random_state
         self.class_weight = class_weight
         self.decision_function_shape = decision_function_shape
+        self.tol = tol
 
     def _build_model(self):
         kernel_instance = QuantumKernelEstimator(
@@ -45,7 +48,8 @@ class QSVCWrapper(BaseEstimator, ClassifierMixin):
           C=self.C, 
           random_state=self.random_state, 
           class_weight=self.class_weight,
-          decision_function_shape=self.decision_function_shape
+          decision_function_shape=self.decision_function_shape,
+          tol=self.tol
         )
 
     def fit(self, X, y):
