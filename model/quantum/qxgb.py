@@ -10,7 +10,7 @@ class QXGB(BaseEstimator, ClassifierMixin):
       lambda_=1.0, 
       kernel='full', 
       n_measurements=1024, 
-      use_hardware=False, 
+      mode='fsk', 
       n_features=4,
       
       random_state=42,
@@ -28,7 +28,7 @@ class QXGB(BaseEstimator, ClassifierMixin):
     self.classes_ = None
     self.X_train = None
     self.K_train = None
-    self.use_hardware = use_hardware
+    self.mode = mode
     self.n_features = n_features
     self.random_state = random_state
     self.n_estimators = n_estimators
@@ -48,7 +48,7 @@ class QXGB(BaseEstimator, ClassifierMixin):
 
     self.qkernel_ = kernel_instance.build_quantum_kernel(
         n_features=self.n_features,
-        use_hardware=self.use_hardware,
+        mode=self.mode,
     )
 
     return XGBClassifier(

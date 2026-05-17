@@ -5,14 +5,14 @@ from .models import qsvc_model, svc_model, xgboost_model, catboost_model, libsvm
 from .training import train_model, validate_model, test_model
 from utils.hpo import build_hpo
 
-def run_model(data, kernels, model_type='quantum', use_hardware=False, stage='cv', use_hpo=False, random_state=42, n_splits=None, fold=None):
+def run_model(data, kernels, model_type='quantum', mode='fsk', stage='cv', use_hpo=False, random_state=42, n_splits=None, fold=None):
     results = []
     
     if model_type in ['quantum', 'sklearn', 'libsvm']: kernel_list = kernels
     else: kernel_list = [None]
     for kernel in kernel_list:
         if model_type == 'quantum':
-            model = qsvc_model(kernel, n_measurements=1024, use_hardware=use_hardware, n_features=data['X_train'].shape[1])
+            model = qsvc_model(kernel, n_measurements=1024, mode=mode, n_features=data['X_train'].shape[1])
         elif model_type == 'sklearn':
             model = svc_model(kernel, random_state=random_state)
         elif model_type == 'xgboost':

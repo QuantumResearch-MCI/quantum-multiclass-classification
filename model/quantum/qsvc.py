@@ -10,7 +10,7 @@ class QSVCWrapper(BaseEstimator, ClassifierMixin):
         lambda_=1.0, 
         kernel='full', 
         n_measurements=1024, 
-        use_hardware=False, 
+        mode='fsk', 
         n_features=20, 
         
         random_state=42,
@@ -24,7 +24,7 @@ class QSVCWrapper(BaseEstimator, ClassifierMixin):
         self.lambda_ = lambda_
         self.C = C
         self.n_measurements = n_measurements
-        self.use_hardware = use_hardware
+        self.mode = mode
         self.n_features = n_features
         self.random_state = random_state
         self.class_weight = class_weight
@@ -40,7 +40,7 @@ class QSVCWrapper(BaseEstimator, ClassifierMixin):
         )
         feature_map = kernel_instance.build_quantum_kernel(
             n_features=self.n_features,
-            use_hardware=self.use_hardware,
+            mode=self.mode,
         )
         return QSVC(
           quantum_kernel=feature_map, 

@@ -10,6 +10,8 @@ from qiskit.transpiler import generate_preset_pass_manager
 from .circuits import QuantumKernelCircuits
 import numpy as np
 
+KERNEL_MODES = ['fsk', 'fqk', 'fqk-hardware']
+
 class QuantumKernelEstimator:
     
     def __init__(self, n_qubits, lambda_=1.0, kernel='full', n_measurements=1024):
@@ -19,6 +21,7 @@ class QuantumKernelEstimator:
         self.n_qubits = n_qubits
         self.lambda_ = lambda_
         self._qkernel = None
+        self._feature_map = None
         
         # Map kernel types to circuit creation functions
         self.qkc = QuantumKernelCircuits(self.n_qubits, self.lambda_)
@@ -38,34 +41,47 @@ class QuantumKernelEstimator:
         
         return feature_map
     
-    def build_quantum_kernel(self, n_features, use_hardware=False):
+    def _build_fsk(self, n_features):
+        feature_map = self._build_feature_map(n_features)
+        transpiled_map = transpile(feature_map, AerSimulator())
+        return FidelityStatevectorKernel(feature_map=transpiled_map)
+    
+    def _build_fqk(self, n_features):
+        feature_map = self._build_feature_map(n_features)
+        sampler = SamplerV2()
+        sampler.options.default_shots = int(self.n_measurements)
+        fidelity = ComputeUncompute(sampler=sampler)
+        return FidelityQuantumKernel(feature_map=feature_map, fidelity=fidelity)
+    
+    def _build_fqk_hardware(self, n_features):
+        feature_map = self._build_feature_map(n_features)
+        service = QiskitRuntimeService()
+        self.backend = service.least_busy(simulator=False, operational=True)
+        
+        print("Using backend:", self.backend.name)
+
+        pm = generate_preset_pass_manager(backend=self.backend)
+        # isa_feature_map = pm.run(feature_map)
+
+        sampler = SamplerV2(mode=self.backend)
+        sampler.options.default_shots = int(self.n_measurements)
+        
+        fidelity = ComputeUncompute(sampler=sampler, transpiler=pm)
+        return FidelityQuantumKernel(feature_map=feature_map, fidelity=fidelity, max_circuits_per_job=300)
+
+    def build_quantum_kernel(self, n_features, mode='fsk'):
+        if mode not in KERNEL_MODES:
+            raise ValueError(f"Invalid kernel mode '{mode}'. Must be one of {KERNEL_MODES}.")
+        
         self._feature_map = self._build_feature_map(n_features)
 
-        # create FQK
-        if use_hardware:
-            # aer_sim = AerSimulator()
-            service = QiskitRuntimeService()
-            self.backend = service.least_busy(simulator=False, operational=True)
-            
-            print("Using backend:", self.backend.name)
+        builders = {
+            'fsk': self._build_fsk,
+            'fqk': self._build_fqk,
+            'fqk-hardware': self._build_fqk_hardware
+        }
 
-            pm = generate_preset_pass_manager(backend=self.backend)
-            # isa_feature_map = pm.run(self._feature_map)
-
-            self.sampler = SamplerV2(mode=self.backend)
-            self.sampler.options.default_shots = int(self.n_measurements)
-            
-            # create fidelity implementation
-            fidelity = ComputeUncompute(sampler=self.sampler, transpiler=pm)
-            self._qkernel = FidelityQuantumKernel(
-                feature_map=self._feature_map, 
-                fidelity=fidelity, 
-                max_circuits_per_job=300
-            )
-        else:
-            transpiled_feature_map = transpile(self._feature_map, AerSimulator())
-            self._qkernel = FidelityStatevectorKernel(feature_map=transpiled_feature_map)
-
+        self._qkernel = builders[mode](n_features)
         return self._qkernel
     
     # ------------------------------------------------------------------

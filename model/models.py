@@ -29,14 +29,14 @@ def catboost_model(iterations=1000, learning_rate=0.1, depth=6, random_seed=42):
             )
     return model
 
-def qsvc_model(kernel, random_state=42, use_hardware=False, n_features=20, decision_function_shape='ovr', n_qubits=4):
+def qsvc_model(kernel, random_state=42, mode='fsk', n_features=20, decision_function_shape='ovr', n_qubits=4):
     # from qiskit_machine_learning.algorithms import QSVC
     # from .quantum.estimator import QuantumKernelEstimator
     from .quantum.qsvc import QSVCWrapper
 
     model = QSVCWrapper(
         kernel=kernel, 
-        use_hardware=use_hardware, 
+        mode=mode, 
         n_features=n_features, 
         random_state=random_state, 
         decision_function_shape=decision_function_shape,
@@ -44,13 +44,13 @@ def qsvc_model(kernel, random_state=42, use_hardware=False, n_features=20, decis
     )
     
     # kernel_instance = QuantumKernelEstimator(kernel_type=kernel, n_qubits=n_qubits, lambda_=lambda_, n_measurements=n_measurements)
-    # feature_map = kernel_instance.build_quantum_kernel(n_features=n_features, use_hardware=use_hardware)
+    # feature_map = kernel_instance.build_quantum_kernel(n_features=n_features, mode=mode)
     # model = QSVC(quantum_kernel=feature_map, C=1.0, decision_function_shape='ovr')
     return model
 
-def qesvc_model(kernel, random_state=42, use_hardware=False, n_features=20, n_qubits=4):
+def qesvc_model(kernel, random_state=42, mode='fsk', n_features=20, n_qubits=4):
     from .quantum.qesvc import QESVC
-    model = QESVC(kernel_type=kernel, use_hardware=use_hardware, n_features=n_features, random_state=random_state, n_qubits=n_qubits)
+    model = QESVC(kernel_type=kernel, mode=mode, n_features=n_features, random_state=random_state, n_qubits=n_qubits)
     return model
 
 def libsvm_model(kernel='rbf', C=1.0, gamma=None, degree=None):

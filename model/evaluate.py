@@ -27,12 +27,12 @@ def evaluate_catboost(data, kernel_types):
     )
     return result
 
-def evaluate_quantum(data, quantum_kernel_types, use_hardware=False):
+def evaluate_quantum(data, quantum_kernel_types, mode='fsk'):
     result = run_model(
         data, 
         kernels=quantum_kernel_types, 
         model_type='quantum', 
-        use_hardware=use_hardware,
+        mode=mode,
     )
     return result
 
