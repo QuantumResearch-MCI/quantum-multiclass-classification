@@ -2,6 +2,7 @@ from qiskit_machine_learning.kernels import FidelityQuantumKernel
 from qiskit_machine_learning.algorithms import QSVC
 from qiskit import transpile
 from qiskit_aer import AerSimulator
+from qiskit_aer.primitives import SamplerV2 as AerSamplerV2
 from qiskit_machine_learning.kernels import FidelityStatevectorKernel
 from qiskit.circuit import ParameterVector
 from qiskit_ibm_runtime import QiskitRuntimeService, SamplerV2
@@ -48,7 +49,7 @@ class QuantumKernelEstimator:
     
     def _build_fqk(self, n_features):
         feature_map = self._build_feature_map(n_features)
-        sampler = SamplerV2()
+        sampler = AerSamplerV2()
         sampler.options.default_shots = int(self.n_measurements)
         fidelity = ComputeUncompute(sampler=sampler)
         return FidelityQuantumKernel(feature_map=feature_map, fidelity=fidelity)

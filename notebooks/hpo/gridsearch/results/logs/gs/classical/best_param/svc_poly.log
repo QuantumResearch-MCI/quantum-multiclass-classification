@@ -1,0 +1,16 @@
+📝 Log: results\logs\gs\classical\best_param\svc_poly.log
+🕒 Started: 2026-05-22T09:33:07
+🔬 Search space: 1 C × 1 class_weight × 1 tol × 1 degree × 1 gamma × 1 coef0 =  1 configs × 5 folds = 5 fits
+   Scoring criterion: (AUROC + PRAUC + Accuracy) / 3
+
+  ▶ [1/1] C=1 | class_weight=None | tol=0.1 | degree=5 | gamma=0.5 | coef0=3
+    F1 → Acc=0.9721 | Prec=0.9726 | Rec=0.9721 | F1=0.9723 | AUROC=0.9988 | PRAUC=0.9958
+    F2 → Acc=0.9741 | Prec=0.9743 | Rec=0.9741 | F1=0.9741 | AUROC=0.9984 | PRAUC=0.9957
+    F3 → Acc=0.9621 | Prec=0.9623 | Rec=0.9621 | F1=0.9621 | AUROC=0.9976 | PRAUC=0.9935
+    F4 → Acc=0.9721 | Prec=0.9728 | Rec=0.9721 | F1=0.9723 | AUROC=0.9986 | PRAUC=0.9960
+    F5 → Acc=0.9625 | Prec=0.9634 | Rec=0.9625 | F1=0.9627 | AUROC=0.9982 | PRAUC=0.9941
+  ✅  Acc:0.9686±0.0052 | Precision:0.9691±0.0051  |Recall:0.9686±0.0052 |F1:0.9687±0.0052 | AUROC:0.9983±0.0004 | PRAUC:0.9950±0.0010 | MCC:0.9550 | Composite:0.9873
+
+🏆 Best config : C=1 | class_weight=None | tol=0.1 | degree=5 | gamma=0.5 | coef0=3
+   Composite   : 0.9873 (AUROC=0.9983±0.0004 | PRAUC=0.9950±0.0010 | Acc=0.9686±0.0052 |Prec=0.9691±0.0051 |Rec=0.9686±0.0052) |
+✅ [SVC Poly] recorded | Exec. time: 72.2s

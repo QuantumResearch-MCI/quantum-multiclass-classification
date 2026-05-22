@@ -61,6 +61,8 @@ class QCAT(BaseEstimator, ClassifierMixin):
       verbose=0,
       l2_leaf_reg=self.l2_leaf_reg,
       random_strength=self.random_strength,
+      task_type='GPU',
+      devices='0',
     )
   
   def fit(self, X, y):

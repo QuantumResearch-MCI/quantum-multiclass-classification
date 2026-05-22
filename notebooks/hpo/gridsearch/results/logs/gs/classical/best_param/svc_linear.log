@@ -1,0 +1,17 @@
+📝 Log: results\logs\gs\classical\best_param\svc_linear.log
+🕒 Started: 2026-05-22T09:29:21
+🔬 Search space: 1 C × 1 class_weight × 1 tol =  1 configs × 5 folds = 5 fits
+   Scoring criterion: (AUROC + PRAUC + Accuracy) / 3
+
+  ▶ [1/1] C=10 | class_weight=None | tol=0.1
+    F1 → Acc=0.4395 | Prec=0.2972 | Rec=0.4395 | F1=0.3278 | AUROC=0.6963 | PRAUC=0.4676
+    F2 → Acc=0.4491 | Prec=0.2844 | Rec=0.4491 | F1=0.3317 | AUROC=0.7218 | PRAUC=0.5031
+    F3 → Acc=0.4467 | Prec=0.2814 | Rec=0.4467 | F1=0.3295 | AUROC=0.6872 | PRAUC=0.4567
+    F4 → Acc=0.4376 | Prec=0.2856 | Rec=0.4376 | F1=0.3183 | AUROC=0.7064 | PRAUC=0.4850
+    F5 → Acc=0.4407 | Prec=0.2785 | Rec=0.4407 | F1=0.3253 | AUROC=0.6935 | PRAUC=0.4588
+  ✅  Acc:0.4427±0.0044 | Precision:0.2854±0.0064  |Recall:0.4427±0.0044 |F1:0.3265±0.0046 | AUROC:0.7010±0.0121 | PRAUC:0.4742±0.0176 | MCC:0.0688 | Composite:0.5393
+
+🏆 Best config : C=10 | class_weight=None | tol=0.1
+   Composite   : 0.5393 (AUROC=0.7010±0.0121 | PRAUC=0.4742±0.0176 | Acc=0.4427±0.0044 |Prec=0.2854±0.0064 |Rec=0.4427±0.0044) |
+✅ Saved: ./results/best_param/svc_linear.csv
+✅ [SVC Linear] recorded | Exec. time: 226.1s

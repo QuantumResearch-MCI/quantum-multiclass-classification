@@ -1,0 +1,18 @@
+📝 Log: results\logs\gs\classical\best_param\svc_sigmoid.log
+🕒 Started: 2026-05-22T09:34:30
+🔬 Search space: 1 C × 1 class_weight × 1 decision_function_shape × 1 tol × 1 gamma × 1 coef0 =  1 configs × 5 folds = 5 fits
+   Scoring criterion: (AUROC + PRAUC + Accuracy) / 3
+
+  ▶ [1/1] C=1 | class_weight=None | decision_function_shape=ovr | tol=0.1 | gamma=0.01 | coef0=0
+
+  ▶ C=1 | class_weight=None | decision_function_shape=ovr | tol=0.1 | gamma=0.01 | coef0=0
+    F1 → Acc=0.4505 | Prec=0.3070 | Rec=0.4505 | F1=0.3551 | AUROC=0.6588 | PRAUC=0.4058
+    F2 → Acc=0.4457 | Prec=0.3033 | Rec=0.4457 | F1=0.3539 | AUROC=0.6736 | PRAUC=0.4335
+    F3 → Acc=0.4539 | Prec=0.3050 | Rec=0.4539 | F1=0.3608 | AUROC=0.6574 | PRAUC=0.4072
+    F4 → Acc=0.4500 | Prec=0.3073 | Rec=0.4500 | F1=0.3544 | AUROC=0.6648 | PRAUC=0.4166
+    F5 → Acc=0.4368 | Prec=0.2892 | Rec=0.4368 | F1=0.3436 | AUROC=0.6721 | PRAUC=0.4238
+  ✅  Acc:0.4474±0.0059 | Precision:0.3024±0.0068  |Recall:0.4474±0.0059 |F1:0.3536±0.0056 | AUROC:0.6653±0.0066 | PRAUC:0.4174±0.0104 | MCC:0.1059 | Composite:0.5100
+
+🏆 Best config : C=1 | class_weight=None | decision_function_shape=ovr | tol=0.1 | gamma=0.01 | coef0=0
+   Composite   : 0.5100 (AUROC=0.6653±0.0066 | PRAUC=0.4174±0.0104 | Acc=0.4474±0.0059 |Prec=0.3024±0.0068 |Rec=0.4474±0.0059) |
+✅ [SVC Sigmoid] recorded | Exec. time: 75.7s

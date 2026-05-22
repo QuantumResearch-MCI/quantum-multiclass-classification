@@ -1,0 +1,18 @@
+📝 Log: results\logs\gs\classical\best_param\svc_rbf.log
+🕒 Started: 2026-05-22T09:34:19
+🔬 Search space: 1 C × 1 class_weight × 1 decision_function_shape × 1 tol × 1 gamma =  1 configs × 5 folds = 5 fits
+   Scoring criterion: (AUROC + PRAUC + Accuracy) / 3
+
+  ▶ [1/1] C=10 | class_weight=None | decision_function_shape=ovr | tol=0.1 | gamma=0.5
+
+  ▶ C=10 | class_weight=None | decision_function_shape=ovr | tol=0.1 | gamma=0.5
+    F1 → Acc=0.9784 | Prec=0.9788 | Rec=0.9784 | F1=0.9785 | AUROC=0.9993 | PRAUC=0.9973
+    F2 → Acc=0.9745 | Prec=0.9749 | Rec=0.9745 | F1=0.9746 | AUROC=0.9984 | PRAUC=0.9953
+    F3 → Acc=0.9712 | Prec=0.9715 | Rec=0.9712 | F1=0.9713 | AUROC=0.9981 | PRAUC=0.9943
+    F4 → Acc=0.9817 | Prec=0.9819 | Rec=0.9817 | F1=0.9818 | AUROC=0.9992 | PRAUC=0.9970
+    F5 → Acc=0.9702 | Prec=0.9707 | Rec=0.9702 | F1=0.9703 | AUROC=0.9983 | PRAUC=0.9941
+  ✅  Acc:0.9752±0.0043 | Precision:0.9756±0.0042  |Recall:0.9752±0.0043 |F1:0.9753±0.0043 | AUROC:0.9986±0.0005 | PRAUC:0.9956±0.0013 | MCC:0.9644 | Composite:0.9898
+
+🏆 Best config : C=10 | class_weight=None | decision_function_shape=ovr | tol=0.1 | gamma=0.5
+   Composite   : 0.9898 (AUROC=0.9986±0.0005 | PRAUC=0.9956±0.0013 | Acc=0.9752±0.0043 |Prec=0.9756±0.0042 |Rec=0.9752±0.0043) |
+✅ [SVC RBF] recorded | Exec. time: 10.6s

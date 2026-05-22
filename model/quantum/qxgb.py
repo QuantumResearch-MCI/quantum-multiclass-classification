@@ -19,6 +19,8 @@ class QXGB(BaseEstimator, ClassifierMixin):
       subsample=0.8,
       learning_rate=0.5,
       booster='gbtree',
+      rate_drop=None,
+      skip_drop=None,
   ):
     self.n_qubits = n_qubits
     self.lambda_ = lambda_
@@ -37,6 +39,8 @@ class QXGB(BaseEstimator, ClassifierMixin):
     self.learning_rate = learning_rate
     self.booster = booster
     self.qkernel_ = None
+    self.rate_drop = rate_drop
+    self.skip_drop = skip_drop
 
   def _build_model(self):
     kernel_instance = QuantumKernelEstimator(
@@ -59,6 +63,10 @@ class QXGB(BaseEstimator, ClassifierMixin):
       max_depth=self.max_depth,
       subsample=self.subsample,
       learning_rate=self.learning_rate,
+      device='cuda',
+      tree_method='hist',
+      rate_drop=self.rate_drop,
+      skip_drop=self.skip_drop,
     )
   
   def fit(self, X, y):
