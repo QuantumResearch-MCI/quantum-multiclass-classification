@@ -45,7 +45,7 @@ class QuantumKernelEstimator:
     def _build_fsk(self, n_features):
         feature_map = self._build_feature_map(n_features)
         transpiled_map = transpile(feature_map, AerSimulator())
-        return FidelityStatevectorKernel(feature_map=transpiled_map)
+        return FidelityStatevectorKernel(feature_map=transpiled_map, shots=self.n_measurements)
     
     def _build_fqk(self, n_features):
         feature_map = self._build_feature_map(n_features)

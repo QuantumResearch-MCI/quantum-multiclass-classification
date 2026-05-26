@@ -1,0 +1,15 @@
+📝 Log: results\logs\gs\quantum\fsk\qxgb_gbtree_full.log
+🕒 Started: 2026-05-26T20:45:18
+🔬 Search space: 2 n_estimators × 2 learning_rate × 2 max_depth × 2 lambda_ × 2 n_measurements =  32 configs × 5 folds = 160 fits
+   Scoring criterion: (AUROC + PRAUC + Accuracy) / 3
+♻️  Resumed checkpoint: results\checkpoints\gs\quantum\all\qxgb_gbtree_full.pkl (4 configs done)
+
+  ⏭️  [1/32] n_estimators=100 | learning_rate=0.01 | max_depth=4 | lambda_=0.1 | n_measurements=256  (skipped, already done)
+
+  ⏭️  [2/32] n_estimators=100 | learning_rate=0.01 | max_depth=4 | lambda_=0.1 | n_measurements=1024  (skipped, already done)
+
+  ⏭️  [3/32] n_estimators=100 | learning_rate=0.01 | max_depth=4 | lambda_=5 | n_measurements=256  (skipped, already done)
+
+  ⏭️  [4/32] n_estimators=100 | learning_rate=0.01 | max_depth=4 | lambda_=5 | n_measurements=1024  (skipped, already done)
+
+  ▶ [5/32] n_estimators=100 | learning_rate=0.01 | max_depth=10 | lambda_=0.1 | n_measurements=256

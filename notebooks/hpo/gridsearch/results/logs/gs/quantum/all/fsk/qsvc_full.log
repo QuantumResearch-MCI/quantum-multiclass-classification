@@ -1,0 +1,85 @@
+📝 Log: results\logs\gs\quantum\all\fsk\qsvc_full.log
+🕒 Started: 2026-05-26T20:30:06
+🔬 Search space: 3 C × 2 lambda_ × 2 n_measurements =  12 configs × 5 folds = 60 fits
+   Scoring criterion: (AUROC + PRAUC + Accuracy) / 3
+♻️  Resumed checkpoint: results\checkpoints\gs\quantum\all\qsvc_full.pkl (2 configs done)
+
+  ⏭️  [1/12] C=0.1 | lambda_=0.1 | n_measurements=256  (skipped, already done)
+
+  ⏭️  [2/12] C=0.1 | lambda_=0.1 | n_measurements=1024  (skipped, already done)
+
+  ▶ [3/12] C=0.1 | lambda_=5 | n_measurements=256
+    F1 → Acc=0.4444 | Prec=0.1975 | Rec=0.4444 | F1=0.2735 | AUROC=0.6974 | PRAUC=0.5764
+    F2 → Acc=0.4444 | Prec=0.1975 | Rec=0.4444 | F1=0.2735 | AUROC=0.7805 | PRAUC=0.6620
+    F3 → Acc=0.4444 | Prec=0.1975 | Rec=0.4444 | F1=0.2735 | AUROC=0.7123 | PRAUC=0.5999
+    F4 → Acc=0.4516 | Prec=0.2040 | Rec=0.4516 | F1=0.2810 | AUROC=0.6068 | PRAUC=0.4747
+    F5 → Acc=0.4516 | Prec=0.2040 | Rec=0.4516 | F1=0.2810 | AUROC=0.7399 | PRAUC=0.5394
+  ✅  Acc:0.4473±0.0035 | Precision:0.2001±0.0031  |Recall:0.4473±0.0035 |F1:0.2765±0.0037 | AUROC:0.7074±0.0577 | PRAUC:0.5705±0.0623 | MCC:0.0000 | Composite:0.5751
+
+  ▶ [4/12] C=0.1 | lambda_=5 | n_measurements=1024
+    F1 → Acc=0.4444 | Prec=0.1975 | Rec=0.4444 | F1=0.2735 | AUROC=0.6957 | PRAUC=0.5710
+    F2 → Acc=0.4444 | Prec=0.1975 | Rec=0.4444 | F1=0.2735 | AUROC=0.7571 | PRAUC=0.6145
+    F3 → Acc=0.4444 | Prec=0.1975 | Rec=0.4444 | F1=0.2735 | AUROC=0.7226 | PRAUC=0.5925
+    F4 → Acc=0.4516 | Prec=0.2040 | Rec=0.4516 | F1=0.2810 | AUROC=0.6023 | PRAUC=0.4487
+    F5 → Acc=0.4516 | Prec=0.2040 | Rec=0.4516 | F1=0.2810 | AUROC=0.7047 | PRAUC=0.5251
+  ✅  Acc:0.4473±0.0035 | Precision:0.2001±0.0031  |Recall:0.4473±0.0035 |F1:0.2765±0.0037 | AUROC:0.6965±0.0516 | PRAUC:0.5504±0.0588 | MCC:0.0000 | Composite:0.5647
+
+  ▶ [5/12] C=1 | lambda_=0.1 | n_measurements=256
+    F1 → Acc=0.7143 | Prec=0.7332 | Rec=0.7143 | F1=0.6989 | AUROC=0.9298 | PRAUC=0.8812
+    F2 → Acc=0.7302 | Prec=0.7444 | Rec=0.7302 | F1=0.6985 | AUROC=0.9015 | PRAUC=0.8074
+    F3 → Acc=0.7143 | Prec=0.7632 | Rec=0.7143 | F1=0.6820 | AUROC=0.8936 | PRAUC=0.8024
+    F4 → Acc=0.6129 | Prec=0.5887 | Rec=0.6129 | F1=0.5956 | AUROC=0.8410 | PRAUC=0.6660
+    F5 → Acc=0.6452 | Prec=0.6944 | Rec=0.6452 | F1=0.6343 | AUROC=0.8738 | PRAUC=0.8144
+  ✅  Acc:0.6834±0.0459 | Precision:0.7048±0.0622  |Recall:0.6834±0.0459 |F1:0.6619±0.0407 | AUROC:0.8879±0.0296 | PRAUC:0.7943±0.0702 | MCC:0.5273 | Composite:0.7885
+
+  ▶ [6/12] C=1 | lambda_=0.1 | n_measurements=1024
+    F1 → Acc=0.7143 | Prec=0.7290 | Rec=0.7143 | F1=0.6960 | AUROC=0.9155 | PRAUC=0.8502
+    F2 → Acc=0.7460 | Prec=0.7583 | Rec=0.7460 | F1=0.7263 | AUROC=0.9271 | PRAUC=0.8529
+    F3 → Acc=0.7143 | Prec=0.7513 | Rec=0.7143 | F1=0.6816 | AUROC=0.9108 | PRAUC=0.8146
+    F4 → Acc=0.6452 | Prec=0.6162 | Rec=0.6452 | F1=0.6263 | AUROC=0.8420 | PRAUC=0.6812
+    F5 → Acc=0.6613 | Prec=0.7034 | Rec=0.6613 | F1=0.6481 | AUROC=0.8713 | PRAUC=0.8096
+  ✅  Acc:0.6962±0.0373 | Precision:0.7117±0.0514  |Recall:0.6962±0.0373 |F1:0.6757±0.0353 | AUROC:0.8933±0.0318 | PRAUC:0.8017±0.0628 | MCC:0.5477 | Composite:0.7971
+
+  ▶ [7/12] C=1 | lambda_=5 | n_measurements=256
+    F1 → Acc=0.4603 | Prec=0.4051 | Rec=0.4603 | F1=0.3801 | AUROC=0.6790 | PRAUC=0.5277
+    F2 → Acc=0.5079 | Prec=0.4185 | Rec=0.5079 | F1=0.4250 | AUROC=0.7205 | PRAUC=0.5640
+    F3 → Acc=0.5079 | Prec=0.4826 | Rec=0.5079 | F1=0.4753 | AUROC=0.7468 | PRAUC=0.6165
+    F4 → Acc=0.5000 | Prec=0.4102 | Rec=0.5000 | F1=0.4311 | AUROC=0.6137 | PRAUC=0.4983
+    F5 → Acc=0.4839 | Prec=0.4534 | Rec=0.4839 | F1=0.4212 | AUROC=0.6180 | PRAUC=0.4443
+  ✅  Acc:0.4920±0.0181 | Precision:0.4340±0.0296  |Recall:0.4920±0.0181 |F1:0.4265±0.0303 | AUROC:0.6756±0.0534 | PRAUC:0.5302±0.0583 | MCC:0.1950 | Composite:0.5659
+
+  ▶ [8/12] C=1 | lambda_=5 | n_measurements=1024
+    F1 → Acc=0.4444 | Prec=0.4031 | Rec=0.4444 | F1=0.3999 | AUROC=0.6881 | PRAUC=0.5131
+    F2 → Acc=0.5556 | Prec=0.5279 | Rec=0.5556 | F1=0.4896 | AUROC=0.7521 | PRAUC=0.6084
+    F3 → Acc=0.5397 | Prec=0.5691 | Rec=0.5397 | F1=0.5135 | AUROC=0.7454 | PRAUC=0.6095
+    F4 → Acc=0.5000 | Prec=0.3613 | Rec=0.5000 | F1=0.3971 | AUROC=0.6497 | PRAUC=0.4935
+    F5 → Acc=0.5000 | Prec=0.4661 | Rec=0.5000 | F1=0.4395 | AUROC=0.6547 | PRAUC=0.4841
+  ✅  Acc:0.5079±0.0386 | Precision:0.4655±0.0767  |Recall:0.5079±0.0386 |F1:0.4479±0.0469 | AUROC:0.6980±0.0435 | PRAUC:0.5417±0.0557 | MCC:0.2264 | Composite:0.5825
+
+  ▶ [9/12] C=10 | lambda_=0.1 | n_measurements=256
+    F1 → Acc=0.7619 | Prec=0.7745 | Rec=0.7619 | F1=0.7648 | AUROC=0.9126 | PRAUC=0.8417
+    F2 → Acc=0.6825 | Prec=0.7201 | Rec=0.6825 | F1=0.6958 | AUROC=0.9257 | PRAUC=0.8586
+    F3 → Acc=0.7937 | Prec=0.8099 | Rec=0.7937 | F1=0.7846 | AUROC=0.8908 | PRAUC=0.7850
+    F4 → Acc=0.6613 | Prec=0.7006 | Rec=0.6613 | F1=0.6622 | AUROC=0.8885 | PRAUC=0.8033
+    F5 → Acc=0.6452 | Prec=0.6993 | Rec=0.6452 | F1=0.6515 | AUROC=0.8946 | PRAUC=0.8130
+  ✅  Acc:0.7089±0.0583 | Precision:0.7409±0.0440  |Recall:0.7089±0.0583 |F1:0.7118±0.0538 | AUROC:0.9025±0.0144 | PRAUC:0.8203±0.0265 | MCC:0.5954 | Composite:0.8106
+
+  ▶ [10/12] C=10 | lambda_=0.1 | n_measurements=1024
+    F1 → Acc=0.7460 | Prec=0.7586 | Rec=0.7460 | F1=0.7503 | AUROC=0.9491 | PRAUC=0.9030
+    F2 → Acc=0.7937 | Prec=0.8097 | Rec=0.7937 | F1=0.7888 | AUROC=0.9693 | PRAUC=0.9472
+    F3 → Acc=0.8413 | Prec=0.8510 | Rec=0.8413 | F1=0.8367 | AUROC=0.9365 | PRAUC=0.8844
+    F4 → Acc=0.7258 | Prec=0.7544 | Rec=0.7258 | F1=0.7276 | AUROC=0.8906 | PRAUC=0.7793
+    F5 → Acc=0.6935 | Prec=0.7918 | Rec=0.6935 | F1=0.6999 | AUROC=0.9137 | PRAUC=0.8573
+  ✅  Acc:0.7601±0.0520 | Precision:0.7931±0.0355  |Recall:0.7601±0.0520 |F1:0.7606±0.0479 | AUROC:0.9319±0.0274 | PRAUC:0.8742±0.0558 | MCC:0.6646 | Composite:0.8554
+
+  ▶ [11/12] C=10 | lambda_=5 | n_measurements=256
+    F1 → Acc=0.4762 | Prec=0.4999 | Rec=0.4762 | F1=0.4796 | AUROC=0.6417 | PRAUC=0.4655
+    F2 → Acc=0.4762 | Prec=0.5084 | Rec=0.4762 | F1=0.4770 | AUROC=0.5990 | PRAUC=0.4493
+    F3 → Acc=0.4603 | Prec=0.5196 | Rec=0.4603 | F1=0.4844 | AUROC=0.6730 | PRAUC=0.5642
+    F4 → Acc=0.3710 | Prec=0.3975 | Rec=0.3710 | F1=0.3811 | AUROC=0.5232 | PRAUC=0.3504
+    F5 → Acc=0.2903 | Prec=0.3380 | Rec=0.2903 | F1=0.3069 | AUROC=0.6331 | PRAUC=0.4199
+  ✅  Acc:0.4148±0.0735 | Precision:0.4527±0.0721  |Recall:0.4148±0.0735 |F1:0.4258±0.0709 | AUROC:0.6140±0.0511 | PRAUC:0.4498±0.0694 | MCC:0.2000 | Composite:0.4929
+
+  ▶ [12/12] C=10 | lambda_=5 | n_measurements=1024
+    F1 → Acc=0.4286 | Prec=0.4929 | Rec=0.4286 | F1=0.4391 | AUROC=0.6830 | PRAUC=0.5072
+    F2 → Acc=0.4127 | Prec=0.4407 | Rec=0.4127 | F1=0.4228 | AUROC=0.6600 | PRAUC=0.5074

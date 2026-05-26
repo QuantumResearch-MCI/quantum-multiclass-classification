@@ -1,0 +1,34 @@
+📝 Log: results\logs\gs\quantum\fsk\qsvc_full.log
+🕒 Started: 2026-05-26T20:45:16
+🔬 Search space: 3 C × 2 lambda_ × 2 n_measurements =  12 configs × 5 folds = 60 fits
+   Scoring criterion: (AUROC + PRAUC + Accuracy) / 3
+♻️  Resumed checkpoint: results\checkpoints\gs\quantum\all\qsvc_full.pkl (12 configs done)
+
+  ⏭️  [1/12] C=0.1 | lambda_=0.1 | n_measurements=256  (skipped, already done)
+
+  ⏭️  [2/12] C=0.1 | lambda_=0.1 | n_measurements=1024  (skipped, already done)
+
+  ⏭️  [3/12] C=0.1 | lambda_=5 | n_measurements=256  (skipped, already done)
+
+  ⏭️  [4/12] C=0.1 | lambda_=5 | n_measurements=1024  (skipped, already done)
+
+  ⏭️  [5/12] C=1 | lambda_=0.1 | n_measurements=256  (skipped, already done)
+
+  ⏭️  [6/12] C=1 | lambda_=0.1 | n_measurements=1024  (skipped, already done)
+
+  ⏭️  [7/12] C=1 | lambda_=5 | n_measurements=256  (skipped, already done)
+
+  ⏭️  [8/12] C=1 | lambda_=5 | n_measurements=1024  (skipped, already done)
+
+  ⏭️  [9/12] C=10 | lambda_=0.1 | n_measurements=256  (skipped, already done)
+
+  ⏭️  [10/12] C=10 | lambda_=0.1 | n_measurements=1024  (skipped, already done)
+
+  ⏭️  [11/12] C=10 | lambda_=5 | n_measurements=256  (skipped, already done)
+
+  ⏭️  [12/12] C=10 | lambda_=5 | n_measurements=1024  (skipped, already done)
+
+🏆 Best config : C=10 | lambda_=0.1 | n_measurements=1024
+   Composite   : 0.8553864180460623 (AUROC=0.9319±0.0274 | PRAUC=0.8742±0.0558 | Acc=0.7601±0.0520 |Prec=0.7931±0.0355 |Rec=0.7601±0.0520) |
+✅ Saved: ./results/qsvc_full.csv
+✅ [QSVC (full)] recorded | Exec. time: 49.6s

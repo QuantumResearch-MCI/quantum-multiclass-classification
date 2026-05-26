@@ -1,0 +1,137 @@
+📝 Log: results\logs\gs\classical\all\cnn1d.log
+🕒 Started: 2026-05-26T17:44:53
+🔬 Search space: 2 filters × 2 kernel_size × 2 dropout × 2 learning_rate × 1 batch_size × 1 epochs =  16 configs × 5 folds = 80 fits
+   Scoring criterion: (AUROC + PRAUC + Accuracy) / 3
+
+  ▶ [1/16] filters=(32, 64) | kernel_size=2 | dropout=0.1 | learning_rate=0.001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8751 | Prec=0.8779 | Rec=0.8751 | F1=0.8759 | AUROC=0.9829 | PRAUC=0.9546
+    F2 → Acc=0.8780 | Prec=0.8823 | Rec=0.8780 | F1=0.8793 | AUROC=0.9845 | PRAUC=0.9578
+    F3 → Acc=0.8910 | Prec=0.8949 | Rec=0.8910 | F1=0.8919 | AUROC=0.9865 | PRAUC=0.9624
+    F4 → Acc=0.8862 | Prec=0.8891 | Rec=0.8862 | F1=0.8870 | AUROC=0.9862 | PRAUC=0.9627
+    F5 → Acc=0.8741 | Prec=0.8785 | Rec=0.8741 | F1=0.8752 | AUROC=0.9830 | PRAUC=0.9524
+  ✅  Acc:0.8809±0.0066 | Precision:0.8845±0.0065  |Recall:0.8809±0.0066 |F1:0.8819±0.0065 | AUROC:0.9846±0.0015 | PRAUC:0.9580±0.0041 | MCC:0.8301 | Composite:0.9412
+
+  ▶ [2/16] filters=(32, 64) | kernel_size=2 | dropout=0.1 | learning_rate=0.0001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8237 | Prec=0.8273 | Rec=0.8237 | F1=0.8246 | AUROC=0.9687 | PRAUC=0.9217
+    F2 → Acc=0.8353 | Prec=0.8413 | Rec=0.8353 | F1=0.8367 | AUROC=0.9694 | PRAUC=0.9220
+    F3 → Acc=0.8540 | Prec=0.8565 | Rec=0.8540 | F1=0.8548 | AUROC=0.9751 | PRAUC=0.9360
+    F4 → Acc=0.8391 | Prec=0.8435 | Rec=0.8391 | F1=0.8404 | AUROC=0.9745 | PRAUC=0.9330
+    F5 → Acc=0.8366 | Prec=0.8397 | Rec=0.8366 | F1=0.8376 | AUROC=0.9696 | PRAUC=0.9205
+  ✅  Acc:0.8377±0.0097 | Precision:0.8417±0.0093  |Recall:0.8377±0.0097 |F1:0.8388±0.0097 | AUROC:0.9714±0.0028 | PRAUC:0.9267±0.0065 | MCC:0.7685 | Composite:0.9119
+
+  ▶ [3/16] filters=(32, 64) | kernel_size=2 | dropout=0.3 | learning_rate=0.001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8170 | Prec=0.8306 | Rec=0.8170 | F1=0.8178 | AUROC=0.9671 | PRAUC=0.9165
+    F2 → Acc=0.8112 | Prec=0.8227 | Rec=0.8112 | F1=0.8117 | AUROC=0.9651 | PRAUC=0.9120
+    F3 → Acc=0.8386 | Prec=0.8523 | Rec=0.8386 | F1=0.8402 | AUROC=0.9701 | PRAUC=0.9205
+    F4 → Acc=0.8189 | Prec=0.8264 | Rec=0.8189 | F1=0.8177 | AUROC=0.9684 | PRAUC=0.9172
+    F5 → Acc=0.8092 | Prec=0.8137 | Rec=0.8092 | F1=0.8078 | AUROC=0.9675 | PRAUC=0.9166
+  ✅  Acc:0.8190±0.0104 | Precision:0.8292±0.0129  |Recall:0.8190±0.0104 |F1:0.8191±0.0112 | AUROC:0.9676±0.0016 | PRAUC:0.9166±0.0027 | MCC:0.7423 | Composite:0.9011
+
+  ▶ [4/16] filters=(32, 64) | kernel_size=2 | dropout=0.3 | learning_rate=0.0001 | batch_size=32 | epochs=100
+    F1 → Acc=0.7541 | Prec=0.7589 | Rec=0.7541 | F1=0.7528 | AUROC=0.9359 | PRAUC=0.8422
+    F2 → Acc=0.7661 | Prec=0.7725 | Rec=0.7661 | F1=0.7659 | AUROC=0.9412 | PRAUC=0.8533
+    F3 → Acc=0.7834 | Prec=0.7869 | Rec=0.7834 | F1=0.7823 | AUROC=0.9495 | PRAUC=0.8718
+    F4 → Acc=0.7695 | Prec=0.7768 | Rec=0.7695 | F1=0.7675 | AUROC=0.9441 | PRAUC=0.8588
+    F5 → Acc=0.7593 | Prec=0.7632 | Rec=0.7593 | F1=0.7578 | AUROC=0.9388 | PRAUC=0.8484
+  ✅  Acc:0.7665±0.0100 | Precision:0.7717±0.0099  |Recall:0.7665±0.0100 |F1:0.7653±0.0101 | AUROC:0.9419±0.0046 | PRAUC:0.8549±0.0101 | MCC:0.6643 | Composite:0.8544
+
+  ▶ [5/16] filters=(32, 64) | kernel_size=3 | dropout=0.1 | learning_rate=0.001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8967 | Prec=0.9001 | Rec=0.8967 | F1=0.8977 | AUROC=0.9893 | PRAUC=0.9700
+    F2 → Acc=0.9044 | Prec=0.9074 | Rec=0.9044 | F1=0.9053 | AUROC=0.9882 | PRAUC=0.9665
+    F3 → Acc=0.9068 | Prec=0.9104 | Rec=0.9068 | F1=0.9077 | AUROC=0.9897 | PRAUC=0.9690
+    F4 → Acc=0.8924 | Prec=0.8928 | Rec=0.8924 | F1=0.8924 | AUROC=0.9887 | PRAUC=0.9688
+    F5 → Acc=0.8871 | Prec=0.8891 | Rec=0.8871 | F1=0.8874 | AUROC=0.9866 | PRAUC=0.9627
+  ✅  Acc:0.8975±0.0073 | Precision:0.9000±0.0082  |Recall:0.8975±0.0073 |F1:0.8981±0.0076 | AUROC:0.9885±0.0011 | PRAUC:0.9674±0.0026 | MCC:0.8535 | Composite:0.9511
+
+  ▶ [6/16] filters=(32, 64) | kernel_size=3 | dropout=0.1 | learning_rate=0.0001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8540 | Prec=0.8595 | Rec=0.8540 | F1=0.8550 | AUROC=0.9781 | PRAUC=0.9415
+    F2 → Acc=0.8588 | Prec=0.8635 | Rec=0.8588 | F1=0.8594 | AUROC=0.9804 | PRAUC=0.9455
+    F3 → Acc=0.8722 | Prec=0.8745 | Rec=0.8722 | F1=0.8729 | AUROC=0.9814 | PRAUC=0.9468
+    F4 → Acc=0.8588 | Prec=0.8612 | Rec=0.8588 | F1=0.8596 | AUROC=0.9803 | PRAUC=0.9486
+    F5 → Acc=0.8506 | Prec=0.8535 | Rec=0.8506 | F1=0.8512 | AUROC=0.9752 | PRAUC=0.9346
+  ✅  Acc:0.8589±0.0074 | Precision:0.8625±0.0069  |Recall:0.8589±0.0074 |F1:0.8596±0.0073 | AUROC:0.9791±0.0022 | PRAUC:0.9434±0.0049 | MCC:0.7983 | Composite:0.9271
+
+  ▶ [7/16] filters=(32, 64) | kernel_size=3 | dropout=0.3 | learning_rate=0.001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8367 | Prec=0.8457 | Rec=0.8367 | F1=0.8384 | AUROC=0.9746 | PRAUC=0.9325
+    F2 → Acc=0.8516 | Prec=0.8646 | Rec=0.8516 | F1=0.8530 | AUROC=0.9792 | PRAUC=0.9394
+    F3 → Acc=0.8655 | Prec=0.8732 | Rec=0.8655 | F1=0.8667 | AUROC=0.9798 | PRAUC=0.9411
+    F4 → Acc=0.8501 | Prec=0.8578 | Rec=0.8501 | F1=0.8516 | AUROC=0.9769 | PRAUC=0.9374
+    F5 → Acc=0.8477 | Prec=0.8551 | Rec=0.8477 | F1=0.8486 | AUROC=0.9748 | PRAUC=0.9329
+  ✅  Acc:0.8503±0.0092 | Precision:0.8593±0.0092  |Recall:0.8503±0.0092 |F1:0.8517±0.0091 | AUROC:0.9771±0.0022 | PRAUC:0.9367±0.0034 | MCC:0.7879 | Composite:0.9214
+
+  ▶ [8/16] filters=(32, 64) | kernel_size=3 | dropout=0.3 | learning_rate=0.0001 | batch_size=32 | epochs=100
+    F1 → Acc=0.7719 | Prec=0.7753 | Rec=0.7719 | F1=0.7710 | AUROC=0.9509 | PRAUC=0.8743
+    F2 → Acc=0.7834 | Prec=0.7895 | Rec=0.7834 | F1=0.7837 | AUROC=0.9531 | PRAUC=0.8787
+    F3 → Acc=0.8160 | Prec=0.8230 | Rec=0.8160 | F1=0.8161 | AUROC=0.9617 | PRAUC=0.8975
+    F4 → Acc=0.7872 | Prec=0.7903 | Rec=0.7872 | F1=0.7875 | AUROC=0.9558 | PRAUC=0.8859
+    F5 → Acc=0.7866 | Prec=0.7946 | Rec=0.7866 | F1=0.7874 | AUROC=0.9506 | PRAUC=0.8744
+  ✅  Acc:0.7890±0.0146 | Precision:0.7946±0.0156  |Recall:0.7890±0.0146 |F1:0.7891±0.0148 | AUROC:0.9544±0.0041 | PRAUC:0.8822±0.0087 | MCC:0.6994 | Composite:0.8752
+
+  ▶ [9/16] filters=(64, 128) | kernel_size=2 | dropout=0.1 | learning_rate=0.001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8900 | Prec=0.8944 | Rec=0.8900 | F1=0.8910 | AUROC=0.9877 | PRAUC=0.9668
+    F2 → Acc=0.9015 | Prec=0.9042 | Rec=0.9015 | F1=0.9024 | AUROC=0.9882 | PRAUC=0.9667
+    F3 → Acc=0.8963 | Prec=0.8973 | Rec=0.8963 | F1=0.8966 | AUROC=0.9881 | PRAUC=0.9664
+    F4 → Acc=0.8948 | Prec=0.8975 | Rec=0.8948 | F1=0.8952 | AUROC=0.9882 | PRAUC=0.9680
+    F5 → Acc=0.8866 | Prec=0.8882 | Rec=0.8866 | F1=0.8870 | AUROC=0.9857 | PRAUC=0.9600
+  ✅  Acc:0.8938±0.0052 | Precision:0.8963±0.0052  |Recall:0.8938±0.0052 |F1:0.8944±0.0052 | AUROC:0.9876±0.0010 | PRAUC:0.9656±0.0028 | MCC:0.8480 | Composite:0.9490
+
+  ▶ [10/16] filters=(64, 128) | kernel_size=2 | dropout=0.1 | learning_rate=0.0001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8607 | Prec=0.8638 | Rec=0.8607 | F1=0.8616 | AUROC=0.9782 | PRAUC=0.9447
+    F2 → Acc=0.8569 | Prec=0.8608 | Rec=0.8569 | F1=0.8579 | AUROC=0.9785 | PRAUC=0.9442
+    F3 → Acc=0.8703 | Prec=0.8716 | Rec=0.8703 | F1=0.8708 | AUROC=0.9805 | PRAUC=0.9496
+    F4 → Acc=0.8646 | Prec=0.8689 | Rec=0.8646 | F1=0.8656 | AUROC=0.9812 | PRAUC=0.9503
+    F5 → Acc=0.8510 | Prec=0.8539 | Rec=0.8510 | F1=0.8519 | AUROC=0.9766 | PRAUC=0.9389
+  ✅  Acc:0.8607±0.0066 | Precision:0.8638±0.0062  |Recall:0.8607±0.0066 |F1:0.8615±0.0065 | AUROC:0.9790±0.0016 | PRAUC:0.9456±0.0041 | MCC:0.8007 | Composite:0.9284
+
+  ▶ [11/16] filters=(64, 128) | kernel_size=2 | dropout=0.3 | learning_rate=0.001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8482 | Prec=0.8538 | Rec=0.8482 | F1=0.8488 | AUROC=0.9767 | PRAUC=0.9392
+    F2 → Acc=0.8521 | Prec=0.8627 | Rec=0.8521 | F1=0.8538 | AUROC=0.9778 | PRAUC=0.9411
+    F3 → Acc=0.8732 | Prec=0.8792 | Rec=0.8732 | F1=0.8743 | AUROC=0.9808 | PRAUC=0.9485
+    F4 → Acc=0.8617 | Prec=0.8658 | Rec=0.8617 | F1=0.8627 | AUROC=0.9807 | PRAUC=0.9489
+    F5 → Acc=0.8462 | Prec=0.8534 | Rec=0.8462 | F1=0.8462 | AUROC=0.9757 | PRAUC=0.9373
+  ✅  Acc:0.8563±0.0100 | Precision:0.8630±0.0094  |Recall:0.8563±0.0100 |F1:0.8572±0.0102 | AUROC:0.9783±0.0021 | PRAUC:0.9430±0.0048 | MCC:0.7951 | Composite:0.9259
+
+  ▶ [12/16] filters=(64, 128) | kernel_size=2 | dropout=0.3 | learning_rate=0.0001 | batch_size=32 | epochs=100
+    F1 → Acc=0.7819 | Prec=0.7835 | Rec=0.7819 | F1=0.7821 | AUROC=0.9513 | PRAUC=0.8799
+    F2 → Acc=0.7973 | Prec=0.8003 | Rec=0.7973 | F1=0.7979 | AUROC=0.9556 | PRAUC=0.8873
+    F3 → Acc=0.8252 | Prec=0.8286 | Rec=0.8252 | F1=0.8256 | AUROC=0.9614 | PRAUC=0.9020
+    F4 → Acc=0.7997 | Prec=0.8020 | Rec=0.7997 | F1=0.7980 | AUROC=0.9591 | PRAUC=0.8959
+    F5 → Acc=0.7972 | Prec=0.8029 | Rec=0.7972 | F1=0.7977 | AUROC=0.9559 | PRAUC=0.8898
+  ✅  Acc:0.8003±0.0140 | Precision:0.8035±0.0145  |Recall:0.8003±0.0140 |F1:0.8002±0.0141 | AUROC:0.9567±0.0034 | PRAUC:0.8910±0.0075 | MCC:0.7132 | Composite:0.8826
+
+  ▶ [13/16] filters=(64, 128) | kernel_size=3 | dropout=0.1 | learning_rate=0.001 | batch_size=32 | epochs=100
+    F1 → Acc=0.9011 | Prec=0.9031 | Rec=0.9011 | F1=0.9017 | AUROC=0.9899 | PRAUC=0.9720
+    F2 → Acc=0.9131 | Prec=0.9167 | Rec=0.9131 | F1=0.9140 | AUROC=0.9909 | PRAUC=0.9733
+    F3 → Acc=0.9087 | Prec=0.9097 | Rec=0.9087 | F1=0.9091 | AUROC=0.9899 | PRAUC=0.9705
+    F4 → Acc=0.9059 | Prec=0.9072 | Rec=0.9059 | F1=0.9063 | AUROC=0.9903 | PRAUC=0.9725
+    F5 → Acc=0.8876 | Prec=0.8902 | Rec=0.8876 | F1=0.8882 | AUROC=0.9879 | PRAUC=0.9655
+  ✅  Acc:0.9033±0.0088 | Precision:0.9054±0.0088  |Recall:0.9033±0.0088 |F1:0.9039±0.0088 | AUROC:0.9898±0.0010 | PRAUC:0.9708±0.0028 | MCC:0.8615 | Composite:0.9546
+
+  ▶ [14/16] filters=(64, 128) | kernel_size=3 | dropout=0.1 | learning_rate=0.0001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8814 | Prec=0.8859 | Rec=0.8814 | F1=0.8825 | AUROC=0.9855 | PRAUC=0.9597
+    F2 → Acc=0.8823 | Prec=0.8858 | Rec=0.8823 | F1=0.8829 | AUROC=0.9857 | PRAUC=0.9593
+    F3 → Acc=0.8972 | Prec=0.8996 | Rec=0.8972 | F1=0.8977 | AUROC=0.9860 | PRAUC=0.9595
+    F4 → Acc=0.8814 | Prec=0.8829 | Rec=0.8814 | F1=0.8819 | AUROC=0.9848 | PRAUC=0.9591
+    F5 → Acc=0.8751 | Prec=0.8768 | Rec=0.8751 | F1=0.8755 | AUROC=0.9824 | PRAUC=0.9516
+  ✅  Acc:0.8835±0.0073 | Precision:0.8862±0.0075  |Recall:0.8835±0.0073 |F1:0.8841±0.0073 | AUROC:0.9849±0.0013 | PRAUC:0.9578±0.0031 | MCC:0.8333 | Composite:0.9421
+
+  ▶ [15/16] filters=(64, 128) | kernel_size=3 | dropout=0.3 | learning_rate=0.001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8799 | Prec=0.8872 | Rec=0.8799 | F1=0.8817 | AUROC=0.9843 | PRAUC=0.9567
+    F2 → Acc=0.8833 | Prec=0.8919 | Rec=0.8833 | F1=0.8848 | AUROC=0.9856 | PRAUC=0.9580
+    F3 → Acc=0.8852 | Prec=0.8891 | Rec=0.8852 | F1=0.8858 | AUROC=0.9860 | PRAUC=0.9586
+    F4 → Acc=0.8756 | Prec=0.8818 | Rec=0.8756 | F1=0.8769 | AUROC=0.9851 | PRAUC=0.9581
+    F5 → Acc=0.8717 | Prec=0.8822 | Rec=0.8717 | F1=0.8729 | AUROC=0.9836 | PRAUC=0.9533
+  ✅  Acc:0.8791±0.0050 | Precision:0.8864±0.0039  |Recall:0.8791±0.0050 |F1:0.8804±0.0049 | AUROC:0.9849±0.0009 | PRAUC:0.9569±0.0019 | MCC:0.8287 | Composite:0.9403
+
+  ▶ [16/16] filters=(64, 128) | kernel_size=3 | dropout=0.3 | learning_rate=0.0001 | batch_size=32 | epochs=100
+    F1 → Acc=0.8093 | Prec=0.8181 | Rec=0.8093 | F1=0.8104 | AUROC=0.9681 | PRAUC=0.9177
+    F2 → Acc=0.8271 | Prec=0.8339 | Rec=0.8271 | F1=0.8276 | AUROC=0.9708 | PRAUC=0.9215
+    F3 → Acc=0.8511 | Prec=0.8554 | Rec=0.8511 | F1=0.8517 | AUROC=0.9736 | PRAUC=0.9285
+    F4 → Acc=0.8290 | Prec=0.8339 | Rec=0.8290 | F1=0.8300 | AUROC=0.9704 | PRAUC=0.9248
+    F5 → Acc=0.8265 | Prec=0.8311 | Rec=0.8265 | F1=0.8273 | AUROC=0.9670 | PRAUC=0.9139
+  ✅  Acc:0.8286±0.0133 | Precision:0.8345±0.0120  |Recall:0.8286±0.0133 |F1:0.8294±0.0132 | AUROC:0.9699±0.0023 | PRAUC:0.9213±0.0052 | MCC:0.7564 | Composite:0.9066
+
+🏆 Best config : filters=(64, 128) | kernel_size=3 | dropout=0.1 | learning_rate=0.001 | batch_size=32 | epochs=100
+   Composite   : 0.9545984494481915 (AUROC=0.9898±0.0010 | PRAUC=0.9708±0.0028 | Acc=0.9033±0.0088 |Prec=0.9054±0.0088 |Rec=0.9033±0.0088) |
+✅ Saved: ./results/cnn1d.csv
+✅ [1D CNN] recorded | Exec. time: 558.7s

@@ -1,0 +1,312 @@
+📝 Log: results\logs\gs\quantum\all\fsk\qxgb_dart_linear.log
+🕒 Started: 2026-05-25T05:01:49
+🔬 Search space: 2 n_estimators × 2 learning_rate × 2 max_depth × 2 rate_drop × 2 skip_drop × 2 lambda_ × 1 n_measurements =  64 configs × 5 folds = 320 fits
+   Scoring criterion: (AUROC + PRAUC + Accuracy) / 3
+
+  ▶ [1/64] n_estimators=100 | learning_rate=0.01 | max_depth=4 | rate_drop=0.1 | skip_drop=0.1 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.4381 | Prec=0.1919 | Rec=0.4381 | F1=0.2669 | AUROC=0.9107 | PRAUC=0.8192
+    F2 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.8834 | PRAUC=0.7892
+    F3 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.9756 | PRAUC=0.9454
+    F4 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.9413 | PRAUC=0.8840
+    F5 → Acc=0.4423 | Prec=0.1956 | Rec=0.4423 | F1=0.2713 | AUROC=0.9528 | PRAUC=0.8999
+  ✅  Acc:0.4472±0.0059 | Precision:0.2001±0.0053  |Recall:0.4472±0.0059 |F1:0.2764±0.0061 | AUROC:0.9327±0.0323 | PRAUC:0.8676±0.0563 | MCC:0.0000 | Composite:0.7492
+
+  ▶ [2/64] n_estimators=100 | learning_rate=0.01 | max_depth=4 | rate_drop=0.1 | skip_drop=0.1 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.4381 | Prec=0.1919 | Rec=0.4381 | F1=0.2669 | AUROC=0.7850 | PRAUC=0.6046
+    F2 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7647 | PRAUC=0.6025
+    F3 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7454 | PRAUC=0.5887
+    F4 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7271 | PRAUC=0.5435
+    F5 → Acc=0.4423 | Prec=0.1956 | Rec=0.4423 | F1=0.2713 | AUROC=0.7146 | PRAUC=0.5223
+  ✅  Acc:0.4472±0.0059 | Precision:0.2001±0.0053  |Recall:0.4472±0.0059 |F1:0.2764±0.0061 | AUROC:0.7474±0.0253 | PRAUC:0.5723±0.0334 | MCC:0.0000 | Composite:0.5890
+
+  ▶ [3/64] n_estimators=100 | learning_rate=0.01 | max_depth=4 | rate_drop=0.1 | skip_drop=0.5 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.5810 | Prec=0.5887 | Rec=0.5810 | F1=0.5173 | AUROC=0.9215 | PRAUC=0.8467
+    F2 → Acc=0.6346 | Prec=0.7256 | Rec=0.6346 | F1=0.5843 | AUROC=0.9158 | PRAUC=0.8234
+    F3 → Acc=0.7019 | Prec=0.7863 | Rec=0.7019 | F1=0.6663 | AUROC=0.9779 | PRAUC=0.9552
+    F4 → Acc=0.6827 | Prec=0.6982 | Rec=0.6827 | F1=0.6282 | AUROC=0.9448 | PRAUC=0.8973
+    F5 → Acc=0.6346 | Prec=0.7711 | Rec=0.6346 | F1=0.5816 | AUROC=0.9601 | PRAUC=0.9203
+  ✅  Acc:0.6470±0.0423 | Precision:0.7139±0.0701  |Recall:0.6470±0.0423 |F1:0.5955±0.0500 | AUROC:0.9441±0.0233 | PRAUC:0.8886±0.0480 | MCC:0.4939 | Composite:0.8265
+
+  ▶ [4/64] n_estimators=100 | learning_rate=0.01 | max_depth=4 | rate_drop=0.1 | skip_drop=0.5 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.4476 | Prec=0.3071 | Rec=0.4476 | F1=0.2899 | AUROC=0.8126 | PRAUC=0.6369
+    F2 → Acc=0.4615 | Prec=0.4274 | Rec=0.4615 | F1=0.3016 | AUROC=0.7681 | PRAUC=0.5913
+    F3 → Acc=0.4904 | Prec=0.6547 | Rec=0.4904 | F1=0.3598 | AUROC=0.7451 | PRAUC=0.5806
+    F4 → Acc=0.4712 | Prec=0.5073 | Rec=0.4712 | F1=0.3244 | AUROC=0.7241 | PRAUC=0.5464
+    F5 → Acc=0.4615 | Prec=0.4206 | Rec=0.4615 | F1=0.3103 | AUROC=0.7263 | PRAUC=0.5396
+  ✅  Acc:0.4664±0.0141 | Precision:0.4634±0.1150  |Recall:0.4664±0.0141 |F1:0.3172±0.0241 | AUROC:0.7553±0.0328 | PRAUC:0.5790±0.0350 | MCC:0.1322 | Composite:0.6002
+
+  ▶ [5/64] n_estimators=100 | learning_rate=0.01 | max_depth=4 | rate_drop=0.5 | skip_drop=0.1 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.4381 | Prec=0.1919 | Rec=0.4381 | F1=0.2669 | AUROC=0.9081 | PRAUC=0.8285
+    F2 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.8736 | PRAUC=0.7745
+    F3 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.9706 | PRAUC=0.9400
+    F4 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.9344 | PRAUC=0.8764
+    F5 → Acc=0.4423 | Prec=0.1956 | Rec=0.4423 | F1=0.2713 | AUROC=0.9400 | PRAUC=0.8831
+  ✅  Acc:0.4472±0.0059 | Precision:0.2001±0.0053  |Recall:0.4472±0.0059 |F1:0.2764±0.0061 | AUROC:0.9253±0.0326 | PRAUC:0.8605±0.0557 | MCC:0.0000 | Composite:0.7444
+
+  ▶ [6/64] n_estimators=100 | learning_rate=0.01 | max_depth=4 | rate_drop=0.5 | skip_drop=0.1 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.4381 | Prec=0.1919 | Rec=0.4381 | F1=0.2669 | AUROC=0.7773 | PRAUC=0.5971
+    F2 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7775 | PRAUC=0.6067
+    F3 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7567 | PRAUC=0.6179
+    F4 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7104 | PRAUC=0.5266
+    F5 → Acc=0.4423 | Prec=0.1956 | Rec=0.4423 | F1=0.2713 | AUROC=0.7027 | PRAUC=0.5153
+  ✅  Acc:0.4472±0.0059 | Precision:0.2001±0.0053  |Recall:0.4472±0.0059 |F1:0.2764±0.0061 | AUROC:0.7449±0.0323 | PRAUC:0.5727±0.0429 | MCC:0.0000 | Composite:0.5883
+
+  ▶ [7/64] n_estimators=100 | learning_rate=0.01 | max_depth=4 | rate_drop=0.5 | skip_drop=0.5 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.5810 | Prec=0.6077 | Rec=0.5810 | F1=0.5124 | AUROC=0.9227 | PRAUC=0.8457
+    F2 → Acc=0.5962 | Prec=0.6156 | Rec=0.5962 | F1=0.5267 | AUROC=0.9149 | PRAUC=0.8197
+    F3 → Acc=0.6827 | Prec=0.7944 | Rec=0.6827 | F1=0.6456 | AUROC=0.9774 | PRAUC=0.9540
+    F4 → Acc=0.6827 | Prec=0.6982 | Rec=0.6827 | F1=0.6282 | AUROC=0.9444 | PRAUC=0.8974
+    F5 → Acc=0.6250 | Prec=0.6817 | Rec=0.6250 | F1=0.5619 | AUROC=0.9595 | PRAUC=0.9197
+  ✅  Acc:0.6335±0.0426 | Precision:0.6795±0.0675  |Recall:0.6335±0.0426 |F1:0.5749±0.0534 | AUROC:0.9438±0.0230 | PRAUC:0.8873±0.0488 | MCC:0.4763 | Composite:0.8215
+
+  ▶ [8/64] n_estimators=100 | learning_rate=0.01 | max_depth=4 | rate_drop=0.5 | skip_drop=0.5 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.4381 | Prec=0.1919 | Rec=0.4381 | F1=0.2669 | AUROC=0.8049 | PRAUC=0.6262
+    F2 → Acc=0.4615 | Prec=0.4274 | Rec=0.4615 | F1=0.3016 | AUROC=0.7786 | PRAUC=0.6070
+    F3 → Acc=0.4808 | Prec=0.6526 | Rec=0.4808 | F1=0.3408 | AUROC=0.7387 | PRAUC=0.5789
+    F4 → Acc=0.4712 | Prec=0.5073 | Rec=0.4712 | F1=0.3244 | AUROC=0.7229 | PRAUC=0.5384
+    F5 → Acc=0.4615 | Prec=0.4206 | Rec=0.4615 | F1=0.3103 | AUROC=0.7232 | PRAUC=0.5324
+  ✅  Acc:0.4626±0.0142 | Precision:0.4400±0.1495  |Recall:0.4626±0.0142 |F1:0.3088±0.0248 | AUROC:0.7537±0.0327 | PRAUC:0.5766±0.0369 | MCC:0.1215 | Composite:0.5976
+
+  ▶ [9/64] n_estimators=100 | learning_rate=0.01 | max_depth=10 | rate_drop=0.1 | skip_drop=0.1 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.4381 | Prec=0.1919 | Rec=0.4381 | F1=0.2669 | AUROC=0.9330 | PRAUC=0.8588
+    F2 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.9513 | PRAUC=0.8762
+    F3 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.9881 | PRAUC=0.9700
+    F4 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.9679 | PRAUC=0.9265
+    F5 → Acc=0.4423 | Prec=0.1956 | Rec=0.4423 | F1=0.2713 | AUROC=0.9654 | PRAUC=0.9186
+  ✅  Acc:0.4472±0.0059 | Precision:0.2001±0.0053  |Recall:0.4472±0.0059 |F1:0.2764±0.0061 | AUROC:0.9611±0.0183 | PRAUC:0.9100±0.0393 | MCC:0.0000 | Composite:0.7728
+
+  ▶ [10/64] n_estimators=100 | learning_rate=0.01 | max_depth=10 | rate_drop=0.1 | skip_drop=0.1 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.4381 | Prec=0.1919 | Rec=0.4381 | F1=0.2669 | AUROC=0.8081 | PRAUC=0.6381
+    F2 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7749 | PRAUC=0.6092
+    F3 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7641 | PRAUC=0.6133
+    F4 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7485 | PRAUC=0.5534
+    F5 → Acc=0.4423 | Prec=0.1956 | Rec=0.4423 | F1=0.2713 | AUROC=0.7309 | PRAUC=0.5518
+  ✅  Acc:0.4472±0.0059 | Precision:0.2001±0.0053  |Recall:0.4472±0.0059 |F1:0.2764±0.0061 | AUROC:0.7653±0.0260 | PRAUC:0.5932±0.0346 | MCC:0.0000 | Composite:0.6019
+
+  ▶ [11/64] n_estimators=100 | learning_rate=0.01 | max_depth=10 | rate_drop=0.1 | skip_drop=0.5 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.6286 | Prec=0.6192 | Rec=0.6286 | F1=0.5763 | AUROC=0.9402 | PRAUC=0.8716
+    F2 → Acc=0.6731 | Prec=0.7470 | Rec=0.6731 | F1=0.6366 | AUROC=0.9539 | PRAUC=0.8815
+    F3 → Acc=0.7596 | Prec=0.8164 | Rec=0.7596 | F1=0.7266 | AUROC=0.9893 | PRAUC=0.9748
+    F4 → Acc=0.6923 | Prec=0.6913 | Rec=0.6923 | F1=0.6447 | AUROC=0.9661 | PRAUC=0.9310
+    F5 → Acc=0.7115 | Prec=0.7966 | Rec=0.7115 | F1=0.6771 | AUROC=0.9718 | PRAUC=0.9362
+  ✅  Acc:0.6930±0.0432 | Precision:0.7341±0.0719  |Recall:0.6930±0.0432 |F1:0.6522±0.0494 | AUROC:0.9643±0.0166 | PRAUC:0.9190±0.0380 | MCC:0.5609 | Composite:0.8588
+
+  ▶ [12/64] n_estimators=100 | learning_rate=0.01 | max_depth=10 | rate_drop=0.1 | skip_drop=0.5 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.4667 | Prec=0.5376 | Rec=0.4667 | F1=0.3269 | AUROC=0.8172 | PRAUC=0.6575
+    F2 → Acc=0.4615 | Prec=0.3188 | Rec=0.4615 | F1=0.3028 | AUROC=0.7989 | PRAUC=0.6424
+    F3 → Acc=0.5000 | Prec=0.6569 | Rec=0.5000 | F1=0.3774 | AUROC=0.7760 | PRAUC=0.6183
+    F4 → Acc=0.4808 | Prec=0.4932 | Rec=0.4808 | F1=0.3447 | AUROC=0.7357 | PRAUC=0.5530
+    F5 → Acc=0.4519 | Prec=0.4182 | Rec=0.4519 | F1=0.3062 | AUROC=0.7471 | PRAUC=0.5781
+  ✅  Acc:0.4722±0.0167 | Precision:0.4849±0.1135  |Recall:0.4722±0.0167 |F1:0.3316±0.0274 | AUROC:0.7750±0.0306 | PRAUC:0.6099±0.0391 | MCC:0.1478 | Composite:0.6190
+
+  ▶ [13/64] n_estimators=100 | learning_rate=0.01 | max_depth=10 | rate_drop=0.5 | skip_drop=0.1 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.4381 | Prec=0.1919 | Rec=0.4381 | F1=0.2669 | AUROC=0.9277 | PRAUC=0.8592
+    F2 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.9439 | PRAUC=0.8677
+    F3 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.9854 | PRAUC=0.9664
+    F4 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.9632 | PRAUC=0.9202
+    F5 → Acc=0.4423 | Prec=0.1956 | Rec=0.4423 | F1=0.2713 | AUROC=0.9581 | PRAUC=0.9010
+  ✅  Acc:0.4472±0.0059 | Precision:0.2001±0.0053  |Recall:0.4472±0.0059 |F1:0.2764±0.0061 | AUROC:0.9557±0.0193 | PRAUC:0.9029±0.0387 | MCC:0.0000 | Composite:0.7686
+
+  ▶ [14/64] n_estimators=100 | learning_rate=0.01 | max_depth=10 | rate_drop=0.5 | skip_drop=0.1 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.4381 | Prec=0.1919 | Rec=0.4381 | F1=0.2669 | AUROC=0.7770 | PRAUC=0.5884
+    F2 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7711 | PRAUC=0.6022
+    F3 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7570 | PRAUC=0.6000
+    F4 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7509 | PRAUC=0.5548
+    F5 → Acc=0.4423 | Prec=0.1956 | Rec=0.4423 | F1=0.2713 | AUROC=0.7270 | PRAUC=0.5394
+  ✅  Acc:0.4472±0.0059 | Precision:0.2001±0.0053  |Recall:0.4472±0.0059 |F1:0.2764±0.0061 | AUROC:0.7566±0.0175 | PRAUC:0.5770±0.0253 | MCC:0.0000 | Composite:0.5936
+
+  ▶ [15/64] n_estimators=100 | learning_rate=0.01 | max_depth=10 | rate_drop=0.5 | skip_drop=0.5 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.6095 | Prec=0.6346 | Rec=0.6095 | F1=0.5520 | AUROC=0.9403 | PRAUC=0.8706
+    F2 → Acc=0.6538 | Prec=0.6525 | Rec=0.6538 | F1=0.5999 | AUROC=0.9532 | PRAUC=0.8790
+    F3 → Acc=0.7404 | Prec=0.8075 | Rec=0.7404 | F1=0.7064 | AUROC=0.9897 | PRAUC=0.9772
+    F4 → Acc=0.7019 | Prec=0.7051 | Rec=0.7019 | F1=0.6535 | AUROC=0.9654 | PRAUC=0.9280
+    F5 → Acc=0.6923 | Prec=0.7897 | Rec=0.6923 | F1=0.6541 | AUROC=0.9718 | PRAUC=0.9349
+  ✅  Acc:0.6796±0.0446 | Precision:0.7179±0.0701  |Recall:0.6796±0.0446 |F1:0.6332±0.0527 | AUROC:0.9641±0.0168 | PRAUC:0.9179±0.0391 | MCC:0.5445 | Composite:0.8539
+
+  ▶ [16/64] n_estimators=100 | learning_rate=0.01 | max_depth=10 | rate_drop=0.5 | skip_drop=0.5 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.4571 | Prec=0.6433 | Rec=0.4571 | F1=0.3070 | AUROC=0.8197 | PRAUC=0.6557
+    F2 → Acc=0.4615 | Prec=0.4274 | Rec=0.4615 | F1=0.3016 | AUROC=0.7920 | PRAUC=0.6374
+    F3 → Acc=0.5000 | Prec=0.6569 | Rec=0.5000 | F1=0.3774 | AUROC=0.7796 | PRAUC=0.6220
+    F4 → Acc=0.4712 | Prec=0.4910 | Rec=0.4712 | F1=0.3258 | AUROC=0.7392 | PRAUC=0.5582
+    F5 → Acc=0.4519 | Prec=0.4182 | Rec=0.4519 | F1=0.3062 | AUROC=0.7533 | PRAUC=0.5748
+  ✅  Acc:0.4684±0.0170 | Precision:0.5273±0.1034  |Recall:0.4684±0.0170 |F1:0.3236±0.0281 | AUROC:0.7768±0.0284 | PRAUC:0.6096±0.0372 | MCC:0.1375 | Composite:0.6183
+
+  ▶ [17/64] n_estimators=100 | learning_rate=0.1 | max_depth=4 | rate_drop=0.1 | skip_drop=0.1 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.7429 | Prec=0.7499 | Rec=0.7429 | F1=0.7283 | AUROC=0.9370 | PRAUC=0.8779
+    F2 → Acc=0.7788 | Prec=0.7728 | Rec=0.7788 | F1=0.7630 | AUROC=0.9358 | PRAUC=0.8538
+    F3 → Acc=0.8654 | Prec=0.8604 | Rec=0.8654 | F1=0.8550 | AUROC=0.9856 | PRAUC=0.9660
+    F4 → Acc=0.7981 | Prec=0.7984 | Rec=0.7981 | F1=0.7905 | AUROC=0.9552 | PRAUC=0.9175
+    F5 → Acc=0.8077 | Prec=0.8227 | Rec=0.8077 | F1=0.7936 | AUROC=0.9652 | PRAUC=0.9333
+  ✅  Acc:0.7986±0.0401 | Precision:0.8008±0.0385  |Recall:0.7986±0.0401 |F1:0.7861±0.0417 | AUROC:0.9558±0.0186 | PRAUC:0.9097±0.0398 | MCC:0.7060 | Composite:0.8880
+
+  ▶ [18/64] n_estimators=100 | learning_rate=0.1 | max_depth=4 | rate_drop=0.1 | skip_drop=0.1 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.5619 | Prec=0.5868 | Rec=0.5619 | F1=0.5091 | AUROC=0.8127 | PRAUC=0.6517
+    F2 → Acc=0.5769 | Prec=0.5964 | Rec=0.5769 | F1=0.5121 | AUROC=0.7715 | PRAUC=0.6000
+    F3 → Acc=0.5385 | Prec=0.4888 | Rec=0.5385 | F1=0.4545 | AUROC=0.7617 | PRAUC=0.6055
+    F4 → Acc=0.5096 | Prec=0.4522 | Rec=0.5096 | F1=0.4409 | AUROC=0.7398 | PRAUC=0.5606
+    F5 → Acc=0.5288 | Prec=0.5313 | Rec=0.5288 | F1=0.4727 | AUROC=0.7312 | PRAUC=0.5447
+  ✅  Acc:0.5432±0.0238 | Precision:0.5311±0.0555  |Recall:0.5432±0.0238 |F1:0.4779±0.0286 | AUROC:0.7634±0.0286 | PRAUC:0.5925±0.0375 | MCC:0.2925 | Composite:0.6330
+
+  ▶ [19/64] n_estimators=100 | learning_rate=0.1 | max_depth=4 | rate_drop=0.1 | skip_drop=0.5 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.8000 | Prec=0.8024 | Rec=0.8000 | F1=0.7957 | AUROC=0.9501 | PRAUC=0.9017
+    F2 → Acc=0.8173 | Prec=0.8040 | Rec=0.8173 | F1=0.8035 | AUROC=0.9636 | PRAUC=0.9175
+    F3 → Acc=0.9231 | Prec=0.9255 | Rec=0.9231 | F1=0.9229 | AUROC=0.9916 | PRAUC=0.9764
+    F4 → Acc=0.8558 | Prec=0.8566 | Rec=0.8558 | F1=0.8549 | AUROC=0.9700 | PRAUC=0.9394
+    F5 → Acc=0.7981 | Prec=0.7922 | Rec=0.7981 | F1=0.7857 | AUROC=0.9669 | PRAUC=0.9439
+  ✅  Acc:0.8388±0.0469 | Precision:0.8361±0.0500  |Recall:0.8388±0.0469 |F1:0.8325±0.0511 | AUROC:0.9684±0.0134 | PRAUC:0.9358±0.0254 | MCC:0.7643 | Composite:0.9144
+
+  ▶ [20/64] n_estimators=100 | learning_rate=0.1 | max_depth=4 | rate_drop=0.1 | skip_drop=0.5 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.5714 | Prec=0.5678 | Rec=0.5714 | F1=0.5482 | AUROC=0.8272 | PRAUC=0.6777
+    F2 → Acc=0.5962 | Prec=0.5643 | Rec=0.5962 | F1=0.5417 | AUROC=0.7990 | PRAUC=0.6433
+    F3 → Acc=0.5769 | Prec=0.5089 | Rec=0.5769 | F1=0.5110 | AUROC=0.7864 | PRAUC=0.6152
+    F4 → Acc=0.5577 | Prec=0.5281 | Rec=0.5577 | F1=0.5362 | AUROC=0.7428 | PRAUC=0.5574
+    F5 → Acc=0.5673 | Prec=0.5537 | Rec=0.5673 | F1=0.5337 | AUROC=0.7425 | PRAUC=0.5916
+  ✅  Acc:0.5739±0.0128 | Precision:0.5446±0.0226  |Recall:0.5739±0.0128 |F1:0.5342±0.0126 | AUROC:0.7796±0.0329 | PRAUC:0.6170±0.0414 | MCC:0.3479 | Composite:0.6568
+
+  ▶ [21/64] n_estimators=100 | learning_rate=0.1 | max_depth=4 | rate_drop=0.5 | skip_drop=0.1 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.6952 | Prec=0.7430 | Rec=0.6952 | F1=0.6706 | AUROC=0.9317 | PRAUC=0.8614
+    F2 → Acc=0.7308 | Prec=0.7483 | Rec=0.7308 | F1=0.7072 | AUROC=0.9130 | PRAUC=0.8146
+    F3 → Acc=0.8077 | Prec=0.8131 | Rec=0.8077 | F1=0.7948 | AUROC=0.9771 | PRAUC=0.9529
+    F4 → Acc=0.7596 | Prec=0.7777 | Rec=0.7596 | F1=0.7447 | AUROC=0.9485 | PRAUC=0.9143
+    F5 → Acc=0.7404 | Prec=0.7954 | Rec=0.7404 | F1=0.7164 | AUROC=0.9591 | PRAUC=0.9185
+  ✅  Acc:0.7467±0.0370 | Precision:0.7755±0.0269  |Recall:0.7467±0.0370 |F1:0.7267±0.0414 | AUROC:0.9459±0.0221 | PRAUC:0.8924±0.0486 | MCC:0.6329 | Composite:0.8617
+
+  ▶ [22/64] n_estimators=100 | learning_rate=0.1 | max_depth=4 | rate_drop=0.5 | skip_drop=0.1 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.4762 | Prec=0.3935 | Rec=0.4762 | F1=0.3793 | AUROC=0.7542 | PRAUC=0.5811
+    F2 → Acc=0.5192 | Prec=0.5887 | Rec=0.5192 | F1=0.4137 | AUROC=0.7504 | PRAUC=0.5888
+    F3 → Acc=0.5577 | Prec=0.5547 | Rec=0.5577 | F1=0.4624 | AUROC=0.7512 | PRAUC=0.6064
+    F4 → Acc=0.5096 | Prec=0.4859 | Rec=0.5096 | F1=0.4126 | AUROC=0.6944 | PRAUC=0.5137
+    F5 → Acc=0.5000 | Prec=0.5609 | Rec=0.5000 | F1=0.4044 | AUROC=0.7223 | PRAUC=0.5490
+  ✅  Acc:0.5125±0.0267 | Precision:0.5167±0.0703  |Recall:0.5125±0.0267 |F1:0.4145±0.0270 | AUROC:0.7345±0.0231 | PRAUC:0.5678±0.0328 | MCC:0.2351 | Composite:0.6050
+
+  ▶ [23/64] n_estimators=100 | learning_rate=0.1 | max_depth=4 | rate_drop=0.5 | skip_drop=0.5 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.8190 | Prec=0.8244 | Rec=0.8190 | F1=0.8158 | AUROC=0.9529 | PRAUC=0.9078
+    F2 → Acc=0.8269 | Prec=0.8129 | Rec=0.8269 | F1=0.8144 | AUROC=0.9564 | PRAUC=0.9005
+    F3 → Acc=0.9423 | Prec=0.9432 | Rec=0.9423 | F1=0.9410 | AUROC=0.9918 | PRAUC=0.9758
+    F4 → Acc=0.8462 | Prec=0.8501 | Rec=0.8462 | F1=0.8458 | AUROC=0.9669 | PRAUC=0.9336
+    F5 → Acc=0.8365 | Prec=0.8342 | Rec=0.8365 | F1=0.8229 | AUROC=0.9700 | PRAUC=0.9481
+  ✅  Acc:0.8542±0.0450 | Precision:0.8530±0.0467  |Recall:0.8542±0.0450 |F1:0.8480±0.0479 | AUROC:0.9676±0.0137 | PRAUC:0.9332±0.0274 | MCC:0.7873 | Composite:0.9183
+
+  ▶ [24/64] n_estimators=100 | learning_rate=0.1 | max_depth=4 | rate_drop=0.5 | skip_drop=0.5 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.5714 | Prec=0.5561 | Rec=0.5714 | F1=0.5536 | AUROC=0.8219 | PRAUC=0.6663
+    F2 → Acc=0.6058 | Prec=0.5868 | Rec=0.6058 | F1=0.5687 | AUROC=0.7815 | PRAUC=0.6268
+    F3 → Acc=0.5865 | Prec=0.5455 | Rec=0.5865 | F1=0.5151 | AUROC=0.7989 | PRAUC=0.6335
+    F4 → Acc=0.5577 | Prec=0.5264 | Rec=0.5577 | F1=0.5290 | AUROC=0.7333 | PRAUC=0.5474
+    F5 → Acc=0.6058 | Prec=0.5911 | Rec=0.6058 | F1=0.5658 | AUROC=0.7372 | PRAUC=0.5841
+  ✅  Acc:0.5854±0.0189 | Precision:0.5612±0.0246  |Recall:0.5854±0.0189 |F1:0.5464±0.0210 | AUROC:0.7745±0.0346 | PRAUC:0.6116±0.0414 | MCC:0.3669 | Composite:0.6572
+
+  ▶ [25/64] n_estimators=100 | learning_rate=0.1 | max_depth=10 | rate_drop=0.1 | skip_drop=0.1 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.7524 | Prec=0.7561 | Rec=0.7524 | F1=0.7395 | AUROC=0.9500 | PRAUC=0.9064
+    F2 → Acc=0.7788 | Prec=0.7690 | Rec=0.7788 | F1=0.7662 | AUROC=0.9625 | PRAUC=0.9150
+    F3 → Acc=0.8942 | Prec=0.9053 | Rec=0.8942 | F1=0.8907 | AUROC=0.9916 | PRAUC=0.9777
+    F4 → Acc=0.8365 | Prec=0.8276 | Rec=0.8365 | F1=0.8290 | AUROC=0.9669 | PRAUC=0.9403
+    F5 → Acc=0.7981 | Prec=0.8071 | Rec=0.7981 | F1=0.7817 | AUROC=0.9650 | PRAUC=0.9341
+  ✅  Acc:0.8120±0.0494 | Precision:0.8130±0.0528  |Recall:0.8120±0.0494 |F1:0.8014±0.0533 | AUROC:0.9672±0.0136 | PRAUC:0.9347±0.0248 | MCC:0.7250 | Composite:0.9046
+
+  ▶ [26/64] n_estimators=100 | learning_rate=0.1 | max_depth=10 | rate_drop=0.1 | skip_drop=0.1 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.5238 | Prec=0.5330 | Rec=0.5238 | F1=0.4849 | AUROC=0.7960 | PRAUC=0.6375
+    F2 → Acc=0.5673 | Prec=0.5668 | Rec=0.5673 | F1=0.5048 | AUROC=0.7839 | PRAUC=0.6225
+    F3 → Acc=0.5769 | Prec=0.5399 | Rec=0.5769 | F1=0.5080 | AUROC=0.7808 | PRAUC=0.6306
+    F4 → Acc=0.5385 | Prec=0.4741 | Rec=0.5385 | F1=0.4783 | AUROC=0.7543 | PRAUC=0.5652
+    F5 → Acc=0.5288 | Prec=0.5645 | Rec=0.5288 | F1=0.4720 | AUROC=0.7435 | PRAUC=0.5622
+  ✅  Acc:0.5471±0.0212 | Precision:0.5356±0.0335  |Recall:0.5471±0.0212 |F1:0.4896±0.0143 | AUROC:0.7717±0.0196 | PRAUC:0.6036±0.0329 | MCC:0.2974 | Composite:0.6408
+
+  ▶ [27/64] n_estimators=100 | learning_rate=0.1 | max_depth=10 | rate_drop=0.1 | skip_drop=0.5 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.8000 | Prec=0.8015 | Rec=0.8000 | F1=0.7961 | AUROC=0.9496 | PRAUC=0.9004
+    F2 → Acc=0.8269 | Prec=0.8202 | Rec=0.8269 | F1=0.8121 | AUROC=0.9634 | PRAUC=0.9131
+    F3 → Acc=0.9231 | Prec=0.9243 | Rec=0.9231 | F1=0.9223 | AUROC=0.9939 | PRAUC=0.9805
+    F4 → Acc=0.8654 | Prec=0.8762 | Rec=0.8654 | F1=0.8678 | AUROC=0.9717 | PRAUC=0.9477
+    F5 → Acc=0.8173 | Prec=0.8014 | Rec=0.8173 | F1=0.8050 | AUROC=0.9653 | PRAUC=0.9386
+  ✅  Acc:0.8465±0.0439 | Precision:0.8447±0.0483  |Recall:0.8465±0.0439 |F1:0.8406±0.0479 | AUROC:0.9688±0.0145 | PRAUC:0.9361±0.0280 | MCC:0.7762 | Composite:0.9171
+
+  ▶ [28/64] n_estimators=100 | learning_rate=0.1 | max_depth=10 | rate_drop=0.1 | skip_drop=0.5 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.6000 | Prec=0.5973 | Rec=0.6000 | F1=0.5790 | AUROC=0.8172 | PRAUC=0.6567
+    F2 → Acc=0.5962 | Prec=0.5632 | Rec=0.5962 | F1=0.5599 | AUROC=0.7982 | PRAUC=0.6474
+    F3 → Acc=0.6058 | Prec=0.5767 | Rec=0.6058 | F1=0.5467 | AUROC=0.8043 | PRAUC=0.6310
+    F4 → Acc=0.5577 | Prec=0.5235 | Rec=0.5577 | F1=0.5303 | AUROC=0.7280 | PRAUC=0.5472
+    F5 → Acc=0.5769 | Prec=0.5655 | Rec=0.5769 | F1=0.5378 | AUROC=0.7369 | PRAUC=0.5694
+  ✅  Acc:0.5873±0.0177 | Precision:0.5652±0.0241  |Recall:0.5873±0.0177 |F1:0.5507±0.0172 | AUROC:0.7769±0.0370 | PRAUC:0.6103±0.0438 | MCC:0.3707 | Composite:0.6582
+
+  ▶ [29/64] n_estimators=100 | learning_rate=0.1 | max_depth=10 | rate_drop=0.5 | skip_drop=0.1 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.7238 | Prec=0.7453 | Rec=0.7238 | F1=0.7043 | AUROC=0.9410 | PRAUC=0.8802
+    F2 → Acc=0.7692 | Prec=0.7682 | Rec=0.7692 | F1=0.7500 | AUROC=0.9562 | PRAUC=0.8869
+    F3 → Acc=0.8558 | Prec=0.8557 | Rec=0.8558 | F1=0.8432 | AUROC=0.9862 | PRAUC=0.9705
+    F4 → Acc=0.7885 | Prec=0.7902 | Rec=0.7885 | F1=0.7787 | AUROC=0.9656 | PRAUC=0.9355
+    F5 → Acc=0.7692 | Prec=0.8107 | Rec=0.7692 | F1=0.7486 | AUROC=0.9671 | PRAUC=0.9309
+  ✅  Acc:0.7813±0.0429 | Precision:0.7940±0.0378  |Recall:0.7813±0.0429 |F1:0.7650±0.0458 | AUROC:0.9632±0.0148 | PRAUC:0.9208±0.0334 | MCC:0.6827 | Composite:0.8884
+
+  ▶ [30/64] n_estimators=100 | learning_rate=0.1 | max_depth=10 | rate_drop=0.5 | skip_drop=0.1 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.5048 | Prec=0.5172 | Rec=0.5048 | F1=0.4185 | AUROC=0.7586 | PRAUC=0.5805
+    F2 → Acc=0.5481 | Prec=0.6744 | Rec=0.5481 | F1=0.4676 | AUROC=0.7872 | PRAUC=0.6331
+    F3 → Acc=0.5288 | Prec=0.5754 | Rec=0.5288 | F1=0.4348 | AUROC=0.7619 | PRAUC=0.6099
+    F4 → Acc=0.5481 | Prec=0.5215 | Rec=0.5481 | F1=0.4743 | AUROC=0.7280 | PRAUC=0.5584
+    F5 → Acc=0.5096 | Prec=0.5246 | Rec=0.5096 | F1=0.4263 | AUROC=0.7424 | PRAUC=0.5587
+  ✅  Acc:0.5279±0.0184 | Precision:0.5626±0.0598  |Recall:0.5279±0.0184 |F1:0.4443±0.0225 | AUROC:0.7556±0.0199 | PRAUC:0.5881±0.0294 | MCC:0.2664 | Composite:0.6239
+
+  ▶ [31/64] n_estimators=100 | learning_rate=0.1 | max_depth=10 | rate_drop=0.5 | skip_drop=0.5 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.7905 | Prec=0.7926 | Rec=0.7905 | F1=0.7872 | AUROC=0.9497 | PRAUC=0.9044
+    F2 → Acc=0.8173 | Prec=0.8094 | Rec=0.8173 | F1=0.8018 | AUROC=0.9627 | PRAUC=0.9078
+    F3 → Acc=0.9327 | Prec=0.9346 | Rec=0.9327 | F1=0.9321 | AUROC=0.9934 | PRAUC=0.9819
+    F4 → Acc=0.8750 | Prec=0.8807 | Rec=0.8750 | F1=0.8755 | AUROC=0.9684 | PRAUC=0.9418
+    F5 → Acc=0.8077 | Prec=0.7945 | Rec=0.8077 | F1=0.7954 | AUROC=0.9684 | PRAUC=0.9440
+  ✅  Acc:0.8446±0.0524 | Precision:0.8424±0.0563  |Recall:0.8446±0.0524 |F1:0.8384±0.0565 | AUROC:0.9685±0.0142 | PRAUC:0.9360±0.0283 | MCC:0.7734 | Composite:0.9164
+
+  ▶ [32/64] n_estimators=100 | learning_rate=0.1 | max_depth=10 | rate_drop=0.5 | skip_drop=0.5 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.6190 | Prec=0.6079 | Rec=0.6190 | F1=0.5920 | AUROC=0.8121 | PRAUC=0.6684
+    F2 → Acc=0.6250 | Prec=0.6063 | Rec=0.6250 | F1=0.5888 | AUROC=0.8038 | PRAUC=0.6563
+    F3 → Acc=0.5865 | Prec=0.5190 | Rec=0.5865 | F1=0.5197 | AUROC=0.7965 | PRAUC=0.6333
+    F4 → Acc=0.5481 | Prec=0.5145 | Rec=0.5481 | F1=0.5192 | AUROC=0.7217 | PRAUC=0.5369
+    F5 → Acc=0.5577 | Prec=0.5482 | Rec=0.5577 | F1=0.5176 | AUROC=0.7373 | PRAUC=0.5605
+  ✅  Acc:0.5873±0.0311 | Precision:0.5592±0.0408  |Recall:0.5873±0.0311 |F1:0.5475±0.0351 | AUROC:0.7743±0.0372 | PRAUC:0.6111±0.0527 | MCC:0.3699 | Composite:0.6575
+
+  ▶ [33/64] n_estimators=500 | learning_rate=0.01 | max_depth=4 | rate_drop=0.1 | skip_drop=0.1 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.6000 | Prec=0.6096 | Rec=0.6000 | F1=0.5359 | AUROC=0.9249 | PRAUC=0.8504
+    F2 → Acc=0.6346 | Prec=0.7256 | Rec=0.6346 | F1=0.5843 | AUROC=0.9064 | PRAUC=0.8102
+    F3 → Acc=0.7212 | Prec=0.7919 | Rec=0.7212 | F1=0.6836 | AUROC=0.9815 | PRAUC=0.9562
+    F4 → Acc=0.6827 | Prec=0.6863 | Rec=0.6827 | F1=0.6352 | AUROC=0.9490 | PRAUC=0.9018
+    F5 → Acc=0.6731 | Prec=0.7693 | Rec=0.6731 | F1=0.6353 | AUROC=0.9584 | PRAUC=0.9171
+  ✅  Acc:0.6623±0.0416 | Precision:0.7165±0.0646  |Recall:0.6623±0.0416 |F1:0.6149±0.0504 | AUROC:0.9440±0.0261 | PRAUC:0.8871±0.0513 | MCC:0.5152 | Composite:0.8312
+
+  ▶ [34/64] n_estimators=500 | learning_rate=0.01 | max_depth=4 | rate_drop=0.1 | skip_drop=0.1 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.4571 | Prec=0.6433 | Rec=0.4571 | F1=0.3070 | AUROC=0.7958 | PRAUC=0.6364
+    F2 → Acc=0.4615 | Prec=0.4274 | Rec=0.4615 | F1=0.3016 | AUROC=0.7811 | PRAUC=0.6137
+    F3 → Acc=0.4808 | Prec=0.6526 | Rec=0.4808 | F1=0.3408 | AUROC=0.7476 | PRAUC=0.5891
+    F4 → Acc=0.4712 | Prec=0.5073 | Rec=0.4712 | F1=0.3244 | AUROC=0.7178 | PRAUC=0.5361
+    F5 → Acc=0.4615 | Prec=0.4206 | Rec=0.4615 | F1=0.3103 | AUROC=0.7439 | PRAUC=0.5478
+  ✅  Acc:0.4664±0.0085 | Precision:0.5302±0.1009  |Recall:0.4664±0.0085 |F1:0.3169±0.0142 | AUROC:0.7572±0.0279 | PRAUC:0.5846±0.0381 | MCC:0.1376 | Composite:0.6028
+
+  ▶ [35/64] n_estimators=500 | learning_rate=0.01 | max_depth=4 | rate_drop=0.1 | skip_drop=0.5 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.7810 | Prec=0.8029 | Rec=0.7810 | F1=0.7750 | AUROC=0.9426 | PRAUC=0.8944
+    F2 → Acc=0.8077 | Prec=0.7964 | Rec=0.8077 | F1=0.7908 | AUROC=0.9483 | PRAUC=0.8799
+    F3 → Acc=0.9231 | Prec=0.9255 | Rec=0.9231 | F1=0.9222 | AUROC=0.9892 | PRAUC=0.9734
+    F4 → Acc=0.8462 | Prec=0.8527 | Rec=0.8462 | F1=0.8461 | AUROC=0.9625 | PRAUC=0.9266
+    F5 → Acc=0.7885 | Prec=0.7985 | Rec=0.7885 | F1=0.7762 | AUROC=0.9647 | PRAUC=0.9313
+  ✅  Acc:0.8293±0.0521 | Precision:0.8352±0.0497  |Recall:0.8293±0.0521 |F1:0.8220±0.0564 | AUROC:0.9615±0.0162 | PRAUC:0.9211±0.0325 | MCC:0.7514 | Composite:0.9039
+
+  ▶ [36/64] n_estimators=500 | learning_rate=0.01 | max_depth=4 | rate_drop=0.1 | skip_drop=0.5 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.5905 | Prec=0.5963 | Rec=0.5905 | F1=0.5494 | AUROC=0.8171 | PRAUC=0.6606
+    F2 → Acc=0.5962 | Prec=0.6108 | Rec=0.5962 | F1=0.5399 | AUROC=0.7914 | PRAUC=0.6322
+    F3 → Acc=0.5577 | Prec=0.5213 | Rec=0.5577 | F1=0.4775 | AUROC=0.7894 | PRAUC=0.6263
+    F4 → Acc=0.5673 | Prec=0.5415 | Rec=0.5673 | F1=0.5292 | AUROC=0.7305 | PRAUC=0.5462
+    F5 → Acc=0.5385 | Prec=0.5010 | Rec=0.5385 | F1=0.4736 | AUROC=0.7426 | PRAUC=0.5772
+  ✅  Acc:0.5700±0.0212 | Precision:0.5542±0.0426  |Recall:0.5700±0.0212 |F1:0.5139±0.0320 | AUROC:0.7742±0.0325 | PRAUC:0.6085±0.0411 | MCC:0.3411 | Composite:0.6509
+
+  ▶ [37/64] n_estimators=500 | learning_rate=0.01 | max_depth=4 | rate_drop=0.5 | skip_drop=0.1 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.5714 | Prec=0.6017 | Rec=0.5714 | F1=0.5009 | AUROC=0.9223 | PRAUC=0.8439
+    F2 → Acc=0.5962 | Prec=0.6156 | Rec=0.5962 | F1=0.5267 | AUROC=0.9037 | PRAUC=0.8074
+    F3 → Acc=0.6635 | Prec=0.7013 | Rec=0.6635 | F1=0.6134 | AUROC=0.9806 | PRAUC=0.9558
+    F4 → Acc=0.6635 | Prec=0.7013 | Rec=0.6635 | F1=0.6108 | AUROC=0.9447 | PRAUC=0.8914
+    F5 → Acc=0.6346 | Prec=0.6845 | Rec=0.6346 | F1=0.5788 | AUROC=0.9571 | PRAUC=0.9139
+  ✅  Acc:0.6258±0.0367 | Precision:0.6609±0.0433  |Recall:0.6258±0.0367 |F1:0.5661±0.0452 | AUROC:0.9417±0.0268 | PRAUC:0.8825±0.0521 | MCC:0.4648 | Composite:0.8167
+
+  ▶ [38/64] n_estimators=500 | learning_rate=0.01 | max_depth=4 | rate_drop=0.5 | skip_drop=0.1 | lambda_=5 | n_measurements=None
+    F1 → Acc=0.4476 | Prec=0.4128 | Rec=0.4476 | F1=0.2870 | AUROC=0.7926 | PRAUC=0.6343
+    F2 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7830 | PRAUC=0.6189
+    F3 → Acc=0.4519 | Prec=0.2042 | Rec=0.4519 | F1=0.2813 | AUROC=0.7417 | PRAUC=0.5814
+    F4 → Acc=0.4712 | Prec=0.5073 | Rec=0.4712 | F1=0.3244 | AUROC=0.7221 | PRAUC=0.5270
+    F5 → Acc=0.4519 | Prec=0.4187 | Rec=0.4519 | F1=0.2915 | AUROC=0.7365 | PRAUC=0.5379
+  ✅  Acc:0.4549±0.0083 | Precision:0.3495±0.1232  |Recall:0.4549±0.0083 |F1:0.2931±0.0161 | AUROC:0.7552±0.0276 | PRAUC:0.5799±0.0425 | MCC:0.0817 | Composite:0.5967
+
+  ▶ [39/64] n_estimators=500 | learning_rate=0.01 | max_depth=4 | rate_drop=0.5 | skip_drop=0.5 | lambda_=0.1 | n_measurements=None
+    F1 → Acc=0.7810 | Prec=0.7972 | Rec=0.7810 | F1=0.7742 | AUROC=0.9427 | PRAUC=0.8936
+    F2 → Acc=0.7981 | Prec=0.7887 | Rec=0.7981 | F1=0.7820 | AUROC=0.9482 | PRAUC=0.8792
