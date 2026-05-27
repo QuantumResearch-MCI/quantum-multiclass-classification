@@ -24,6 +24,8 @@ class QuantumKernelCircuits:
             theta = self.lambda_ * params[i] * params[j]
             qc.rzz(theta, i, j)
                 
+        for i in range(self.n_qubits):
+            qc.h(i)
         return qc
     
     # @staticmethod
@@ -45,7 +47,10 @@ class QuantumKernelCircuits:
         #     qc.cx(i, i+1)
         #     qc.rz(x[i] * x[i+1], i+1)
         #     qc.cx(i, i+1)
-                
+        
+        for i in range(self.n_qubits):
+            qc.h(i)
+
         return qc
     
     # @staticmethod
@@ -65,7 +70,10 @@ class QuantumKernelCircuits:
             j = (i + 1) % self.n_qubits
             theta = self.lambda_ * params[i] * params[j]
             qc.rzz(theta, i, j)
-                
+        
+        for i in range(self.n_qubits):
+            qc.h(i)
+
         return qc
     
     # @staticmethod
