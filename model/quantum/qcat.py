@@ -3,39 +3,31 @@ import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin
 from catboost import CatBoostClassifier
 
+_KERNEL_PARAMS = {'n_qubits', 'lambda_', 'kernel', 'n_measurements', 'mode', 'n_features'}
+
 class QCAT(BaseEstimator, ClassifierMixin):
   def __init__(
       self,
-      n_qubits=8, 
-      lambda_=1.0, 
-      kernel='full', 
-      n_measurements=1024, 
-      mode='fsk', 
+      n_qubits=8,
+      lambda_=1.0,
+      kernel='full',
+      n_measurements=1024,
+      mode='fsk',
       n_features=4,
-      
-      random_seed=42,
-      iterations=100,
-      depth=5,
-      learning_rate=0.1,
-      l2_leaf_reg=3,
-      random_strength=1,
+      **cat_params,
   ):
     self.n_qubits = n_qubits
     self.lambda_ = lambda_
     self.kernel = kernel
-    self.n_measurements = n_measurements        
+    self.n_measurements = n_measurements
+    self.mode = mode
+    self.n_features = n_features
+    self.cat_params = cat_params
+
     self.binary_classifiers = {}
     self.classes_ = None
     self.X_train = None
     self.K_train = None
-    self.mode = mode
-    self.n_features = n_features
-    self.random_seed = random_seed
-    self.iterations = iterations
-    self.depth = depth
-    self.l2_leaf_reg = l2_leaf_reg
-    self.learning_rate = learning_rate
-    self.random_strength = random_strength
     self.qkernel_ = None
 
   def _build_model(self):
@@ -53,18 +45,30 @@ class QCAT(BaseEstimator, ClassifierMixin):
 
     return CatBoostClassifier(
       loss_function="MultiClassOneVsAll",
-      iterations=self.iterations,
-      learning_rate=self.learning_rate,
-      depth=self.depth,
       eval_metric="Accuracy",
-      random_seed=self.random_seed,
       verbose=0,
-      l2_leaf_reg=self.l2_leaf_reg,
-      random_strength=self.random_strength,
-      task_type='GPU',
-      devices='0',
+      **self.cat_params,
     )
-  
+
+  def get_params(self, deep=True):
+    return {
+      'n_qubits': self.n_qubits,
+      'lambda_': self.lambda_,
+      'kernel': self.kernel,
+      'n_measurements': self.n_measurements,
+      'mode': self.mode,
+      'n_features': self.n_features,
+      **self.cat_params,
+    }
+
+  def set_params(self, **params):
+    for key, value in params.items():
+      if key in _KERNEL_PARAMS:
+        setattr(self, key, value)
+      else:
+        self.cat_params[key] = value
+    return self
+
   def fit(self, X, y):
     self.X_train = X
     self.classes_ = np.unique(y)
@@ -73,16 +77,15 @@ class QCAT(BaseEstimator, ClassifierMixin):
     K_train = self.qkernel_.evaluate(X, X)
     self.model_.fit(K_train, y)
     return self
-  
+
   def predict(self, X):
     K_test = self.qkernel_.evaluate(X, self.X_train)
     return self.model_.predict(K_test)
-  
+
   def predict_proba(self, X):
     K_test = self.qkernel_.evaluate(X, self.X_train)
     return self.model_.predict_proba(K_test)
-  
+
   def score(self, X, y):
     K_test = self.qkernel_.evaluate(X, self.X_train)
     return self.model_.score(K_test, y)
-  

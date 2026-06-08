@@ -1,7 +1,9 @@
 __pycache__
 .ipynb_checkpoints
-.quantum
+.venv
 catboost_info
 dataset
 .env
-checkpoints
+results
+.claude
+pdfs

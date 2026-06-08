@@ -9,13 +9,17 @@ from qiskit_ibm_runtime import QiskitRuntimeService, SamplerV2
 from qiskit_algorithms.state_fidelities import ComputeUncompute
 from qiskit.transpiler import generate_preset_pass_manager
 from .circuits import QuantumKernelCircuits
+from .custom_encode_circuits import CustomEncodeCircuits
+from .custom_gate_circuits import CustomGateCircuits
+from .custom_topology_circuits import CustomTopologyCircuits
 import numpy as np
+from .ProjectedQuantumKernel import ProjectedQuantumKernel
 
-KERNEL_MODES = ['fsk', 'fqk', 'fqk-hardware']
+KERNEL_MODES = ['fsk', 'fqk', 'fqk-hardware', 'pqk']
 
 class QuantumKernelEstimator:
     
-    def __init__(self, n_qubits, lambda_=1.0, kernel='full', n_measurements=1024):
+    def __init__(self, n_qubits, lambda_=1.0, kernel='full', n_measurements=1024, gamma=1.0):
         self.kernel = kernel
         self.n_measurements = n_measurements
         self.backend = None
@@ -23,16 +27,46 @@ class QuantumKernelEstimator:
         self.lambda_ = lambda_
         self._qkernel = None
         self._feature_map = None
+        self.gamma = gamma
         
         # Map kernel types to circuit creation functions
         self.qkc = QuantumKernelCircuits(self.n_qubits, self.lambda_)
+        self.cec = CustomEncodeCircuits(self.n_qubits, self.lambda_)
+        self.cgc = CustomGateCircuits(self.n_qubits, self.lambda_)
+        self.ctc = CustomTopologyCircuits(self.n_qubits, self.lambda_)
         self.circuit_creators = {
             'full': self.qkc.create_iqp_full,
             'linear': self.qkc.create_iqp_linear,
             'circular': self.qkc.create_iqp_circular,
             'pauli_x': self.qkc.create_pauli_x,
             'pauli_y': self.qkc.create_pauli_y,
-            'pauli_z': self.qkc.create_pauli_z
+            'pauli_z': self.qkc.create_pauli_z,
+
+            'full_quadratic': self.cec.create_iqp_full_quadratic,
+            'linear_quadratic': self.cec.create_iqp_linear_quadratic,
+            'circular_quadratic': self.cec.create_iqp_circular_quadratic,
+            'full_cosine': self.cec.create_iqp_full_cosine,
+            'linear_cosine': self.cec.create_iqp_linear_cosine,
+            'circular_cosine': self.cec.create_iqp_circular_cosine,
+            'full_selisih': self.cec.create_iqp_full_selisih,
+            'linear_selisih': self.cec.create_iqp_linear_selisih,
+            'circular_selisih': self.cec.create_iqp_circular_selisih,
+
+            'full_polynomial': self.cec.create_iqp_full_polynomial,
+            'linear_polynomial': self.cec.create_iqp_linear_polynomial,
+            'circular_polynomial': self.cec.create_iqp_circular_polynomial,
+            'full_polynomial4': self.cec.create_iqp_full_polynomial4,
+            'linear_polynomial4': self.cec.create_iqp_linear_polynomial4,
+            'circular_polynomial4': self.cec.create_iqp_circular_polynomial4,
+
+            'x_full': self.cgc.x_full,
+            'x_linear': self.cgc.x_linear,
+            'x_circular': self.cgc.x_circular,
+            'y_full': self.cgc.y_full,
+            'y_linear': self.cgc.y_linear,
+            'y_circular': self.cgc.y_circular,
+
+            'star': self.ctc.star,
         }
 
     def _build_feature_map(self, n_features):
@@ -70,6 +104,11 @@ class QuantumKernelEstimator:
         fidelity = ComputeUncompute(sampler=sampler, transpiler=pm)
         return FidelityQuantumKernel(feature_map=feature_map, fidelity=fidelity, max_circuits_per_job=300)
 
+    def _build_pqk(self, n_features):
+        feature_map = self._build_feature_map(n_features)
+        transpiled_map = transpile(feature_map, AerSimulator())
+        return ProjectedQuantumKernel(feature_map=transpiled_map, gamma=self.gamma, cache=True)
+
     def build_quantum_kernel(self, n_features, mode='fsk'):
         if mode not in KERNEL_MODES:
             raise ValueError(f"Invalid kernel mode '{mode}'. Must be one of {KERNEL_MODES}.")
@@ -79,7 +118,8 @@ class QuantumKernelEstimator:
         builders = {
             'fsk': self._build_fsk,
             'fqk': self._build_fqk,
-            'fqk-hardware': self._build_fqk_hardware
+            'fqk-hardware': self._build_fqk_hardware,
+            'pqk': self._build_pqk
         }
 
         self._qkernel = builders[mode](n_features)

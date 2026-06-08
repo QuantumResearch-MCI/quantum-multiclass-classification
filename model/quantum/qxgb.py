@@ -3,44 +3,32 @@ import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin
 from xgboost import XGBClassifier
 
+_KERNEL_PARAMS = {'n_qubits', 'lambda_', 'kernel', 'n_measurements', 'mode', 'n_features'}
+
 class QXGB(BaseEstimator, ClassifierMixin):
   def __init__(
       self,
-      n_qubits=8, 
-      lambda_=1.0, 
-      kernel='full', 
-      n_measurements=1024, 
-      mode='fsk', 
+      n_qubits=8,
+      lambda_=1.0,
+      kernel='full',
+      n_measurements=1024,
+      mode='fsk',
       n_features=4,
-      
-      random_state=42,
-      n_estimators=500,
-      max_depth=10,
-      subsample=0.8,
-      learning_rate=0.5,
-      booster='gbtree',
-      rate_drop=None,
-      skip_drop=None,
+      **xgb_params,
   ):
     self.n_qubits = n_qubits
     self.lambda_ = lambda_
     self.kernel = kernel
-    self.n_measurements = n_measurements        
+    self.n_measurements = n_measurements
+    self.mode = mode
+    self.n_features = n_features
+    self.xgb_params = xgb_params
+
     self.binary_classifiers = {}
     self.classes_ = None
     self.X_train = None
     self.K_train = None
-    self.mode = mode
-    self.n_features = n_features
-    self.random_state = random_state
-    self.n_estimators = n_estimators
-    self.max_depth = max_depth
-    self.subsample = subsample
-    self.learning_rate = learning_rate
-    self.booster = booster
     self.qkernel_ = None
-    self.rate_drop = rate_drop
-    self.skip_drop = skip_drop
 
   def _build_model(self):
     kernel_instance = QuantumKernelEstimator(
@@ -56,37 +44,47 @@ class QXGB(BaseEstimator, ClassifierMixin):
     )
 
     return XGBClassifier(
-      booster=self.booster,
-      objective = 'multi:softprob',
-      random_state=self.random_state,
-      n_estimators=self.n_estimators,
-      max_depth=self.max_depth,
-      subsample=self.subsample,
-      learning_rate=self.learning_rate,
-      device='cuda',
+      objective='multi:softprob',
       tree_method='hist',
-      rate_drop=self.rate_drop,
-      skip_drop=self.skip_drop,
+      **self.xgb_params,
     )
-  
-  def fit(self, X, y):
+
+  def get_params(self, deep=True):
+    return {
+      'n_qubits': self.n_qubits,
+      'lambda_': self.lambda_,
+      'kernel': self.kernel,
+      'n_measurements': self.n_measurements,
+      'mode': self.mode,
+      'n_features': self.n_features,
+      **self.xgb_params,
+    }
+
+  def set_params(self, **params):
+    for key, value in params.items():
+      if key in _KERNEL_PARAMS:
+        setattr(self, key, value)
+      else:
+        self.xgb_params[key] = value
+    return self
+
+  def fit(self, X, y, sample_weight=None):
     self.X_train = X
     self.classes_ = np.unique(y)
     self.model_ = self._build_model()
 
     K_train = self.qkernel_.evaluate(X, X)
-    self.model_.fit(K_train, y)
+    self.model_.fit(K_train, y, sample_weight=sample_weight)
     return self
-  
+
   def predict(self, X):
     K_test = self.qkernel_.evaluate(X, self.X_train)
     return self.model_.predict(K_test)
-  
+
   def predict_proba(self, X):
     K_test = self.qkernel_.evaluate(X, self.X_train)
     return self.model_.predict_proba(K_test)
-  
+
   def score(self, X, y):
     K_test = self.qkernel_.evaluate(X, self.X_train)
     return self.model_.score(K_test, y)
-  

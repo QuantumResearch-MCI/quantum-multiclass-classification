@@ -1,11 +1,12 @@
 import itertools
+import numpy as np
 from qiskit import QuantumCircuit
 class QuantumKernelCircuits:
 
     def __init__(self, n_qubits, lambda_=1.0):
         self.lambda_ = lambda_
         self.n_qubits = n_qubits
-    
+
     # @staticmethod
     def create_iqp_full(self, params):
         # params = ParameterVector("x", n_qubits)
@@ -24,8 +25,6 @@ class QuantumKernelCircuits:
             theta = self.lambda_ * params[i] * params[j]
             qc.rzz(theta, i, j)
                 
-        for i in range(self.n_qubits):
-            qc.h(i)
         return qc
     
     # @staticmethod
@@ -48,8 +47,6 @@ class QuantumKernelCircuits:
         #     qc.rz(x[i] * x[i+1], i+1)
         #     qc.cx(i, i+1)
         
-        for i in range(self.n_qubits):
-            qc.h(i)
 
         return qc
     
@@ -71,8 +68,6 @@ class QuantumKernelCircuits:
             theta = self.lambda_ * params[i] * params[j]
             qc.rzz(theta, i, j)
         
-        for i in range(self.n_qubits):
-            qc.h(i)
 
         return qc
     
@@ -97,9 +92,9 @@ class QuantumKernelCircuits:
     # @staticmethod
     def create_pauli_z(self, params):
         qc = QuantumCircuit(self.n_qubits)
-        
+
         for i in range(self.n_qubits):
             qc.h(i)
             qc.rz(params[i], i)
-            
+
         return qc
