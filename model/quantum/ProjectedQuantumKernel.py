@@ -88,30 +88,35 @@ class ProjectedQuantumKernel:
         Phi : ndarray of shape (N, 3 * n_qubits)
             Phi[i] = [<X_0>_xi, <Y_0>_xi, <Z_0>_xi, <X_1>_xi, ...]
         """
-        # Check cache first to avoid recomputation
+        X = np.ascontiguousarray(np.asarray(X, dtype=np.float64))
+
+        # Check cache first to avoid recomputation. Key on array *content*
+        # (shape + bytes), NOT id(X): Python recycles ids after an array is
+        # garbage-collected, so an id() key can return a stale Phi belonging to
+        # a different array (e.g. the resampled train fold), causing shape
+        # mismatches downstream.
         if self.cache:
-            key = id(X)
+            key = (X.shape, hash(X.tobytes()))
             if key in self._cache:
                 return self._cache[key]
-        
-        X = np.asarray(X)
+
         n_samples = X.shape[0]
         n_features_out = 3 * self.n_qubits
         Phi = np.zeros((n_samples, n_features_out), dtype=np.float64)
-        
+
         for i, x in enumerate(X):
             # Bind parameters and compute the full statevector |phi(x)>
             bound = self.feature_map.assign_parameters(x)
             sv = Statevector(bound)
-            
+
             # Compute <P_k>_x for each (k, P) — this is equivalent to
             # tracing out other qubits then measuring P on qubit k.
             for j, obs in enumerate(self._observables):
                 Phi[i, j] = sv.expectation_value(obs).real
-        
+
         if self.cache:
-            self._cache[id(X)] = Phi
-        
+            self._cache[key] = Phi
+
         return Phi
     
     def evaluate(self, x_vec, y_vec=None):

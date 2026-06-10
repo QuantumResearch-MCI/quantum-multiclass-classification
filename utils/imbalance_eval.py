@@ -191,6 +191,9 @@ def make_custom_resampler(targets, class_names, random_state=42, smote_k=5,
       * nama kelas lain -> samakan dengan jumlah kelas itu DI FOLD TRAINING saat itu
                            (mis. {'B': 'C', 'E': 'C'} -> B & E disamakan ke jumlah C).
     Kelas yang TIDAK disebut di `targets` -> tidak diubah.
+    `targets` juga boleh berupa string sentinel (dihitung per fold):
+      * 'auto-over'  -> full oversampling: semua kelas dinaikkan ke jumlah MAYORITAS.
+      * 'auto-under' -> full undersampling: semua kelas diturunkan ke jumlah MINORITAS.
 
     Untuk tiap kelas: target < jumlah sekarang -> di-undersample; target > jumlah
     sekarang -> di-oversample. Keduanya dibungkus dalam satu FunctionSampler supaya
@@ -220,16 +223,28 @@ def make_custom_resampler(targets, class_names, random_state=42, smote_k=5,
     from imblearn.combine import SMOTEENN, SMOTETomek
 
     name_to_label = {n: i for i, n in enumerate(class_names)}
-    spec = {name_to_label[k]: v for k, v in targets.items()}
+    # `targets` boleh string sentinel auto, atau dict per-kelas.
+    _auto = targets if isinstance(targets, str) else None
+    if _auto is not None and _auto not in ("auto-over", "auto-under"):
+        raise ValueError(f"targets string tak dikenal: {targets!r} "
+                         "(pakai 'auto-over' | 'auto-under' atau dict per-kelas)")
+    spec = {} if _auto else {name_to_label[k]: v for k, v in targets.items()}
 
     def _resample(X, y):
         cnt = Counter(np.asarray(y).tolist())
 
-        def resolve(v):
-            return int(cnt[name_to_label[v]]) if isinstance(v, str) else int(v)
+        if _auto == "auto-over":        # full oversampling -> semua kelas ke jumlah MAYORITAS
+            m = max(cnt.values())
+            under, over = {}, {lbl: m for lbl in cnt if cnt[lbl] < m}
+        elif _auto == "auto-under":     # full undersampling -> semua kelas ke jumlah MINORITAS
+            m = min(cnt.values())
+            under, over = {lbl: m for lbl in cnt if cnt[lbl] > m}, {}
+        else:
+            def resolve(v):
+                return int(cnt[name_to_label[v]]) if isinstance(v, str) else int(v)
 
-        under = {lbl: resolve(v) for lbl, v in spec.items() if resolve(v) < cnt[lbl]}
-        over = {lbl: resolve(v) for lbl, v in spec.items() if resolve(v) > cnt[lbl]}
+            under = {lbl: resolve(v) for lbl, v in spec.items() if resolve(v) < cnt[lbl]}
+            over = {lbl: resolve(v) for lbl, v in spec.items() if resolve(v) > cnt[lbl]}
 
         X_r, y_r = X, y
         if under:

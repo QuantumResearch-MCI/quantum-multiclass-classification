@@ -129,6 +129,42 @@ data.head(10)
 '''
 
 XY_CELL = r'''
+# ── ⚙️ Skenario Eksperimen ──────────────────────────────────
+# DROP_CLASSES   : label kelas (nilai asli kolom target) yang dibuang sebelum split.
+#                  Contoh ["B"] -> buang kelas B. [] = pakai semua kelas.
+# CUSTOM_TARGETS : target jumlah per-kelas saat resample (dihitung per fold, train fold only):
+#                  {} = tanpa resampling. nilai = int (jumlah absolut) ATAU nama kelas lain
+#                  (samakan jumlahnya), mis. {"B": "C", "E": "C"}. Kelas tak disebut = dibiarkan.
+#                  "auto-over"  = full oversampling (semua ke mayoritas);
+#                  "auto-under" = full undersampling (semua ke minoritas).
+# OVER_METHOD    : teknik oversampling -> 'smote' | 'borderline' | 'smoteenn' | 'smotetomek'
+# UNDER_METHOD   : teknik undersampling -> 'random' (target eksak) | 'tomek' (cleaning)
+DROP_CLASSES   = []
+CUSTOM_TARGETS = {}
+OVER_METHOD    = "smoteenn"
+UNDER_METHOD   = "random"
+
+if DROP_CLASSES:
+    _before = len(data)
+    data = data[~data[target_cols].isin(DROP_CLASSES)].reset_index(drop=True)
+    print(f"\U0001f5d1️  Drop kelas {DROP_CLASSES}: {_before} -> {len(data)} baris")
+print("Distribusi kelas:", dict(data[target_cols].value_counts().sort_index()))
+
+def make_resampler():
+    """Resampler kustom per-kelas (CUSTOM_TARGETS) via utils.imbalance_eval.
+    None bila CUSTOM_TARGETS kosong (tanpa resampling). Target dihitung per fold (no leak)."""
+    if not CUSTOM_TARGETS:
+        return None
+    from utils.imbalance_eval import make_custom_resampler
+    return make_custom_resampler(
+        CUSTOM_TARGETS, list(label_encoder.classes_),
+        over_method=OVER_METHOD, under_method=UNDER_METHOD)
+
+def resampler_steps():
+    """Step pipeline imblearn untuk resampler terpilih ([] bila 'none')."""
+    r = make_resampler()
+    return [("resampler", r)] if r is not None else []
+
 X = data[feature_cols]
 y = data[target_cols]
 print(X.shape, y.shape)
@@ -136,12 +172,6 @@ print(X.shape, y.shape)
 from sklearn.preprocessing import LabelEncoder
 label_encoder = LabelEncoder()
 y = label_encoder.fit_transform(y)
-
-# Groups for StratifiedKFold — prevents leakage across folds.
-# Many rows share the same Sampling_ID; they must stay within the same fold.
-# (Sampling_ID, not Chop_ID: class B has only 2 Chop_ID -> can't make 5 folds.)
-groups = data["Sampling_ID"].values
-print("n groups:", len(set(groups)))
 '''
 
 PCA_CELL = r'''
@@ -290,7 +320,7 @@ def plot_fit_diagnostic(build_estimator, params, name, title,
         return a, ll
 
     tr_acc, va_acc, tr_loss, va_loss = [], [], [], []
-    for tr, va in skf.split(X, y, groups):
+    for tr, va in skf.split(X, y):
         m = build_estimator(params)
         m.fit(X.iloc[tr], y[tr], **_fkw(y[tr]))
         a1, c1 = _scores(m, X.iloc[tr], y[tr])
@@ -402,7 +432,7 @@ for i, comb in enumerate(product(*param_vals)):
     accs, f1s, f1ms, rocs, pras, precs, recs, lls = [], [], [], [], [], [], [], []
     tr_lls, tr_f1ms = [], []
     y_val_all, y_pred_all = [], []
-    for fold, (train_idx, val_idx) in enumerate(skf.split(X, y, groups), 1):
+    for fold, (train_idx, val_idx) in enumerate(skf.split(X, y), 1):
         X_train, X_val = X.iloc[train_idx], X.iloc[val_idx]
         y_train, y_val = y[train_idx], y[val_idx]
 
@@ -629,7 +659,7 @@ def gen_classical():
             "    return Pipeline([\n"
             "        ('scaler', StandardScaler()),\n"
             "        ('pca', PCA(n_components=n_optimal)),\n"
-            "        ('smoteenn', SMOTEENN(random_state=42)),  # train-fold only (no leak)\n"
+            "        *resampler_steps(),  # resampling (train-fold only) sesuai CUSTOM_TARGETS\n"
             f"        ('svc', SVC(kernel='{kern}', {gamma_arg}\n"
             "                    probability=True, random_state=42,\n"
             "                    decision_function_shape='ovr', **params)),\n"
@@ -669,7 +699,7 @@ def gen_classical():
             "    return Pipeline([\n"
             "        ('scaler', StandardScaler()),\n"
             "        ('pca', PCA(n_components=n_optimal)),\n"
-            "        ('smoteenn', SMOTEENN(random_state=42)),  # train-fold only (no leak)\n"
+            "        *resampler_steps(),  # resampling (train-fold only) sesuai CUSTOM_TARGETS\n"
             f"        ('xgb', XGBClassifier(booster='{booster}', objective='multi:softprob',\n"
             "                              subsample=0.8, colsample_bytree=0.8,\n"
             "                              random_state=42, device='cuda', **params)),\n"
@@ -700,7 +730,7 @@ def gen_classical():
         "    return Pipeline([\n"
         "        ('scaler', StandardScaler()),\n"
         "        ('pca', PCA(n_components=n_optimal)),\n"
-        "        ('smoteenn', SMOTEENN(random_state=42)),  # train-fold only (no leak)\n"
+        "        *resampler_steps(),  # resampling (train-fold only) sesuai CUSTOM_TARGETS\n"
         "        ('cat', CatBoostClassifier(loss_function='MultiClassOneVsAll',\n"
         "                                   eval_metric='Accuracy', verbose=0,\n"
         "                                   bootstrap_type='Bayesian',\n"
@@ -736,7 +766,8 @@ print(f'TF {tf.__version__} | GPUs detected: {len(tf.config.list_physical_device
 print(f'n_classes = {n_classes}')
 '''
 
-# DL loop + diagnostic share one fold-eval routine defined per notebook.
+# DL loop + diagnostic share one per-fold prep routine (prep_fold).
+# Deep learning uses 5-fold StratifiedKFold CV (same protocol as the sklearn models).
 DL_HELPERS_CELL = r'''
 # Shared per-fold scale + PCA (+ optional Conv reshape) for the DL models.
 from sklearn.preprocessing import StandardScaler
@@ -744,8 +775,14 @@ from sklearn.decomposition import PCA
 from imblearn.combine import SMOTEENN
 
 def make_resampler():
-    """Fresh SMOTEENN per fold (re-fit each call). Resamples train fold only."""
-    return SMOTEENN(random_state=42)
+    """Resampler kustom per-kelas (CUSTOM_TARGETS) via utils.imbalance_eval.
+    None bila CUSTOM_TARGETS kosong (tanpa resampling). Target dihitung per fold (no leak)."""
+    if not CUSTOM_TARGETS:
+        return None
+    from utils.imbalance_eval import make_custom_resampler
+    return make_custom_resampler(
+        CUSTOM_TARGETS, list(label_encoder.classes_),
+        over_method=OVER_METHOD, under_method=UNDER_METHOD)
 
 def prep_fold(train_idx, val_idx, conv=False, resampler=None):
     """Scale + PCA per fold. If `resampler` given, resample the TRAIN fold only
@@ -791,7 +828,7 @@ def plot_fit_diagnostic_dl(build_fn, params, name, title, conv=False,
         return a, ll
 
     tr_acc, va_acc, tr_loss, va_loss = [], [], [], []
-    for tr, va in skf.split(X, y, groups):
+    for tr, va in skf.split(X, y):
         Xtr, ytr, Xtr_eval, ytr_eval, Xva, yva = prep_fold(
             tr, va, conv=conv, resampler=make_resampler())
         keras.backend.clear_session()
@@ -860,12 +897,12 @@ skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=state)
 
 classes = np.unique(y)
 
-# Primary scoring = mean validation LOG-LOSS (lower is better). Overfit is checked
-# with TWO signals, each penalized only beyond its own tolerance:
+# 5-fold StratifiedKFold CV. Primary scoring = mean validation LOG-LOSS (lower is
+# better). Overfit is checked with TWO signals, each penalized only beyond its tolerance:
 #   loss_gap = val_loss - train_loss        -> probability calibration
 #   f1_gap   = train_macroF1 - val_macroF1  -> per-class balance (catches minority overfit)
 #   penalty  = W_LOSS*max(0, loss_gap - TOL_LOSS) + W_F1*max(0, f1_gap - TOL_F1)
-#   selection_score = val_loss + penalty    -> best config = the MINIMUM
+#   selection_score = mean val_loss + penalty    -> best config = the MINIMUM
 # Train metrics are measured on the ORIGINAL (non-resampled) train fold.
 TOL_LOSS = 0.05   # "free" train-val log-loss gap (no penalty below this)
 TOL_F1   = 0.05   # "free" train-val macro-F1 gap
@@ -884,6 +921,14 @@ log("   Scoring criterion: mean validation log-loss (lower better); overfit pena
 log(f"   Overfit guard: +{W_LOSS}×max(0, loss_gap - {TOL_LOSS}) +{W_F1}×max(0, f1_gap - {TOL_F1})")
 
 ckpt, ckpt_path = load_checkpoint("%%NAME%%")
+# Reverted to 5-fold CV; drop any single hold-out checkpoint (dl_protocol mismatch)
+# so we never resume stale hold-out results, without touching classical/quantum.
+DL_PROTOCOL = "kfold-v2"
+if ckpt.get("dl_protocol") != DL_PROTOCOL:
+    if ckpt["done_configs"]:
+        log("♻️  Ignoring checkpoint from a different DL protocol; starting fresh.")
+    ckpt = _fresh_ckpt()
+    ckpt["dl_protocol"] = DL_PROTOCOL
 done_configs = ckpt["done_configs"]
 results      = ckpt["results"]
 best_result  = ckpt["best_result"]
@@ -903,7 +948,7 @@ for i, comb in enumerate(product(*param_vals)):
     accs, f1s, f1ms, rocs, pras, precs, recs, lls = [], [], [], [], [], [], [], []
     tr_lls, tr_f1ms = [], []
     y_val_all, y_pred_all = [], []
-    for fold, (train_idx, val_idx) in enumerate(skf.split(X, y, groups), 1):
+    for fold, (train_idx, val_idx) in enumerate(skf.split(X, y), 1):
         # SMOTEENN resamples the TRAIN fold only (no leakage into validation).
         X_train_fit, y_train_fit, X_train_eval, y_train_eval, X_val_p, y_val = prep_fold(
             train_idx, val_idx, conv=CONV, resampler=make_resampler())
@@ -958,8 +1003,7 @@ for i, comb in enumerate(product(*param_vals)):
     loss_mean, loss_std = np.mean(lls),   np.std(lls)
     mcc = matthews_corrcoef(y_val_all, y_pred_all)
 
-    # Overfit-aware selection: MINIMIZE val log-loss, penalize TWO overfit signals:
-    #   loss_gap = val_loss - train_loss ; f1_gap = train_macroF1 - val_macroF1
+    # Overfit-aware selection: MINIMIZE mean val log-loss, penalize TWO overfit signals.
     tr_loss_mean = float(np.mean(tr_lls))
     tr_f1m_mean  = float(np.mean(tr_f1ms))
     loss_gap = loss_mean - tr_loss_mean
@@ -1007,7 +1051,7 @@ for i, comb in enumerate(product(*param_vals)):
     done_configs[tag] = {"loss": loss_mean, "selection_score": selection_score,
                          "loss_gap": loss_gap, "f1_gap": f1_gap, "params": params}
     save_checkpoint(ckpt_path, {
-        "version": CKPT_VERSION,
+        "version": CKPT_VERSION, "dl_protocol": DL_PROTOCOL,
         "done_configs": done_configs, "results": results,
         "best_result": best_result, "best_score": best_score,
     })
@@ -1025,7 +1069,7 @@ log(
 '''
 
 DL_DIAG_CALL = r'''
-# 📈 Best-param fit diagnostic (overfit / underfit / generalized)
+# 📈 Best-param fit diagnostic (overfit / underfit / generalized) — 5-fold CV
 fit_info = plot_fit_diagnostic_dl(
     build_model, best_result['params'],
     name="%%NAME%%", title="%%TITLE%%", conv=CONV,
@@ -1045,7 +1089,7 @@ def gen_dl():
         "from tensorflow import keras\n"
         "from tensorflow.keras import layers, regularizers\n\n"
         "CONV = False\n"
-        "L2 = 1e-4   # weight decay (anti-overfit). Imbalance handled by SMOTEENN on each train fold\n\n"
+        "L2 = 1e-4   # weight decay (anti-overfit). Imbalance handled by SMOTEENN on the train split\n\n"
         "search_space = {\n"
         "  'hidden_units' : [(64, 32), (128, 64, 32)],\n"
         "  'dropout'      : [0.2, 0.4],\n"
@@ -1086,13 +1130,15 @@ def gen_dl():
         "from tensorflow import keras\n"
         "from tensorflow.keras import layers, regularizers\n\n"
         "CONV = True\n"
-        "L2 = 1e-4   # weight decay (anti-overfit). Imbalance handled by SMOTEENN on each train fold\n\n"
+        "L2 = 1e-4   # weight decay (anti-overfit). Imbalance handled by SMOTEENN on the train split\n\n"
+        "# kernel_size dikunci ke 3 (pilihan paling umum) supaya budget pencarian CNN\n"
+        "# setara dengan MLP: 16 konfigurasi vs 16 konfigurasi.\n"
         "search_space = {\n"
         "  'filters'      : [(32, 64), (64, 128)],\n"
-        "  'kernel_size'  : [2, 3],\n"
+        "  'kernel_size'  : [3],\n"
         "  'dropout'      : [0.2, 0.4],\n"
         "  'learning_rate': [1e-3, 1e-4],\n"
-        "  'batch_size'   : [32],\n"
+        "  'batch_size'   : [32, 64],\n"
         "  'epochs'       : [100],\n"
         "}\n\n"
         "def build_model(input_len, n_classes, params):\n"
@@ -1178,7 +1224,7 @@ QSVC_BUILD = (
     "    return Pipeline([\n"
     "        ('scaler', StandardScaler()),\n"
     "        ('pca', PCA(n_components=n_optimal)),\n"
-    "        ('smoteenn', SMOTEENN(random_state=42)),  # train-fold only (no leak)\n"
+    "        *resampler_steps(),  # resampling (train-fold only) sesuai CUSTOM_TARGETS\n"
     "        ('svc', QSVCWrapper(kernel=QKERNEL, mode=mode, n_qubits=n_optimal,\n"
     "                            n_features=n_optimal, random_state=42,\n"
     "                            decision_function_shape='ovr', **params)),\n"
@@ -1206,7 +1252,7 @@ def _qxgb_build(booster):
         "    return Pipeline([\n"
         "        ('scaler', StandardScaler()),\n"
         "        ('pca', PCA(n_components=n_optimal)),\n"
-        "        ('smoteenn', SMOTEENN(random_state=42)),  # train-fold only (no leak)\n"
+        "        *resampler_steps(),  # resampling (train-fold only) sesuai CUSTOM_TARGETS\n"
         f"        ('qxgb', QXGB(kernel=QKERNEL, mode=mode, n_qubits=n_optimal,\n"
         f"                      n_features=n_optimal, booster='{booster}',\n"
         f"                      {fixed}\n"
@@ -1225,7 +1271,7 @@ QCAT_BUILD = (
     "    return Pipeline([\n"
     "        ('scaler', StandardScaler()),\n"
     "        ('pca', PCA(n_components=n_optimal)),\n"
-    "        ('smoteenn', SMOTEENN(random_state=42)),  # train-fold only (no leak)\n"
+    "        *resampler_steps(),  # resampling (train-fold only) sesuai CUSTOM_TARGETS\n"
     "        ('qcat', QCAT(kernel=QKERNEL, mode=mode, n_qubits=n_optimal,\n"
     "                      n_features=n_optimal, iterations=300,\n"
     "                      bootstrap_type='Bayesian', bagging_temperature=1,\n"

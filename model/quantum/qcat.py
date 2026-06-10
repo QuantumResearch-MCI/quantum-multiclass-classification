@@ -1,9 +1,11 @@
 from .estimator import QuantumKernelEstimator
+from .NystroemQuantumKernel import NystroemQuantumKernel
 import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin
 from catboost import CatBoostClassifier
 
-_KERNEL_PARAMS = {'n_qubits', 'lambda_', 'kernel', 'n_measurements', 'mode', 'n_features'}
+_KERNEL_PARAMS = {'n_qubits', 'lambda_', 'kernel', 'n_measurements', 'mode', 'n_features', 'gamma',
+                  'm_landmarks', 'random_state'}
 
 class QCAT(BaseEstimator, ClassifierMixin):
   def __init__(
@@ -14,6 +16,9 @@ class QCAT(BaseEstimator, ClassifierMixin):
       n_measurements=1024,
       mode='fsk',
       n_features=4,
+      gamma=1.0,
+      m_landmarks=None,
+      random_state=None,
       **cat_params,
   ):
     self.n_qubits = n_qubits
@@ -22,6 +27,9 @@ class QCAT(BaseEstimator, ClassifierMixin):
     self.n_measurements = n_measurements
     self.mode = mode
     self.n_features = n_features
+    self.gamma = gamma
+    self.m_landmarks = m_landmarks
+    self.random_state = random_state
     self.cat_params = cat_params
 
     self.binary_classifiers = {}
@@ -29,6 +37,7 @@ class QCAT(BaseEstimator, ClassifierMixin):
     self.X_train = None
     self.K_train = None
     self.qkernel_ = None
+    self.nys_ = None
 
   def _build_model(self):
     kernel_instance = QuantumKernelEstimator(
@@ -36,6 +45,7 @@ class QCAT(BaseEstimator, ClassifierMixin):
         n_qubits=self.n_qubits,
         lambda_=self.lambda_,
         n_measurements=self.n_measurements,
+        gamma=self.gamma,
     )
 
     self.qkernel_ = kernel_instance.build_quantum_kernel(
@@ -44,6 +54,7 @@ class QCAT(BaseEstimator, ClassifierMixin):
     )
 
     return CatBoostClassifier(
+      devices='GPU',
       loss_function="MultiClassOneVsAll",
       eval_metric="Accuracy",
       verbose=0,
@@ -58,6 +69,9 @@ class QCAT(BaseEstimator, ClassifierMixin):
       'n_measurements': self.n_measurements,
       'mode': self.mode,
       'n_features': self.n_features,
+      'gamma': self.gamma,
+      'm_landmarks': self.m_landmarks,
+      'random_state': self.random_state,
       **self.cat_params,
     }
 
@@ -69,23 +83,33 @@ class QCAT(BaseEstimator, ClassifierMixin):
         self.cat_params[key] = value
     return self
 
+  def _features(self, X, fit=False):
+    # With m_landmarks set, use Nyström features (N x m); otherwise fall back
+    # to the full kernel matrix (N x N) against the training set.
+    if self.m_landmarks is None:
+      return self.qkernel_.evaluate(X, self.X_train)
+    if fit:
+      self.nys_ = NystroemQuantumKernel(
+          self.qkernel_,
+          n_components=self.m_landmarks,
+          random_state=self.random_state,
+      ).fit(X)
+    return self.nys_.transform(X)
+
   def fit(self, X, y):
     self.X_train = X
     self.classes_ = np.unique(y)
     self.model_ = self._build_model()
 
-    K_train = self.qkernel_.evaluate(X, X)
-    self.model_.fit(K_train, y)
+    Phi_train = self._features(X, fit=True)
+    self.model_.fit(Phi_train, y)
     return self
 
   def predict(self, X):
-    K_test = self.qkernel_.evaluate(X, self.X_train)
-    return self.model_.predict(K_test)
+    return self.model_.predict(self._features(X))
 
   def predict_proba(self, X):
-    K_test = self.qkernel_.evaluate(X, self.X_train)
-    return self.model_.predict_proba(K_test)
+    return self.model_.predict_proba(self._features(X))
 
   def score(self, X, y):
-    K_test = self.qkernel_.evaluate(X, self.X_train)
-    return self.model_.score(K_test, y)
+    return self.model_.score(self._features(X), y)
