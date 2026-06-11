@@ -4,6 +4,9 @@ __pycache__
 catboost_info
 dataset
 .env
-results
+notebooks/results/*
+!notebooks/results/checkpoints/
+notebooks/handle_imbalance/results/
+notebooks/hpo/results/
 .claude
 pdfs
