@@ -1281,6 +1281,34 @@ QCAT_BUILD = (
 )
 
 
+# VQC is VARIATIONAL (not a kernel): it trains a parameterized ansatz via a
+# classical optimizer and is VERY slow (every optimizer iteration runs the
+# circuit over all train samples). The grid is kept tiny on purpose. The feature
+# map is borrowed from the kernel estimator so QKERNEL + lambda_ stay consistent
+# with QSVC dkk; mode/n_measurements are accepted for call-uniformity but unused
+# (the sampler is statevector). ansatz/entanglement/reps drive the trainable
+# circuit; optimizer/maxiter drive the classical training loop.
+VQC_SS = ("search_space = {\n  'reps': [1, 2],\n  'optimizer': ['cobyla'],\n  'maxiter': [100],\n"
+          "  # quantum params\n  'ansatz': ['real_amplitudes'],\n  'entanglement': ['full'],\n"
+          "  'lambda_': [0.1, 1],\n  # 'n_measurements': [256, 1024],   # VQC uses a statevector sampler\n}")
+
+VQC_BUILD = (
+    "from imblearn.pipeline import Pipeline\n"
+    "from imblearn.combine import SMOTEENN\n"
+    "from sklearn.preprocessing import StandardScaler\n"
+    "from sklearn.decomposition import PCA\n"
+    "from model.quantum.vqc import VQCWrapper\n\n"
+    "def build_estimator(params):\n"
+    "    return Pipeline([\n"
+    "        ('scaler', StandardScaler()),\n"
+    "        ('pca', PCA(n_components=n_optimal)),\n"
+    "        *resampler_steps(),  # resampling (train-fold only) sesuai CUSTOM_TARGETS\n"
+    "        ('vqc', VQCWrapper(kernel=QKERNEL, mode=mode, n_qubits=n_optimal,\n"
+    "                           n_features=n_optimal, random_state=42, **params)),\n"
+    "    ])"
+)
+
+
 def gen_quantum():
     print("Quantum:")
     total = 0
@@ -1324,6 +1352,15 @@ def gen_quantum():
             cells += sk_section("## QCat", QCAT_SS, QCAT_BUILD, name,
                                 f"QCat ({circuit})", f"QCat ({circuit})", True, extra_common)
             write_notebook(QUANTUM_DIR / family / f"{base}_qcat.ipynb", cells)
+            total += 1
+
+            # -- VQC notebook (variational, not a kernel) --
+            cells = common_header(f"# VQC `{circuit}` — Hyperparameter Optimization (variational)",
+                                  "quantum", 0.95, [code(fill(Q_MODE_CELL, QKERNEL=circuit))])
+            name = f"quantum_{family}_{base}_vqc"
+            cells += sk_section("## VQC", VQC_SS, VQC_BUILD, name,
+                                f"VQC ({circuit})", f"VQC ({circuit})", False, extra_common)
+            write_notebook(QUANTUM_DIR / family / f"{base}_vqc.ipynb", cells)
             total += 1
     print(f"  ({total} quantum notebooks)")
 
