@@ -14,6 +14,7 @@ from .custom_gate_circuits import CustomGateCircuits
 from .custom_topology_circuits import CustomTopologyCircuits
 import numpy as np
 from .ProjectedQuantumKernel import ProjectedQuantumKernel
+from .custom_reupload_circuits import ReuploadCircuits
 
 KERNEL_MODES = ['fsk', 'fqk', 'fqk-hardware', 'pqk']
 
@@ -34,6 +35,7 @@ class QuantumKernelEstimator:
         self.cec = CustomEncodeCircuits(self.n_qubits, self.lambda_)
         self.cgc = CustomGateCircuits(self.n_qubits, self.lambda_)
         self.ctc = CustomTopologyCircuits(self.n_qubits, self.lambda_)
+        self.rc = ReuploadCircuits(self.n_qubits, self.lambda_)
         self.circuit_creators = {
             'full': self.qkc.create_iqp_full,
             'linear': self.qkc.create_iqp_linear,
@@ -67,6 +69,22 @@ class QuantumKernelEstimator:
             'y_circular': self.cgc.y_circular,
 
             'star': self.ctc.star,
+
+            # REUP-HE (proposed) — re-uploading hardware-efficient, multi-basis + bandwidth
+            'reup_full': self.rc.reup_full,
+            'reup_linear': self.rc.reup_linear,
+            'reup_circular': self.rc.reup_circular,
+
+            # REUP-HE v2 — multi-basis ENTANGLED + interaksi + re-uploading
+            'reup_ent_full': self.rc.reup_ent_full,
+            'reup_ent_linear': self.rc.reup_ent_linear,
+            'reup_ent_circular': self.rc.reup_ent_circular,
+
+            # REUP-HE v3 (lite) — star ringan + re-uploading hub berputar
+            'reup_lite': self.rc.reup_lite,
+
+            # STAR-v2 — upgrade 'star': encode multi-basis lebih kaya + bandwidth (tetap 1 hub)
+            'star_v2': self.rc.star_v2,
         }
 
     def _build_feature_map(self, n_features):
