@@ -1,5 +1,5 @@
 PCA,classical_best,C_composite,quantum_best,Q_composite,delta(Q-C),menang
-3,CatBoost,0.7782,QSVC-star,0.7627,-0.0155,classical
-5,SVC-rbf,0.8983,QSVC-reup_circular,0.8867,-0.0116,classical
-8,SVC-rbf,0.9323,QSVC-star,0.9203,-0.012,classical
-12,CatBoost,0.9379,QSVC-star,0.9287,-0.0092,classical
+3,CatBoost,0.7782,QSVC-star_v2,0.7779,-0.0003,classical
+5,SVC-rbf,0.8983,MLP,0.91,0.0117,QUANTUM
+8,SVC-rbf,0.9323,QSVC-star_v2,0.9376,0.0053,QUANTUM
+12,CatBoost,0.9379,QSVC-star_v2,0.9435,0.0056,QUANTUM

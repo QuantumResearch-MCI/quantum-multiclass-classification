@@ -1,12 +1,12 @@
 keluarga,metrik,classical,quantum,delta(Q-C)
-SVM / kernel,acc,0.9155,0.9091,-0.0064
-SVM / kernel,precision,0.9051,0.9239,0.0187
-SVM / kernel,recall,0.9132,0.8698,-0.0434
-SVM / kernel,f1,0.9068,0.8869,-0.0199
-SVM / kernel,mcc,0.88,0.8696,-0.0105
-SVM / kernel,auroc,0.9916,0.9904,-0.0012
-SVM / kernel,prauc,0.9667,0.9643,-0.0024
-SVM / kernel,composite,0.9378,0.9287,-0.0092
+SVM / kernel,acc,0.9155,0.9179,0.0024
+SVM / kernel,precision,0.9051,0.922,0.0168
+SVM / kernel,recall,0.9132,0.9108,-0.0023
+SVM / kernel,f1,0.9068,0.911,0.0042
+SVM / kernel,mcc,0.88,0.8834,0.0034
+SVM / kernel,auroc,0.9916,0.991,-0.0006
+SVM / kernel,prauc,0.9667,0.9777,0.011
+SVM / kernel,composite,0.9378,0.9435,0.0056
 Boosting (Cat),acc,0.9076,0.883,-0.0246
 Boosting (Cat),precision,0.9135,0.8576,-0.0559
 Boosting (Cat),recall,0.9172,0.8711,-0.0461
