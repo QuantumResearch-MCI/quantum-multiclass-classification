@@ -1,0 +1,1044 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  20 JUN 2026 08:25
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**c:/kuliah/TA/quantum-multiclass-classification/latex/access.tex
+(c:/kuliah/TA/quantum-multiclass-classification/latex/access.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-05-26>
+(./ieeeaccess.cls (./IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen150
+\@IEEEtrantmpdimenB=\dimen151
+\@IEEEtrantmpdimenC=\dimen152
+\@IEEEtrantmpcountA=\count276
+\@IEEEtrantmpcountB=\count277
+\@IEEEtrantmpcountC=\count278
+\@IEEEtrantmptoksA=\toks17
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 503.
+(c:/texlive/2026/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen153
+-- This is a 10 point document.
+LaTeX Encoding Info:    Redeclaring text command \textunderscore (encoding ?) on input line 937.
+\CLASSINFOnormalsizebaselineskip=\dimen154
+\CLASSINFOnormalsizeunitybaselineskip=\dimen155
+\IEEEnormaljot=\dimen156
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+\IEEEquantizedlength=\dimen157
+\IEEEquantizedlengthdiff=\dimen158
+\IEEEquantizedtextheightdiff=\dimen159
+\IEEEilabelindentA=\dimen160
+\IEEEilabelindentB=\dimen161
+\IEEEilabelindent=\dimen162
+\IEEEelabelindent=\dimen163
+\IEEEdlabelindent=\dimen164
+\IEEElabelindent=\dimen165
+\IEEEiednormlabelsep=\dimen166
+\IEEEiedmathlabelsep=\dimen167
+\IEEEiedtopsep=\skip49
+\c@section=\count279
+\c@subsection=\count280
+\c@subsubsection=\count281
+\c@paragraph=\count282
+\c@IEEEsubequation=\count283
+\abovecaptionskip=\skip50
+\belowcaptionskip=\skip51
+\c@figure=\count284
+\c@table=\count285
+\@IEEEeqnnumcols=\count286
+\@IEEEeqncolcnt=\count287
+\@IEEEsubeqnnumrollback=\count288
+\@IEEEquantizeheightA=\dimen168
+\@IEEEquantizeheightB=\dimen169
+\@IEEEquantizeheightC=\dimen170
+\@IEEEquantizeprevdepth=\dimen171
+\@IEEEquantizemultiple=\count289
+\@IEEEquantizeboxA=\box53
+\@IEEEtmpitemindent=\dimen172
+\IEEEPARstartletwidth=\dimen173
+\c@IEEEbiography=\count290
+\@IEEEtranrubishbin=\box54
+) (c:/texlive/2026/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+ (c:/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)) (c:/texlive/2026/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
+ (c:/texlive/2026/texmf-dist/tex/generic/xkeyval/xkeyval.tex (c:/texlive/2026/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks18
+\XKV@tempa@toks=\toks19
+\XKV@tempb@toks=\toks20
+ (c:/texlive/2026/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count291
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)){c:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{t1-times.map}{t1-formata.map}{t1-giovannistd.map}
+\@draftversionrule=\dimen174
+ (c:/texlive/2026/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2026-05-17 v1.3f Standard LaTeX Color (DPC)
+ (c:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+ (c:/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+) (c:/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (./spotcolor.sty
+Package: spotcolor 2006/11/15 v1.2 Package for adding Spot Color support to pdfLaTeX.
+ (c:/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
+ (c:/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (c:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\thecolorprofile=\count292
+\thecolor=\count293
+)
+\PANTONE=\toks21
+Package color Info: Redefining color black on input line 287.
+\figbox=\box55
+\titlewidth=\skip52
+\abstractwidth=\skip53
+\c@addrCtr=\count294
+\abstractbox=\box56
+\indexbox=\box57
+\absht=\dimen175
+\kwdht=\dimen176
+\@tempcntc=\count295
+\titlepgskip=\skip54
+\maketitlebox=\box58
+) (c:/texlive/2026/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+) (c:/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2026/05/19 v2.18d AMS math features
+\@mathmargin=\skip55
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+ (c:/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen177
+)) (c:/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen178
+) (c:/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count296
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count297
+\leftroot@=\count298
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count299
+\DOTSCASE@=\count300
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box59
+\strutbox@=\box60
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen179
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count301
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count302
+\dotsspace@=\muskip17
+\c@parentequation=\count303
+\dspbrk@lvl=\count304
+\tag@help=\toks23
+\row@=\count305
+\column@=\count306
+\maxfields@=\count307
+\andhelp@=\toks24
+\eqnshift@=\dimen180
+\alignsep@=\dimen181
+\tagshift@=\dimen182
+\tagwidth@=\dimen183
+\totwidth@=\dimen184
+\lineht@=\dimen185
+\@envbody=\toks25
+\multlinegap=\skip56
+\multlinetaggap=\skip57
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2965.
+LaTeX Info: Redefining \] on input line 2966.
+) (c:/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (c:/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (c:/texlive/2026/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+ (c:/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\c@ALC@unique=\count308
+\c@ALC@line=\count309
+\c@ALC@rem=\count310
+\c@ALC@depth=\count311
+\ALC@tlm=\skip58
+\algorithmicindent=\skip59
+) (c:/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen186
+\Gin@req@width=\dimen187
+) (c:/texlive/2026/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+) (c:/texlive/2026/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip60
+\multirow@cntb=\count312
+\multirow@dima=\skip61
+\bigstrutjot=\dimen188
+) (c:/texlive/2026/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2025/10/21 v1.2g Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (c:/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count313
+) (./access.aux)
+\openout1 = `access.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+
+-- Lines per column: 56 (exact).
+\symNewLetters=\mathgroup9
+\symxsymbols=\mathgroup10
+LaTeX Font Info:    Redeclaring math symbol \ddagger on input line 27.
+LaTeX Font Info:    Redeclaring math symbol \dagger on input line 27.
+\c@mv@regular=\count314
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `regular' on input line 27.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `regular'
+(Font)                  OT1/cmr/m/n --> T1/formata/n/n on input line 27.
+LaTeX Font Info:    Overwriting symbol font `NewLetters' in version `regular'
+(Font)                  T1/times/n/it --> T1/formata/n/it on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `regular'
+(Font)                  T1/formata/n/n --> T1/formata/n/n on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `regular'
+(Font)                  OT1/cmr/m/it --> T1/formata/n/it on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `regular'
+(Font)                  OT1/cmr/bx/n --> T1/formata/m/n on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `regular'
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 27.
+\c@mv@medium=\count315
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `medium' on input line 27.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `medium'
+(Font)                  OT1/cmr/m/n --> T1/formata/m/n on input line 27.
+LaTeX Font Info:    Overwriting symbol font `NewLetters' in version `medium'
+(Font)                  T1/times/n/it --> T1/formata/m/it on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `medium'
+(Font)                  > T1/formata/m/n on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `medium'
+(Font)                  OT1/cmr/m/it --> T1/formata/m/it on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `medium'
+(Font)                  > T1/formata/b/n on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `medium'
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/b/n on input line 27.
+\c@mv@black=\count316
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `black' on input line 27.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `black'
+(Font)                  OT1/cmr/m/n --> T1/formata/b/n on input line 27.
+LaTeX Font Info:    Overwriting symbol font `NewLetters' in version `black'
+(Font)                  T1/times/n/it --> T1/formata/b/it on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `black'
+(Font)                  > T1/formata/b/n on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `black'
+(Font)                  OT1/cmr/m/it --> T1/formata/b/it on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `black'
+(Font)                  > T1/formata/b/n on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `black'
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/b/n on input line 27.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 27.
+(c:/texlive/2026/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+LaTeX Font Info:    Trying to load font information for T1+times on input line 27.
+ (./t1times.fd) (c:/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count317
+\scratchdimen=\dimen189
+\scratchbox=\box61
+\nofMPsegments=\count318
+\nofMParguments=\count319
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count320
+\MPscratchDim=\dimen190
+\MPnumerator=\count321
+\makeMPintoPDFobject=\count322
+\everyMPtoPDFconversion=\toks28
+) (c:/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (c:/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+LaTeX Font Info:    Redeclaring math version `bold' on input line 27.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 27.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/m/n --> T1/times/b/n on input line 27.
+LaTeX Font Info:    Overwriting symbol font `NewLetters' in version `bold'
+(Font)                  T1/times/n/it --> T1/times/b/it on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  > T1/times/b/n on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/m/it --> T1/times/b/it on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  > T1/times/b/n on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/b/n on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/m/n --> OMS/cmsy/b/n on input line 27.
+<bullet.png, id=3, 12.045pt x 35.38219pt>
+File: bullet.png Graphic file (type png)
+<use bullet.png>
+Package pdftex.def Info: bullet.png  used on input line 55.
+(pdftex.def)             Requested size: 5.0pt x 14.6871pt.
+File: bullet.png Graphic file (type png)
+<use bullet.png>
+Package pdftex.def Info: bullet.png  used on input line 59.
+(pdftex.def)             Requested size: 5.0pt x 14.6871pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+ (c:/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+ (c:/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Calculating math sizes for size <9.9> on input line 65.
+LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 65.
+
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 65--65
+[]  
+ []
+
+
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 65--65
+[]  
+ []
+
+<figure/out-new/01_distribusi_kelas.png, id=4, 454.8192pt x 338.9463pt>
+File: figure/out-new/01_distribusi_kelas.png Graphic file (type png)
+<use figure/out-new/01_distribusi_kelas.png>
+Package pdftex.def Info: figure/out-new/01_distribusi_kelas.png  used on input line 102.
+(pdftex.def)             Requested size: 242.67355pt x 180.84573pt.
+<logo.png, id=6, 206.27063pt x 53.44969pt>
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 105.
+(pdftex.def)             Requested size: 91.32pt x 23.66309pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[1
+
+
+ <./logo.png> <./bullet.png>]
+<figure/out-new/02_proporsi_kelas_per_fold.png, id=22, 859.2903pt x 456.7464pt>
+File: figure/out-new/02_proporsi_kelas_per_fold.png Graphic file (type png)
+<use figure/out-new/02_proporsi_kelas_per_fold.png>
+Package pdftex.def Info: figure/out-new/02_proporsi_kelas_per_fold.png  used on input line 118.
+(pdftex.def)             Requested size: 242.67355pt x 128.98927pt.
+
+Underfull \hbox (badness 2096) in paragraph at lines 128--129
+\T1/times/n/n/10 sen-sors op-er-ate on widely dif-fer-ent phys-i-cal scales. As
+ []
+
+<figure/normalization.png, id=23, 1003.8303pt x 498.663pt>
+File: figure/normalization.png Graphic file (type png)
+<use figure/normalization.png>
+Package pdftex.def Info: figure/normalization.png  used on input line 132.
+(pdftex.def)             Requested size: 242.67355pt x 120.54898pt.
+<notaglinelogo.png, id=24, 169.38281pt x 42.91031pt>
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 138.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 138.
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[2 <./notaglinelogo.png> <./figure/out-new/01_distribusi_kelas.png> <./figure/out-new/02_proporsi_kelas_per_fold.png> <./figure/normalization.png>]
+<figure/out-new/03_pca2d_train_test.png, id=35, 859.7721pt x 357.7365pt>
+File: figure/out-new/03_pca2d_train_test.png Graphic file (type png)
+<use figure/out-new/03_pca2d_train_test.png>
+Package pdftex.def Info: figure/out-new/03_pca2d_train_test.png  used on input line 143.
+(pdftex.def)             Requested size: 242.67355pt x 100.96794pt.
+<figure/out-new/04_composite_per_pca.png, id=36, 426.393pt x 252.7041pt>
+File: figure/out-new/04_composite_per_pca.png Graphic file (type png)
+<use figure/out-new/04_composite_per_pca.png>
+Package pdftex.def Info: figure/out-new/04_composite_per_pca.png  used on input line 152.
+(pdftex.def)             Requested size: 242.67355pt x 143.81918pt.
+
+Underfull \hbox (badness 2799) in paragraph at lines 172--173
+\T1/times/n/n/10 The clas-si-cal base-lines span two fam-i-lies. The first is
+ []
+
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 199.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 199.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[3 <./figure/out-new/03_pca2d_train_test.png> <./figure/out-new/04_composite_per_pca.png>]
+Underfull \hbox (badness 1596) in paragraph at lines 222--223
+\T1/times/n/n/10 grades \T1/times/m/it/10 star \T1/times/n/n/10 with three tar-geted mod-i-fi-ca-tions while
+ []
+
+
+Underfull \hbox (badness 6910) in paragraph at lines 222--223
+\T1/times/n/n/10 de-lib-er-ately pre-serv-ing its light single-hub en-tan-
+ []
+
+
+Underfull \hbox (badness 4686) in paragraph at lines 222--223
+\T1/times/n/n/10 gle-ment: (i) a richer multi-basis state prepa-ra-tion
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 226--227
+\T1/times/n/n/10 ef-fec-tive used di-rectly or as en-gi-neered fea-tures. QCAT
+ []
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 232.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 232.
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[4]
+Underfull \hbox (badness 2111) in paragraph at lines 265--266
+\T1/times/n/n/10 based en-sem-bles (XG-Boost, Cat-Boost) and the Sup-port
+ []
+
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 295.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 295.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[5]
+<figure/out-new/14_box_perfold_multimetrik.png, id=53, 1076.823pt x 353.1594pt>
+File: figure/out-new/14_box_perfold_multimetrik.png Graphic file (type png)
+<use figure/out-new/14_box_perfold_multimetrik.png>
+Package pdftex.def Info: figure/out-new/14_box_perfold_multimetrik.png  used on input line 298.
+(pdftex.def)             Requested size: 242.67355pt x 79.58676pt.
+<figure/out-new/15_composite_score_sebaran.png, id=54, 1076.823pt x 353.1594pt>
+File: figure/out-new/15_composite_score_sebaran.png Graphic file (type png)
+<use figure/out-new/15_composite_score_sebaran.png>
+Package pdftex.def Info: figure/out-new/15_composite_score_sebaran.png  used on input line 307.
+(pdftex.def)             Requested size: 242.67355pt x 79.58676pt.
+<figure/out-new/05_heatmap_model_x_pca.png, id=55, 500.8311pt x 390.0171pt>
+File: figure/out-new/05_heatmap_model_x_pca.png Graphic file (type png)
+<use figure/out-new/05_heatmap_model_x_pca.png>
+Package pdftex.def Info: figure/out-new/05_heatmap_model_x_pca.png  used on input line 314.
+(pdftex.def)             Requested size: 242.67355pt x 188.97952pt.
+<figure/out-new/16_konvergensi_efisiensi.png, id=56, 1076.823pt x 353.1594pt>
+File: figure/out-new/16_konvergensi_efisiensi.png Graphic file (type png)
+<use figure/out-new/16_konvergensi_efisiensi.png>
+Package pdftex.def Info: figure/out-new/16_konvergensi_efisiensi.png  used on input line 341.
+(pdftex.def)             Requested size: 242.67355pt x 79.58676pt.
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 352.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 352.
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[6 <./figure/out-new/14_box_perfold_multimetrik.png> <./figure/out-new/15_composite_score_sebaran.png> <./figure/out-new/05_heatmap_model_x_pca.png> <./figure/out-new/16_konvergensi_efisiensi.png>]
+<figure/qml/DL/14_box_perfold_multimetrik.png, id=64, 1076.823pt x 353.8821pt>
+File: figure/qml/DL/14_box_perfold_multimetrik.png Graphic file (type png)
+<use figure/qml/DL/14_box_perfold_multimetrik.png>
+Package pdftex.def Info: figure/qml/DL/14_box_perfold_multimetrik.png  used on input line 355.
+(pdftex.def)             Requested size: 242.67355pt x 79.74962pt.
+<figure/qml/DL/15_composite_score_sebaran.png, id=65, 1076.823pt x 353.8821pt>
+File: figure/qml/DL/15_composite_score_sebaran.png Graphic file (type png)
+<use figure/qml/DL/15_composite_score_sebaran.png>
+Package pdftex.def Info: figure/qml/DL/15_composite_score_sebaran.png  used on input line 362.
+(pdftex.def)             Requested size: 242.67355pt x 79.74962pt.
+
+Underfull \hbox (badness 1924) in paragraph at lines 367--368
+[]\T1/times/n/n/10 Like the clas-si-cal mod-els, both deep net-works se-lect
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 369--370
+\T1/times/n/n/10 par-a-tive foun-da-tion against which to eval-u-ate the high-
+ []
+
+<figure/qml/comparison/05_quantum_approaches.png, id=66, 679.338pt x 338.7054pt>
+File: figure/qml/comparison/05_quantum_approaches.png Graphic file (type png)
+<use figure/qml/comparison/05_quantum_approaches.png>
+Package pdftex.def Info: figure/qml/comparison/05_quantum_approaches.png  used on input line 408.
+(pdftex.def)             Requested size: 242.67355pt x 120.99323pt.
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 414.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 414.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[7 <./figure/qml/DL/14_box_perfold_multimetrik.png> <./figure/qml/DL/15_composite_score_sebaran.png> <./figure/qml/comparison/05_quantum_approaches.png>]
+Underfull \hbox (badness 1565) in paragraph at lines 444--445
+\T1/times/n/n/10 family, $\T1/times/m/it/10 R[]$ \T1/times/n/n/10 only) fails al-most com-pletely (Com-pos-ite $\OMS/cmsy/m/n/10 ^^Y
+ []
+
+<figure/qml/comparison/07_best_three_way.png, id=74, 932.283pt x 353.8821pt>
+File: figure/qml/comparison/07_best_three_way.png Graphic file (type png)
+<use figure/qml/comparison/07_best_three_way.png>
+Package pdftex.def Info: figure/qml/comparison/07_best_three_way.png  used on input line 501.
+(pdftex.def)             Requested size: 242.67355pt x 92.11516pt.
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 507.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 507.
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[8]
+<figure/qml/comparison/01_best_classical_vs_quantum.png, id=78, 787.743pt x 353.4003pt>
+File: figure/qml/comparison/01_best_classical_vs_quantum.png Graphic file (type png)
+<use figure/qml/comparison/01_best_classical_vs_quantum.png>
+Package pdftex.def Info: figure/qml/comparison/01_best_classical_vs_quantum.png  used on input line 535.
+(pdftex.def)             Requested size: 242.67355pt x 108.8681pt.
+<figure/qml/comparison/03_delta_quantum_vs_classical.png, id=79, 715.2321pt x 317.2653pt>
+File: figure/qml/comparison/03_delta_quantum_vs_classical.png Graphic file (type png)
+<use figure/qml/comparison/03_delta_quantum_vs_classical.png>
+Package pdftex.def Info: figure/qml/comparison/03_delta_quantum_vs_classical.png  used on input line 542.
+(pdftex.def)             Requested size: 242.67355pt x 107.64609pt.
+
+Underfull \hbox (badness 4543) in paragraph at lines 547--548
+\T1/times/n/n/10 now \T1/times/m/it/10 sur-passes \T1/times/n/n/10 its clas-si-cal coun-ter-part on al-most ev-
+ []
+
+<figure/qml/comparison/02_paired_family.png, id=80, 1076.823pt x 322.0833pt>
+File: figure/qml/comparison/02_paired_family.png Graphic file (type png)
+<use figure/qml/comparison/02_paired_family.png>
+Package pdftex.def Info: figure/qml/comparison/02_paired_family.png  used on input line 568.
+(pdftex.def)             Requested size: 242.67355pt x 72.58356pt.
+<figure/qml/comparison/04_per_pca_classical_vs_quantum.png, id=81, 1004.553pt x 353.6412pt>
+File: figure/qml/comparison/04_per_pca_classical_vs_quantum.png Graphic file (type png)
+<use figure/qml/comparison/04_per_pca_classical_vs_quantum.png>
+Package pdftex.def Info: figure/qml/comparison/04_per_pca_classical_vs_quantum.png  used on input line 595.
+(pdftex.def)             Requested size: 242.67355pt x 85.42601pt.
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 603.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 603.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[9 <./figure/qml/comparison/07_best_three_way.png> <./figure/qml/comparison/01_best_classical_vs_quantum.png> <./figure/qml/comparison/03_delta_quantum_vs_classical.png> <./figure/qml/comparison/02_paired_family.png>]
+<figure/qml/star-v2/10_confusion_matrix.png, id=89, 621.32124pt x 329.23pt>
+File: figure/qml/star-v2/10_confusion_matrix.png Graphic file (type png)
+<use figure/qml/star-v2/10_confusion_matrix.png>
+Package pdftex.def Info: figure/qml/star-v2/10_confusion_matrix.png  used on input line 627.
+(pdftex.def)             Requested size: 242.67355pt x 128.59007pt.
+<figure/qml/star-v2/12_roc_pr_ovr.png, id=90, 932.5239pt x 711.6186pt>
+File: figure/qml/star-v2/12_roc_pr_ovr.png Graphic file (type png)
+<use figure/qml/star-v2/12_roc_pr_ovr.png>
+Package pdftex.def Info: figure/qml/star-v2/12_roc_pr_ovr.png  used on input line 634.
+(pdftex.def)             Requested size: 242.67355pt x 185.17935pt.
+<figure/qml/star-v2/11_f1_per_kelas_heatmap.png, id=91, 529.2573pt x 209.1012pt>
+File: figure/qml/star-v2/11_f1_per_kelas_heatmap.png Graphic file (type png)
+<use figure/qml/star-v2/11_f1_per_kelas_heatmap.png>
+Package pdftex.def Info: figure/qml/star-v2/11_f1_per_kelas_heatmap.png  used on input line 663.
+(pdftex.def)             Requested size: 242.67355pt x 95.87503pt.
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 669.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 669.
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[10 <./figure/qml/comparison/04_per_pca_classical_vs_quantum.png> <./figure/qml/star-v2/10_confusion_matrix.png (PNG copy)> <./figure/qml/star-v2/12_roc_pr_ovr.png>]
+<figure/out-new/10_confusion_matrix.png, id=97, 1007.6847pt x 470.4777pt>
+File: figure/out-new/10_confusion_matrix.png Graphic file (type png)
+<use figure/out-new/10_confusion_matrix.png>
+Package pdftex.def Info: figure/out-new/10_confusion_matrix.png  used on input line 672.
+(pdftex.def)             Requested size: 242.67355pt x 113.29742pt.
+<figure/out-new/12_roc_pr_ovr.png, id=98, 932.5239pt x 711.6186pt>
+File: figure/out-new/12_roc_pr_ovr.png Graphic file (type png)
+<use figure/out-new/12_roc_pr_ovr.png>
+Package pdftex.def Info: figure/out-new/12_roc_pr_ovr.png  used on input line 679.
+(pdftex.def)             Requested size: 242.67355pt x 185.17935pt.
+<figure/qml/DL/10_confusion_matrix.png, id=99, 1003.3485pt x 240.9pt>
+File: figure/qml/DL/10_confusion_matrix.png Graphic file (type png)
+<use figure/qml/DL/10_confusion_matrix.png>
+Package pdftex.def Info: figure/qml/DL/10_confusion_matrix.png  used on input line 686.
+(pdftex.def)             Requested size: 242.67355pt x 58.26195pt.
+<figure/qml/star-v2/07_gap_train_vs_test_f1.png, id=100, 787.9839pt x 353.6412pt>
+File: figure/qml/star-v2/07_gap_train_vs_test_f1.png Graphic file (type png)
+<use figure/qml/star-v2/07_gap_train_vs_test_f1.png>
+Package pdftex.def Info: figure/qml/star-v2/07_gap_train_vs_test_f1.png  used on input line 697.
+(pdftex.def)             Requested size: 242.67355pt x 108.90994pt.
+<figure/out-new/07_gap_train_vs_test_f1.png, id=101, 787.9839pt x 353.1594pt>
+File: figure/out-new/07_gap_train_vs_test_f1.png Graphic file (type png)
+<use figure/out-new/07_gap_train_vs_test_f1.png>
+Package pdftex.def Info: figure/out-new/07_gap_train_vs_test_f1.png  used on input line 706.
+(pdftex.def)             Requested size: 242.67355pt x 108.76157pt.
+<figure/out-new/09_learning_curve_f1_logloss.png, id=102, 1611.3801pt x 484.6908pt>
+File: figure/out-new/09_learning_curve_f1_logloss.png Graphic file (type png)
+<use figure/out-new/09_learning_curve_f1_logloss.png>
+Package pdftex.def Info: figure/out-new/09_learning_curve_f1_logloss.png  used on input line 713.
+(pdftex.def)             Requested size: 242.67355pt x 72.9889pt.
+<figure/qml/DL/07_gap_train_vs_test_f1.png, id=103, 787.9839pt x 353.8821pt>
+File: figure/qml/DL/07_gap_train_vs_test_f1.png Graphic file (type png)
+<use figure/qml/DL/07_gap_train_vs_test_f1.png>
+Package pdftex.def Info: figure/qml/DL/07_gap_train_vs_test_f1.png  used on input line 720.
+(pdftex.def)             Requested size: 242.67355pt x 108.98413pt.
+<figure/qml/star-v2/13_calibration.png, id=104, 484.209pt x 483.4863pt>
+File: figure/qml/star-v2/13_calibration.png Graphic file (type png)
+<use figure/qml/star-v2/13_calibration.png>
+Package pdftex.def Info: figure/qml/star-v2/13_calibration.png  used on input line 729.
+(pdftex.def)             Requested size: 242.67355pt x 242.31061pt.
+
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 735.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 735.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[11 <./figure/qml/star-v2/11_f1_per_kelas_heatmap.png> <./figure/out-new/10_confusion_matrix.png> <./figure/out-new/12_roc_pr_ovr.png> <./figure/qml/DL/10_confusion_matrix.png> <./figure/qml/star-v2/07_gap_train_vs_test_f1.png>]
+<figure/out-new/13_calibration.png, id=113, 484.209pt x 483.4863pt>
+File: figure/out-new/13_calibration.png Graphic file (type png)
+<use figure/out-new/13_calibration.png>
+Package pdftex.def Info: figure/out-new/13_calibration.png  used on input line 738.
+(pdftex.def)             Requested size: 242.67355pt x 242.31061pt.
+<figure/qml/DL/13_calibration.png, id=114, 484.209pt x 483.4863pt>
+File: figure/qml/DL/13_calibration.png Graphic file (type png)
+<use figure/qml/DL/13_calibration.png>
+Package pdftex.def Info: figure/qml/DL/13_calibration.png  used on input line 745.
+(pdftex.def)             Requested size: 242.67355pt x 242.31061pt.
+<figure/qml/star-v2/14_box_perfold_multimetrik.png, id=115, 1076.823pt x 353.6412pt>
+File: figure/qml/star-v2/14_box_perfold_multimetrik.png Graphic file (type png)
+<use figure/qml/star-v2/14_box_perfold_multimetrik.png>
+Package pdftex.def Info: figure/qml/star-v2/14_box_perfold_multimetrik.png  used on input line 752.
+(pdftex.def)             Requested size: 242.67355pt x 79.69533pt.
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 758.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 758.
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[12 <./figure/out-new/07_gap_train_vs_test_f1.png> <./figure/out-new/09_learning_curve_f1_logloss.png> <./figure/qml/DL/07_gap_train_vs_test_f1.png> <./figure/qml/star-v2/13_calibration.png> <./figure/out-new/13_calibration.png>]
+LaTeX Font Info:    Calculating math sizes for size <7.61> on input line 763.
+
+Underfull \hbox (badness 5578) in paragraph at lines 765--766
+[]\T1/times/n/n/7.61 W.-K. Chen, \T1/times/n/it/7.61 Lin-ear Net-works and Sys-tems. \T1/times/n/n/7.61 Bel-mont, CA, USA:
+ []
+
+
+Underfull \hbox (badness 2951) in paragraph at lines 781--786
+[]\T1/times/n/n/7.61 G. O. Young, ``Syn-thetic struc-ture of in-dus-trial plas-tics,'' in Plas-
+ []
+
+
+Underfull \hbox (badness 1968) in paragraph at lines 787--790
+\T1/times/n/n/7.61 Chicago, IL, USA: Univ. Chicago Press, 1987. [On-line]. Avail-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 806--810
+[]\T1/times/n/n/7.61 PROCESS Cor-po-ra-tion, Boston, MA, USA. In-tranets: In-ter-net
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 806--810
+\T1/times/n/n/7.61 tech-nolo-gies de-ployed be-hind the fire-wall for cor-po-rate pro-duc-tiv-ity.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 806--810
+\T1/times/n/n/7.61 Pre-sented at INET96 An-nual Meet-ing. [On-line]. Avail-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--816
+[]\T1/times/n/n/7.61 Teralyzer. Lytera UG, Kirch-hain, Ger-many [On-line]. Avail-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--816
+[]$\T1/times/n/n/7.61 ,
+ []
+
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 849.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 849.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[13 <./figure/qml/DL/13_calibration.png> <./figure/qml/star-v2/14_box_perfold_multimetrik.png>]
+<author1.png, id=130, 225.84375pt x 282.30469pt>
+File: author1.png Graphic file (type png)
+<use author1.png>
+Package pdftex.def Info: author1.png  used on input line 849.
+(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
+File: author1.png Graphic file (type png)
+<use author1.png>
+Package pdftex.def Info: author1.png  used on input line 849.
+(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
+<author2.png, id=133, 225.84375pt x 282.30469pt>
+File: author2.png Graphic file (type png)
+<use author2.png>
+Package pdftex.def Info: author2.png  used on input line 869.
+(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
+File: author2.png Graphic file (type png)
+<use author2.png>
+Package pdftex.def Info: author2.png  used on input line 869.
+(pdftex.def)             Requested size: 72.27147pt x 90.33934pt.
+File: bullet.png Graphic file (type png)
+<use bullet.png>
+Package pdftex.def Info: bullet.png  used on input line 920.
+(pdftex.def)             Requested size: 5.0pt x 14.6871pt.
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 922.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+
+LaTeX Font Warning: Font shape `T1/formata/m/sl' undefined
+(Font)              using `T1/formata/m/it' instead on input line 922.
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[14 <./author1.png> <./author2.png>] (./access.aux)
+ ***********
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-05-26>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 5148 strings out of 467167
+ 86515 string characters out of 5413691
+ 527443 words of memory out of 5000000
+ 34324 multiletter control sequences out of 15000+600000
+ 719933 words of font info for 189 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 72i,13n,79p,1782b,446s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><./t1-formata-bold.pfb><./t1-formata-condmedium.pfb><./t1-formata-medium.pfb><./t1-formata-mediumitalic.pfb><./t1-formata-regular.pfb><./t1-giovannistd-bookitalic.pfb><./t1-times-bold.pfb><./t1-times-italic.pfb><./t1-times.pfb>
+Output written on access.pdf (14 pages, 7290904 bytes).
+PDF statistics:
+ 222 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+

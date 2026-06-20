@@ -1,0 +1,168 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Works}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Methodology}{1}{}\protected@file@percent }
+\newlabel{sec:methodology}{{III}{1}{}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Dataset and Class Structure}{1}{}\protected@file@percent }
+\newlabel{subsec:dataset}{{\mbox  {III-A}}{1}{}{subsection.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Class Distribution at Three Levels of Data Granularity}}{1}{}\protected@file@percent }
+\newlabel{tab:dataset}{{1}{1}{}{table.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Per-class row count of the raw e-nose dataset before preprocessing, showing the extreme class imbalance in which grade E dominates while the minority grade B is scarce (a ratio of $\approx $ 20:1).}}{2}{}\protected@file@percent }
+\newlabel{fig:class_dist}{{1}{2}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Data Leakage and Group-Aware Cross-Validation}{2}{}\protected@file@percent }
+\newlabel{subsec:cv}{{\mbox  {III-B}}{2}{}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Preprocessing Pipeline}{2}{}\protected@file@percent }
+\newlabel{subsec:preprocessing}{{\mbox  {III-C}}{2}{}{subsection.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Class proportions of the training versus test partitions in each of the five folds. Stratification is preserved across folds even though the split is group-aware (by {\it  Sampling\_ID}).}}{2}{}\protected@file@percent }
+\newlabel{fig:fold_proportion}{{2}{2}{}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Per-feature value distributions before (left) and after (right) {\it  StandardScaler}. The disparate raw sensor scales are normalized to a common zero-mean, unit-variance $z$-score.}}{2}{}\protected@file@percent }
+\newlabel{fig:normalization}{{3}{2}{}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Two-dimensional PCA projection (fitted on the training fold) of the training (left) and test (right) partitions. The partitions cover the same region, but grades A, D, and E overlap heavily, illustrating the non-linear separability of the e-nose data.}}{3}{}\protected@file@percent }
+\newlabel{fig:pca_scatter}{{4}{3}{}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Evaluation Metrics and Composite Score}{3}{}\protected@file@percent }
+\newlabel{subsec:metrics}{{\mbox  {III-D}}{3}{}{subsection.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Mean Composite score (averaged over all models) as a function of the number of retained PCA components. Performance increases monotonically with dimensionality, peaking at $n_{\text  {PCA}}=12$.}}{3}{}\protected@file@percent }
+\newlabel{fig:composite_pca}{{5}{3}{}{figure.5}{}}
+\newlabel{eq:composite}{{1}{3}{}{equation.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-E}}Classical Baseline Models}{3}{}\protected@file@percent }
+\newlabel{subsec:classical_methods}{{\mbox  {III-E}}{3}{}{subsection.3.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Hyperparameter Grids of the Classical Baseline Models}}{3}{}\protected@file@percent }
+\newlabel{tab:classical_grid}{{2}{3}{}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-F}}Deep Learning Baseline Models}{3}{}\protected@file@percent }
+\newlabel{subsec:dl_methods}{{\mbox  {III-F}}{3}{}{subsection.3.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-G}}Quantum Kernel Models}{4}{}\protected@file@percent }
+\newlabel{subsec:quantum_methods}{{\mbox  {III-G}}{4}{}{subsection.3.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-G}1}Quantum Feature Maps and Kernel Estimation}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-G}2}Projected Quantum Kernel}{4}{}\protected@file@percent }
+\newlabel{eq:pqk}{{2}{4}{}{equation.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-G}3}Feature Map Designs}{4}{}\protected@file@percent }
+\newlabel{subsubsec:featuremaps}{{\mbox  {III-G}3}{4}{}{subsubsection.3.7.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-G}4}Quantum-Boosted Hybrid Models}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-H}}Hyperparameter Optimization and Search Spaces}{4}{}\protected@file@percent }
+\newlabel{subsec:hpo}{{\mbox  {III-H}}{4}{}{subsection.3.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Quantum Model Search Space (PQK, $\lambda =0.1$, $c=0.5$)}}{5}{}\protected@file@percent }
+\newlabel{tab:quantum_grid}{{3}{5}{}{table.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Results and Discussion}{5}{}\protected@file@percent }
+\newlabel{sec:results}{{IV}{5}{}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Performance of Classical Models}{5}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Performance Comparison of Classical and Deep Learning Models}}{5}{}\protected@file@percent }
+\newlabel{tab:classical_models}{{4}{5}{}{table.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Performance distribution across validation folds, illustrating the stability of CatBoost and SVC-rbf compared to other classical approaches.}}{6}{}\protected@file@percent }
+\newlabel{fig:classical_boxplot}{{6}{6}{}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Best Composite score per classical model and the spread of all evaluated configurations, showing the clear separation between the strong, intermediate, and failing tiers.}}{6}{}\protected@file@percent }
+\newlabel{fig:classical_spread}{{7}{6}{}{figure.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Search Efficiency of the Strong-Tier Classical Models}}{6}{}\protected@file@percent }
+\newlabel{tab:efficiency}{{5}{6}{}{table.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Composite score per classical model across PCA dimensions; performance increases monotonically with the number of retained components, with the optimum at $n_{\text  {PCA}}=12$.}}{6}{}\protected@file@percent }
+\newlabel{fig:classical_pca_heatmap}{{8}{6}{}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Random-search convergence and tuning efficiency per classical model, contrasting the fast convergence of SVC-rbf with the high average quality of CatBoost.}}{6}{}\protected@file@percent }
+\newlabel{fig:classical_efficiency}{{9}{6}{}{figure.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}1}Deep Learning Baselines}{6}{}\protected@file@percent }
+\newlabel{subsubsec:dl_baselines}{{\mbox  {IV-A}1}{6}{}{subsubsection.4.1.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Per-fold multi-metric distribution of the deep learning models, illustrating the stability of the MLP relative to the 1D-CNN across the five validation folds.}}{7}{}\protected@file@percent }
+\newlabel{fig:dl_boxplot}{{10}{7}{}{figure.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Best Composite score per deep learning model and the spread of all evaluated configurations, confirming that the MLP leads the 1D-CNN by a consistent margin rather than at a single configuration.}}{7}{}\protected@file@percent }
+\newlabel{fig:dl_spread}{{11}{7}{}{figure.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Performance of Quantum Models}{7}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Performance of Baseline Quantum Models}}{7}{}\protected@file@percent }
+\newlabel{tab:baseline_quantum}{{6}{7}{}{table.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Performance trajectory of various quantum approaches relative to the classical CatBoost baseline, highlighting the necessity of multi-basis encoding.}}{7}{}\protected@file@percent }
+\newlabel{fig:quantum_approaches}{{12}{7}{}{figure.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}1}The Proposed STAR-v2 Feature Map}{8}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Design Evolution of the Proposed Quantum Feature Maps (QSVC, PCA = 12 qubits)}}{8}{}\protected@file@percent }
+\newlabel{tab:proposed_quantum}{{7}{8}{}{table.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Composite Leaderboard across Paradigms (best configuration per model; Q = Quantum, C = Classical, DL = Deep Learning)}}{8}{}\protected@file@percent }
+\newlabel{tab:leaderboard}{{8}{8}{}{table.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Comparison Between Classical and Quantum Models}{8}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Best Model per Paradigm under the Identical Protocol}}{8}{}\protected@file@percent }
+\newlabel{tab:three_way}{{9}{8}{}{table.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Multi-metric comparison of the best model per paradigm (Classical vs.\ Quantum vs.\ Deep Learning), illustrating that each paradigm leads a distinct performance profile.}}{9}{}\protected@file@percent }
+\newlabel{fig:three_way}{{13}{9}{}{figure.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Per-Metric Winner across the Three Paradigms}}{9}{}\protected@file@percent }
+\newlabel{tab:per_metric_winner}{{10}{9}{}{table.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Best classical (CatBoost) versus best quantum (STAR-v2) model across all reported metrics.}}{9}{}\protected@file@percent }
+\newlabel{fig:best_cq}{{14}{9}{}{figure.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Signed per-metric difference between the best quantum and best classical models; positive values favor the quantum kernel, with the largest gains on PRAUC and MCC.}}{9}{}\protected@file@percent }
+\newlabel{fig:delta_cq}{{15}{9}{}{figure.15}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Paired Family-wise Comparison of Composite Scores}}{9}{}\protected@file@percent }
+\newlabel{tab:paired_family}{{11}{9}{}{table.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Family-wise comparison of classical and quantum models, showing the quantum advantage confined to the kernel/SVM family.}}{9}{}\protected@file@percent }
+\newlabel{fig:paired_family}{{16}{9}{}{figure.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Class Level Performance and Minority Class Handling}{9}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Best Classical vs.\ Best Non-Classical Model per PCA Dimension (Composite)}}{10}{}\protected@file@percent }
+\newlabel{tab:per_pca}{{12}{10}{}{table.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Composite score of the best classical and best non-classical models as a function of the PCA dimension (number of qubits), showing that the quantum kernel becomes competitive and then superior as the qubit count grows.}}{10}{}\protected@file@percent }
+\newlabel{fig:per_pca}{{17}{10}{}{figure.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Per-Class Recall and F1 of STAR-v2 (Out-of-Fold) vs.\ the Original {\it  star} Map}}{10}{}\protected@file@percent }
+\newlabel{tab:per_class}{{13}{10}{}{table.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Normalized out-of-fold confusion matrix of the proposed STAR-v2 model, showing grade D as the dominant source of error (confused with adjacent grades A and E).}}{10}{}\protected@file@percent }
+\newlabel{fig:starv2_confusion}{{18}{10}{}{figure.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces One-vs-rest ROC and Precision--Recall curves of STAR-v2, confirming strong separability for the minority grade B and the comparative difficulty of grade D.}}{10}{}\protected@file@percent }
+\newlabel{fig:starv2_roc_pr}{{19}{10}{}{figure.19}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Per-Class Recall of the Best Model per Paradigm (Out-of-Fold)}}{10}{}\protected@file@percent }
+\newlabel{tab:per_class_cross}{{14}{10}{}{table.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Per-class F1 heatmap of STAR-v2, highlighting the recovered performance on the minority grade B and the residual weakness on grade D.}}{11}{}\protected@file@percent }
+\newlabel{fig:starv2_f1class}{{20}{11}{}{figure.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Normalized out-of-fold confusion matrices of the classical models; the diagonal equals per-class recall, and grade D is the dominant source of confusion.}}{11}{}\protected@file@percent }
+\newlabel{fig:classical_confusion}{{21}{11}{}{figure.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces ROC and Precision--Recall curves (one-vs-rest) for the classical models, comparing models (top) and per-class behavior of the best model (bottom).}}{11}{}\protected@file@percent }
+\newlabel{fig:classical_roc_pr}{{22}{11}{}{figure.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Model Diagnostic and Limitations}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Normalized out-of-fold confusion matrices of the deep learning models (MLP and 1D-CNN), exhibiting the same A--D--E adjacency error pattern.}}{11}{}\protected@file@percent }
+\newlabel{fig:dl_confusion}{{23}{11}{}{figure.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Train-versus-test macro-F1 gap of STAR-v2, showing milder overfitting than the original {\it  star} map and the tree-based models.}}{11}{}\protected@file@percent }
+\newlabel{fig:starv2_gap}{{24}{11}{}{figure.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Train-versus-test macro-F1 gap per classical model, separating the mild overfitting of the strong tier from the underfitting of SVC-linear/sigmoid.}}{12}{}\protected@file@percent }
+\newlabel{fig:classical_gap}{{25}{12}{}{figure.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Learning curves (macro-F1, top; log-loss, bottom) for the classical models; the still-rising validation curves indicate the bottleneck is the number of independent samples.}}{12}{}\protected@file@percent }
+\newlabel{fig:classical_lc}{{26}{12}{}{figure.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Train-versus-test macro-F1 gap of the deep learning models, comparable to the strong classical tier and to STAR-v2.}}{12}{}\protected@file@percent }
+\newlabel{fig:dl_gap}{{27}{12}{}{figure.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Reliability diagram for STAR-v2, indicating overconfident probability estimates consistent with the other strong models.}}{12}{}\protected@file@percent }
+\newlabel{fig:starv2_calibration}{{28}{12}{}{figure.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Reliability diagrams of the classical models; all lie below the ideal line (overconfident), with CatBoost the closest to calibrated.}}{12}{}\protected@file@percent }
+\newlabel{fig:classical_calibration}{{29}{12}{}{figure.29}{}}
+\bibcite{b1}{1}
+\bibcite{b2}{2}
+\bibcite{b3}{3}
+\bibcite{b4}{4}
+\bibcite{b5}{5}
+\bibcite{b6}{6}
+\bibcite{b7}{7}
+\bibcite{b8}{8}
+\bibcite{b9}{9}
+\bibcite{b10}{10}
+\bibcite{b11}{11}
+\bibcite{b12}{12}
+\bibcite{b13}{13}
+\bibcite{b14}{14}
+\bibcite{b15}{15}
+\bibcite{b16}{16}
+\bibcite{b17}{17}
+\bibcite{b18}{18}
+\bibcite{b19}{19}
+\bibcite{b20}{20}
+\bibcite{b21}{21}
+\bibcite{b22}{22}
+\bibcite{b23}{23}
+\bibcite{b24}{24}
+\bibcite{b25}{25}
+\bibcite{b26}{26}
+\bibcite{b27}{27}
+\bibcite{b28}{28}
+\bibcite{b29}{29}
+\bibcite{b30}{30}
+\bibcite{b31}{31}
+\bibcite{b32}{32}
+\bibcite{b33}{33}
+\bibcite{b34}{34}
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Reliability diagrams of the deep learning models, showing the same overconfident tendency as the other strong models.}}{13}{}\protected@file@percent }
+\newlabel{fig:dl_calibration}{{30}{13}{}{figure.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Per-fold multi-metric distribution of STAR-v2, demonstrating stable performance across the five folds.}}{13}{}\protected@file@percent }
+\newlabel{fig:starv2_box}{{31}{13}{}{figure.31}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusion}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{REFERENCES}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{First A. Author}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Second B. Author}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Third C. Author, Jr.}{14}{}\protected@file@percent }
+\gdef \@abspage@last{14}
